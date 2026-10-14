@@ -22,6 +22,8 @@ one valley.
 - Each connection can run 5 new analyses on the team's Copernicus account; after that, use your own free keys
   (see [Public demo server](#public-demo-server-limits-and-your-own-keys)).
 
+**Technical report (6 pages, with results and limitations):** [docs/REPORT_6_PAGE.pdf](docs/REPORT_6_PAGE.pdf)
+
 
 
 ## What you will see in the web app
@@ -65,7 +67,8 @@ the change and the detection match. Trishuli valley, Nepal:
 The animations show the run's own close-up pictures; nothing is edited. Make them for any run with
 `python scripts/make_flicker_gif.py <run>`.
 
-Full numbers and test types: [docs/results.md](docs/results.md). Report: 6 pages, with limitations.
+Full numbers and test types: [docs/results.md](docs/results.md). The full method, results and limitations are in the
+[6-page report](docs/REPORT_6_PAGE.pdf).
 
 ---
 
