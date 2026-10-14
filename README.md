@@ -1,15 +1,3 @@
----
-title: FloodSight
-emoji: 🌊
-colorFrom: blue
-colorTo: red
-sdk: docker
-app_port: 7860
-pinned: false
-license: mit
-short_description: Flood/debris mapping and cut-off villages from Sentinel-1/2
----
-
 # FloodSight — flood damage mapping from space
 
 **Multimodal AI Hackathon 2026 · Track B: Mapping Flood Damage from Space**
