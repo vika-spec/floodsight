@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "health",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "Government Hospital Pacha Kalay", "amenity": "hospital", "healthcare": "hospital" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 72.4492006, 34.5868301 ], [ 72.4490941, 34.5868947 ], [ 72.4487486, 34.5870562 ], [ 72.4475717, 34.5867332 ], [ 72.4465163, 34.5864603 ], [ 72.4463874, 34.5864215 ], [ 72.4462941, 34.5863934 ], [ 72.4462735, 34.5857913 ], [ 72.446458, 34.5857987 ], [ 72.4478568, 34.5858971 ], [ 72.4486598, 34.5859951 ], [ 72.4486879, 34.5861027 ], [ 72.4490751, 34.5861022 ], [ 72.4491226, 34.5863778 ], [ 72.4491442, 34.5865029 ], [ 72.449155, 34.5865768 ], [ 72.4492006, 34.5868301 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "Dr Dil Raj", "amenity": "doctors", "healthcare": "doctor" }, "geometry": { "type": "Point", "coordinates": [ 72.4600681, 34.5060867 ] } },
+{ "type": "Feature", "properties": { "name": "Dr. Noor Muhammad Medical Centre", "amenity": "clinic", "healthcare": "clinic" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 72.4491901, 34.5873454 ], [ 72.4488978, 34.5874426 ], [ 72.4487486, 34.5870562 ], [ 72.4491713, 34.5871817 ], [ 72.4491901, 34.5873454 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "Dr. Noor Muhammad Medical Centre", "amenity": "clinic", "healthcare": "clinic" }, "geometry": { "type": "Point", "coordinates": [ 72.4490802, 34.5872174 ] } }
+]
+}

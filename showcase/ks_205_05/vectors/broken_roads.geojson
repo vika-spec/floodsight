@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "broken_roads",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "bridge": false }, "geometry": { "type": "LineString", "coordinates": [ [ 80.3324424, 6.7415151 ], [ 80.3327984, 6.7417695 ] ] } },
+{ "type": "Feature", "properties": { "bridge": false }, "geometry": { "type": "LineString", "coordinates": [ [ 80.341762, 6.7091814 ], [ 80.3387472, 6.7104387 ] ] } },
+{ "type": "Feature", "properties": { "bridge": false }, "geometry": { "type": "LineString", "coordinates": [ [ 80.3750643, 6.7020742 ], [ 80.3748589, 6.7029171 ] ] } },
+{ "type": "Feature", "properties": { "bridge": false }, "geometry": { "type": "LineString", "coordinates": [ [ 80.3410192, 6.7001811 ], [ 80.3411198, 6.7009017 ] ] } },
+{ "type": "Feature", "properties": { "bridge": false }, "geometry": { "type": "LineString", "coordinates": [ [ 80.3601513, 6.6779069 ], [ 80.3607843, 6.6780241 ] ] } },
+{ "type": "Feature", "properties": { "bridge": false }, "geometry": { "type": "LineString", "coordinates": [ [ 80.31625, 6.729108 ], [ 80.3163148, 6.7291712 ] ] } },
+{ "type": "Feature", "properties": { "bridge": false }, "geometry": { "type": "LineString", "coordinates": [ [ 80.3163148, 6.7291712 ], [ 80.31649010000001, 6.7294549 ] ] } },
+{ "type": "Feature", "properties": { "bridge": false }, "geometry": { "type": "LineString", "coordinates": [ [ 80.394741, 6.6924202 ], [ 80.395823, 6.6928475 ] ] } },
+{ "type": "Feature", "properties": { "bridge": false }, "geometry": { "type": "LineString", "coordinates": [ [ 80.395823, 6.6928475 ], [ 80.396448, 6.6930577 ] ] } },
+{ "type": "Feature", "properties": { "bridge": false }, "geometry": { "type": "LineString", "coordinates": [ [ 80.396448, 6.6930577 ], [ 80.397055, 6.6932673 ] ] } }
+]
+}

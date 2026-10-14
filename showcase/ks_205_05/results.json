@@ -1,0 +1,386 @@
+{
+ "floodsight_version": "1.0.0",
+ "run_id": "ks_205_05",
+ "generated_utc": "2026-10-04 09:13 UTC",
+ "aoi": {
+  "bbox": [
+   80.3142,
+   6.6549,
+   80.3986,
+   6.7592
+  ],
+  "area_km2": 107.6,
+  "center": [
+   80.35640000000001,
+   6.70705
+  ]
+ },
+ "flood_date": "2017-05-30",
+ "before_images_until": "2017-01-24",
+ "grid": {
+  "crs": "EPSG:32644",
+  "transform": [
+   10.0,
+   0.0,
+   424190.0,
+   0.0,
+   -10.0,
+   747190.0
+  ],
+  "width": 936,
+  "height": 1156,
+  "resolution_m": 10.0
+ },
+ "verdict": "flood_detected",
+ "inputs": {
+  "sentinel1_pairs": [
+   {
+    "track": "des-019",
+    "pre_date": "2017-01-24",
+    "post_date": "2017-05-30",
+    "gap_days": 126,
+    "coverage": 1.0,
+    "incidence_deg": 37.4,
+    "heading_deg": 192.0,
+    "pre_scenes": [
+     "S1A_IW_GRDH_1SDV_20170124T002509_20170124T002535_014966_0186EC_F2D0_COG.SAFE",
+     "S1A_IW_GRDH_1SDV_20170124T002509_20170124T002535_014966_0186EC_AAC2.SAFE"
+    ],
+    "post_scenes": [
+     "S1B_IW_GRDH_1SDV_20170530T002430_20170530T002501_005820_00A340_7032_COG.SAFE",
+     "S1B_IW_GRDH_1SDV_20170530T002430_20170530T002501_005820_00A340_FB2A.SAFE"
+    ]
+   }
+  ],
+  "sentinel1_backend": "sentinelhub",
+  "sentinel1_backend_per_track": {
+   "des-019": "sentinelhub"
+  },
+  "sentinel1_calibration": "SIGMA0_ELLIPSOID",
+  "sentinelhub_processing_units": 44.0,
+  "sentinel2": {
+   "used": false
+  },
+  "osm_snapshot": "2017-01-24",
+  "model": {
+   "used": true,
+   "weights": "siamese_unet.pt",
+   "epoch": 6,
+   "input_speckle_matching": {
+    "target_db": 0.4,
+    "before_db": 1.055,
+    "window": 11,
+    "after_db": 0.394
+   }
+  },
+  "detection_stats": [
+   {
+    "water_threshold_db": -15.0,
+    "water_threshold_method": "bimodal tiles (135) + Otsu",
+    "valid_fraction": 0.9989,
+    "blind_fraction": 0.0011,
+    "has_vh": true,
+    "track": "des-019"
+   }
+  ],
+  "debris_terrain": {
+   "definition": "UNEP-WCMC mountain classes (Kapos et al. 2000)",
+   "source": "DEM with 8 km margin (250 m)",
+   "mountain_fraction": 0.02,
+   "applied": true
+  }
+ },
+ "areas": {
+  "flood_km2": 2.789,
+  "flood_high_conf_km2": 2.355,
+  "debris_km2": 0.0,
+  "debris_high_conf_km2": 0.0,
+  "permanent_water_km2": 0.017,
+  "nodata_km2": 0.124,
+  "aoi_km2": 108.202,
+  "nodata_fraction": 0.0011
+ },
+ "damage": {
+  "buildings_total": 984,
+  "buildings_likely_hit": 0,
+  "buildings_possibly_hit": 0,
+  "buildings_not_observed": 27,
+  "road_km_affected": 0.44,
+  "road_segments_hit": 7,
+  "bridges_total": 8,
+  "bridges_hit": 0
+ },
+ "access": {
+  "settlements_cut_off": 0,
+  "settlements_likely_cut_off": 0,
+  "settlements_unknown": 0,
+  "settlements_detour": 0,
+  "settlements_reachable": 8,
+  "settlements_isolated_before": 0,
+  "settlements_no_road_data": 0,
+  "settlements_total": 8,
+  "target_kind": "hospital",
+  "targets_used": 17,
+  "broken_road_edges": 10,
+  "broken_road_edges_confident": 6,
+  "unseen_road_edges": 0,
+  "buildings_in_cut_off_settlements": 0,
+  "buildings_in_likely_cut_off_settlements": 0,
+  "speeds": "nominal free-flow speeds per OSM road class (OSRM car-profile defaults)"
+ },
+ "settlements": [
+  {
+   "name": "Kospelawinna",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "hospital #4",
+   "target_after": "hospital #4",
+   "km_before": 1.4,
+   "km_after": 1.4,
+   "extra_km": 0.0,
+   "min_before": 2,
+   "min_after": 2,
+   "extra_min": 0,
+   "buildings": 358,
+   "snap_m": 14,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Hidellana Junction",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "hospital #4",
+   "target_after": "hospital #4",
+   "km_before": 3.8,
+   "km_after": 3.8,
+   "extra_km": 0.0,
+   "min_before": 3,
+   "min_after": 3,
+   "extra_min": 0,
+   "buildings": 13,
+   "snap_m": 1,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Ratnapura New Town",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "hospital #4",
+   "target_after": "hospital #4",
+   "km_before": 2.9,
+   "km_after": 2.9,
+   "extra_km": 0.0,
+   "min_before": 2,
+   "min_after": 2,
+   "extra_min": 0,
+   "buildings": 6,
+   "snap_m": 6,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Hidellana",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "hospital #4",
+   "target_after": "hospital #4",
+   "km_before": 3.5,
+   "km_after": 3.5,
+   "extra_km": 0.0,
+   "min_before": 3,
+   "min_after": 3,
+   "extra_min": 0,
+   "buildings": 2,
+   "snap_m": 10,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Amithagoda",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "hospital #4",
+   "target_after": "hospital #4",
+   "km_before": 5.4,
+   "km_after": 5.4,
+   "extra_km": 0.0,
+   "min_before": 5,
+   "min_after": 5,
+   "extra_min": 0,
+   "buildings": 1,
+   "snap_m": 4,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Hidellana",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "hospital #4",
+   "target_after": "hospital #4",
+   "km_before": 3.5,
+   "km_after": 3.5,
+   "extra_km": 0.0,
+   "min_before": 3,
+   "min_after": 3,
+   "extra_min": 0,
+   "buildings": 0,
+   "snap_m": 10,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Batuhena Junction",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #4",
+   "target_after": "hospital #4",
+   "km_before": 6.1,
+   "km_after": 6.3,
+   "extra_km": 0.2,
+   "min_before": 5,
+   "min_after": 5,
+   "extra_min": 0,
+   "buildings": 0,
+   "snap_m": 9,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Edandawela",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #4",
+   "target_after": "hospital #4",
+   "km_before": 7.2,
+   "km_after": 7.4,
+   "extra_km": 0.2,
+   "min_before": 6,
+   "min_after": 6,
+   "extra_min": 0,
+   "buildings": 0,
+   "snap_m": 13,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  }
+ ],
+ "notes": [
+  "Before-images taken on or before 2017-01-24 (set by the operator: the area was still dry then). Change between that date and the after-image includes the whole build-up of the flood, and also any other change in that period (crops, construction).",
+  "OpenStreetMap snapshot of 2017-01-24 (before the event)."
+ ],
+ "web": {
+  "flood": {
+   "png": "layers/flood_web.png",
+   "bounds": [
+    [
+     6.654710395115919,
+     80.31399406514555
+    ],
+    [
+     6.759376966132203,
+     80.39884907259004
+    ]
+   ]
+  },
+  "before": {
+   "png": "layers/before_web.png",
+   "bounds": [
+    [
+     6.654710395115919,
+     80.31399406514555
+    ],
+    [
+     6.759376966132203,
+     80.39884907259004
+    ]
+   ]
+  },
+  "after": {
+   "png": "layers/after_web.png",
+   "bounds": [
+    [
+     6.654710395115919,
+     80.31399406514555
+    ],
+    [
+     6.759376966132203,
+     80.39884907259004
+    ]
+   ]
+  },
+  "change": {
+   "png": "layers/change_web.png",
+   "bounds": [
+    [
+     6.654710395115919,
+     80.31399406514555
+    ],
+    [
+     6.759376966132203,
+     80.39884907259004
+    ]
+   ]
+  },
+  "stretch_db": [
+   -13.2,
+   -1.8
+  ],
+  "zoom": {
+   "before": "layers/zoom_before.png",
+   "after": "layers/zoom_after.png",
+   "change": "layers/zoom_change.png",
+   "size_km": [
+    2.0,
+    2.0
+   ],
+   "bbox": [
+    80.3181,
+    6.7229,
+    80.3362,
+    6.741
+   ]
+  }
+ },
+ "vectors": {
+  "buildings": "vectors\\buildings_hit.geojson",
+  "roads": "vectors\\roads_hit.geojson",
+  "settlements": "vectors\\settlements.geojson",
+  "broken_roads": "vectors\\broken_roads.geojson",
+  "priority_csv": "vectors\\priority_list.csv",
+  "health": "vectors\\health.geojson",
+  "places": "vectors\\places.geojson"
+ },
+ "attributions": [
+  "Contains modified Copernicus Sentinel data 2026.",
+  "Produced using Copernicus WorldDEM-30 \u00a9 DLR e.V. 2010\u20132014 and \u00a9 Airbus Defence and Space GmbH 2014\u20132018 provided under COPERNICUS by the European Union and ESA; all rights reserved.",
+  "\u00a9 OpenStreetMap contributors.",
+  "Model trained on Kuro Siwo: Bountos et al., 2024 (NeurIPS Datasets & Benchmarks)."
+ ],
+ "reports": {
+  "en": "report\\situation_report_en.pdf",
+  "ne": "report\\situation_report_ne.pdf",
+  "map": "report\\map.png"
+ },
+ "timings": {
+  "Searching the Sentinel-1 catalogue": 5.5,
+  "Downloading satellite, elevation and map data": 80.59,
+  "Terrain analysis (slope, drainage, HAND)": 24.14,
+  "Detecting flood water and debris": 13.06,
+  "Segmentation model (Siamese U-Net)": 37.79,
+  "Assessing buildings, roads and bridges": 2.07,
+  "Finding cut-off settlements": 1.99,
+  "Writing maps and results": 7.75,
+  "Generating situation reports": 10.07,
+  "total": 184.6
+ }
+}

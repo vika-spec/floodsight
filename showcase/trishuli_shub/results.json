@@ -1,0 +1,8976 @@
+{
+ "floodsight_version": "1.0.0",
+ "run_id": "trishuli_shub",
+ "generated_utc": "2026-10-10 03:43 UTC",
+ "aoi": {
+  "bbox": [
+   85.08,
+   27.85,
+   85.4,
+   28.29
+  ],
+  "area_km2": 1529.2,
+  "center": [
+   85.24000000000001,
+   28.07
+  ]
+ },
+ "flood_date": "2026-08-26",
+ "before_images_until": "2026-08-25",
+ "grid": {
+  "crs": "EPSG:32645",
+  "transform": [
+   20.0,
+   0.0,
+   310920.0,
+   0.0,
+   -20.0,
+   3130840.0
+  ],
+  "width": 1609,
+  "height": 2462,
+  "resolution_m": 20.0
+ },
+ "verdict": "flood_detected",
+ "inputs": {
+  "sentinel1_pairs": [
+   {
+    "track": "asc-085",
+    "pre_date": "2026-08-16",
+    "post_date": "2026-08-28",
+    "gap_days": 12,
+    "coverage": 1.0,
+    "incidence_deg": 37.9,
+    "heading_deg": -12.0,
+    "pre_scenes": [
+     "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_B091_COG.SAFE",
+     "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_C3AB.SAFE"
+    ],
+    "post_scenes": [
+     "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_01B4.SAFE",
+     "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_C73B_COG.SAFE"
+    ],
+    "pre_stack_dates": [
+     "2026-08-16"
+    ]
+   },
+   {
+    "track": "des-019",
+    "pre_date": "2026-08-24",
+    "post_date": "2026-09-05",
+    "gap_days": 12,
+    "coverage": 1.0,
+    "incidence_deg": 35.3,
+    "heading_deg": 192.0,
+    "pre_scenes": [
+     "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_45FC_COG.SAFE",
+     "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_EDEC.SAFE"
+    ],
+    "post_scenes": [
+     "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_60FD_COG.SAFE",
+     "S1D_IW_GRDH_1SDV_20260905T001844_20260905T001909_004435_00837B_2F0C.SAFE"
+    ],
+    "pre_stack_dates": [
+     "2026-08-24"
+    ]
+   }
+  ],
+  "sentinel1_backend": "sentinelhub",
+  "sentinel1_backend_per_track": {
+   "asc-085": "sentinelhub",
+   "des-019": "sentinelhub"
+  },
+  "sentinel1_calibration": "SIGMA0_ELLIPSOID",
+  "sentinelhub_processing_units": 0.0,
+  "sentinel2": {
+   "used": true,
+   "clear_fraction": 0.399,
+   "confirmed_flood_km2": 0.035,
+   "confirmed_debris_km2": 1.151,
+   "contradicted_km2": 0.059,
+   "blind_filled_km2": 0.0,
+   "added_flood_km2": 0.845,
+   "added_debris_km2": 3.038
+  },
+  "osm_snapshot": "2026-07-27",
+  "model": {
+   "used": true,
+   "weights": "siamese_unet.pt",
+   "epoch": 6,
+   "tracks": [
+    {
+     "track": "asc-085",
+     "after": "2026-08-28",
+     "flood_km2_p_ge_thr": 0.108,
+     "input_speckle_matching": null
+    },
+    {
+     "track": "des-019",
+     "after": "2026-09-05",
+     "flood_km2_p_ge_thr": 0.172,
+     "input_speckle_matching": null
+    }
+   ],
+   "combine": "per-pixel maximum over tracks that see the pixel",
+   "threshold": 0.8,
+   "vs_rules": {
+    "threshold": 0.8,
+    "both_km2": 0.082,
+    "model_only_km2": 0.139,
+    "rules_only_km2": 0.124,
+    "added_to_map_km2": 0.035,
+    "confidence_raised_km2": 0.057,
+    "confidence_lowered_km2": 0.052,
+    "agreement_iou": 0.238,
+    "note": "Flood water only: the model was trained on water labels and does not detect debris; model-only water is added to the map only where water can pond (low and flat), at low confidence."
+   }
+  },
+  "detection_stats": [
+   {
+    "water_threshold_db": -15.0,
+    "water_threshold_method": "bimodal tiles (5) + Otsu",
+    "valid_fraction": 0.9312,
+    "blind_fraction": 0.0688,
+    "has_vh": true,
+    "track": "asc-085"
+   },
+   {
+    "water_threshold_db": -15.0,
+    "water_threshold_method": "bimodal tiles (4) + Otsu",
+    "valid_fraction": 0.9369,
+    "blind_fraction": 0.0631,
+    "has_vh": true,
+    "track": "des-019"
+   }
+  ],
+  "debris_terrain": {
+   "definition": "UNEP-WCMC mountain classes (Kapos et al. 2000)",
+   "source": "DEM with 8 km margin (250 m)",
+   "mountain_fraction": 0.999,
+   "applied": true
+  }
+ },
+ "areas": {
+  "flood_km2": 1.086,
+  "flood_high_conf_km2": 0.157,
+  "debris_km2": 5.491,
+  "debris_high_conf_km2": 1.777,
+  "permanent_water_km2": 0.414,
+  "nodata_km2": 9.217,
+  "aoi_km2": 1584.543,
+  "nodata_fraction": 0.0058
+ },
+ "damage": {
+  "buildings_total": 107838,
+  "buildings_likely_hit": 474,
+  "buildings_possibly_hit": 1417,
+  "buildings_not_observed": 32142,
+  "road_km_affected": 44.72,
+  "road_segments_hit": 286,
+  "bridges_total": 205,
+  "bridges_hit": 40
+ },
+ "access": {
+  "settlements_cut_off": 28,
+  "settlements_likely_cut_off": 5,
+  "settlements_unknown": 4,
+  "settlements_detour": 7,
+  "settlements_reachable": 92,
+  "settlements_isolated_before": 23,
+  "settlements_no_road_data": 10,
+  "settlements_total": 169,
+  "target_kind": "hospital",
+  "targets_used": 107,
+  "broken_road_edges": 1596,
+  "broken_road_edges_confident": 533,
+  "unseen_road_edges": 122,
+  "buildings_in_cut_off_settlements": 5848,
+  "buildings_in_likely_cut_off_settlements": 3543,
+  "speeds": "nominal free-flow speeds per OSM road class (OSRM car-profile defaults)"
+ },
+ "blockages": {
+  "roads": [
+   {
+    "name": "unnamed trunk",
+    "highway": "trunk",
+    "km_affected": 0.3,
+    "certain": true,
+    "lat_lon": [
+     28.2832,
+     85.3754
+    ]
+   },
+   {
+    "name": "Pasang Lhamu Highway",
+    "highway": "primary",
+    "km_affected": 3.45,
+    "certain": true,
+    "lat_lon": [
+     27.9542,
+     85.1646
+    ]
+   },
+   {
+    "name": "Pasang Laahamu",
+    "highway": "primary",
+    "km_affected": 0.57,
+    "certain": true,
+    "lat_lon": [
+     28.2525,
+     85.3658
+    ]
+   },
+   {
+    "name": "Devighat Path",
+    "highway": "primary",
+    "km_affected": 0.44,
+    "certain": true,
+    "lat_lon": [
+     27.8643,
+     85.1148
+    ]
+   },
+   {
+    "name": "unnamed primary",
+    "highway": "primary",
+    "km_affected": 1.37,
+    "certain": true,
+    "lat_lon": [
+     28.1737,
+     85.3425
+    ]
+   },
+   {
+    "name": "Sinchai Path",
+    "highway": "tertiary",
+    "km_affected": 0.49,
+    "certain": true,
+    "lat_lon": [
+     27.8954,
+     85.1407
+    ]
+   }
+  ],
+  "bridges": [
+   {
+    "name": "Pasang Lhamu Highway",
+    "highway": "primary",
+    "lat_lon": [
+     27.8545,
+     85.0811
+    ]
+   },
+   {
+    "name": "devighat-Tadi bridge",
+    "highway": "primary",
+    "lat_lon": [
+     27.8586,
+     85.1091
+    ]
+   },
+   {
+    "name": "Falaakhu River Bridge",
+    "highway": "primary",
+    "lat_lon": [
+     27.9742,
+     85.1858
+    ]
+   },
+   {
+    "name": "Pasang Lhamu Highway",
+    "highway": "primary",
+    "lat_lon": [
+     27.9704,
+     85.1848
+    ]
+   },
+   {
+    "name": "bridge on unnamed primary",
+    "highway": "primary",
+    "lat_lon": [
+     28.2787,
+     85.378
+    ]
+   },
+   {
+    "name": "bridge on unnamed primary",
+    "highway": "primary",
+    "lat_lon": [
+     28.1816,
+     85.3422
+    ]
+   }
+  ],
+  "roads_total": 17,
+  "bridges_total": 39
+ },
+ "settlements": [
+  {
+   "name": "\u092c\u0947\u0924\u094d\u0930\u093e\u0935\u0924\u0940",
+   "name_en": "Betrawati",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Bhagwati Memorial Hospital",
+   "target_after": "",
+   "km_before": 10.6,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 10.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 943,
+   "snap_m": 32,
+   "priority": 1,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0926\u0947\u0935\u0940\u0918\u093e\u091f",
+   "name_en": "Devighat",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Sanjivani Hospital",
+   "target_after": "",
+   "km_before": 6.0,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 7.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 782,
+   "snap_m": 31,
+   "priority": 2,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0917\u094b\u0926\u093e\u092e",
+   "name_en": "Godam",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 30.7,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 39.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 588,
+   "snap_m": 10,
+   "priority": 3,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0917\u094b\u0920\u0947\u0928",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 34.7,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 45.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 541,
+   "snap_m": 9,
+   "priority": 4,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0906\u092e\u093e\u091b\u094b\u0926\u093f\u0919\u094d\u092e\u094b",
+   "name_en": "Aamachhodingmo",
+   "place": "village",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 27.9,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 35.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 386,
+   "snap_m": 76,
+   "priority": 5,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "Chyamdole",
+   "name_en": "Chyamdole",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 27.2,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 34.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 263,
+   "snap_m": 548,
+   "priority": 6,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0917\u094d\u0930\u0947",
+   "name_en": "Gre",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 40.4,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 60.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 255,
+   "snap_m": 65,
+   "priority": 7,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u092c\u093e\u0939\u0941\u0928\u0921\u093e\u0901\u0921\u093e",
+   "name_en": "Bahun Danda",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 24.4,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 29.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 233,
+   "snap_m": 9,
+   "priority": 8,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0932\u093f\u0919\u0932\u093f\u0919",
+   "name_en": "Lingling",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 22.2,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 24.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 173,
+   "snap_m": 40,
+   "priority": 9,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0917\u094b\u0917\u0928\u0947",
+   "name_en": "Gogne",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "hospital #81",
+   "target_after": "",
+   "km_before": 15.3,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 49.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 161,
+   "snap_m": 488,
+   "priority": 10,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0924\u0947\u091f\u093e\u0919\u091a\u0947\u091f",
+   "name_en": "Tetanchet",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 37.5,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 57.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 161,
+   "snap_m": 33,
+   "priority": 11,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0930\u0938\u0941\u0935\u093e\u0917\u0922\u0940",
+   "name_en": "Rasuwa Gadhi",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 29.7,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 29.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 148,
+   "snap_m": 39,
+   "priority": 12,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0921\u093e\u0932\u094d\u092b\u0947\u0921\u0940",
+   "name_en": "Dalphedi",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 23.5,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 23.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 147,
+   "snap_m": 837,
+   "priority": 13,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0924\u093e\u0924\u094b\u092a\u093e\u0928\u0940",
+   "name_en": "Tatopani",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 42.8,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 70.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 142,
+   "snap_m": 10,
+   "priority": 14,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0917\u094b\u0919\u094d\u0917\u093e\u0919",
+   "name_en": "Gongang",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 33.8,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 48.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 132,
+   "snap_m": 633,
+   "priority": 15,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u092a\u093e\u0919\u0932\u093f\u0919",
+   "name_en": "Pangling",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 37.1,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 52.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 131,
+   "snap_m": 1395,
+   "priority": 16,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u092a\u093e\u091c\u0941\u0919",
+   "name_en": "Pajung",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 21.6,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 27.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 120,
+   "snap_m": 70,
+   "priority": 17,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 18.6,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 23.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 90,
+   "snap_m": 74,
+   "priority": 18,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u092d\u094d\u0930\u091c\u092e",
+   "name_en": "Bhrajam",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 23.1,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 31.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 74,
+   "snap_m": 22,
+   "priority": 19,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u092d\u091e\u094d\u091c\u094d\u092f\u093e\u0919",
+   "name_en": "Bhanjyang",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 22.1,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 44.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 69,
+   "snap_m": 250,
+   "priority": 20,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u70ed\u7d22",
+   "name_en": "Resuo",
+   "place": "village",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 30.0,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 29.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 60,
+   "snap_m": 26,
+   "priority": 21,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u092e\u0948\u0932\u0941\u0919",
+   "name_en": "Mailung",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "hospital #81",
+   "target_after": "",
+   "km_before": 12.2,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 41.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 54,
+   "snap_m": 20,
+   "priority": 22,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "Somdang",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 57.3,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 79.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 51,
+   "snap_m": 15,
+   "priority": 23,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u091c\u0930\u094d\u0938\u093e \u0921\u093e\u0901\u0921\u093e",
+   "name_en": "Jarsadada",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 36.9,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 49.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 46,
+   "snap_m": 44,
+   "priority": 24,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u092c\u094d\u0930\u093f\u092e\u0921\u093e\u0919",
+   "name_en": "Brimdang",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 45.0,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 75.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 32,
+   "snap_m": 19,
+   "priority": 25,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "village",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 24.2,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 34.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 26,
+   "snap_m": 609,
+   "priority": 26,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0928\u093e\u0917\u0925\u0932\u0940",
+   "name_en": "Nagthali",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 45.0,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 75.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 21,
+   "snap_m": 770,
+   "priority": 27,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "cut_off",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 35.6,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 52.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 19,
+   "snap_m": 31,
+   "priority": 28,
+   "status_label": "Cut off (no road to a hospital; blocked by confident detections)"
+  },
+  {
+   "name": "\u0928\u094c\u0935\u093f\u0938\u0947 \u092b\u093e\u0901\u091f",
+   "name_en": "Naubisephat",
+   "place": "hamlet",
+   "status": "likely_cut_off",
+   "target_before": "hospital #81",
+   "target_after": "",
+   "km_before": 9.3,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 13.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 1756,
+   "snap_m": 90,
+   "priority": 29,
+   "status_label": "Likely cut off (only low-confidence detections block the last route)"
+  },
+  {
+   "name": "\u092d\u0948\u0902\u0938\u0947",
+   "name_en": "Bhainse",
+   "place": "hamlet",
+   "status": "likely_cut_off",
+   "target_before": "Bhagwati Memorial Hospital",
+   "target_after": "",
+   "km_before": 8.4,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 8.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 1113,
+   "snap_m": 28,
+   "priority": 30,
+   "status_label": "Likely cut off (only low-confidence detections block the last route)"
+  },
+  {
+   "name": "\u0938\u093f\u092e\u094d\u0932\u0947",
+   "name_en": "Simle",
+   "place": "hamlet",
+   "status": "likely_cut_off",
+   "target_before": "hospital #81",
+   "target_after": "",
+   "km_before": 6.6,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 27.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 456,
+   "snap_m": 28,
+   "priority": 31,
+   "status_label": "Likely cut off (only low-confidence detections block the last route)"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "likely_cut_off",
+   "target_before": "hospital #102",
+   "target_after": "",
+   "km_before": 8.9,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 10.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 166,
+   "snap_m": 308,
+   "priority": 32,
+   "status_label": "Likely cut off (only low-confidence detections block the last route)"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "likely_cut_off",
+   "target_before": "hospital #102",
+   "target_after": "",
+   "km_before": 9.2,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 10.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 52,
+   "snap_m": 22,
+   "priority": 33,
+   "status_label": "Likely cut off (only low-confidence detections block the last route)"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "unknown",
+   "target_before": "hospital #81",
+   "target_after": "Rasuwa District Hospital",
+   "km_before": 20.3,
+   "km_after": 20.4,
+   "extra_km": 0.1,
+   "min_before": 31.0,
+   "min_after": 31.0,
+   "extra_min": 0.0,
+   "buildings": 264,
+   "snap_m": 1336,
+   "priority": 34,
+   "status_label": "Unknown (the only remaining route runs through roads the radar could not see)"
+  },
+  {
+   "name": "\u0920\u0941\u0932\u094b \u092d\u093e\u0930\u094d\u0916\u0941",
+   "name_en": "Sano Bharkhu",
+   "place": "hamlet",
+   "status": "unknown",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "Rasuwa District Hospital",
+   "km_before": 6.9,
+   "km_after": 6.9,
+   "extra_km": 0.0,
+   "min_before": 8.0,
+   "min_after": 8.0,
+   "extra_min": 0.0,
+   "buildings": 179,
+   "snap_m": 25,
+   "priority": 35,
+   "status_label": "Unknown (the only remaining route runs through roads the radar could not see)"
+  },
+  {
+   "name": "\u0939\u093e\u0915\u0941 \u092c\u0947\u0938\u0940",
+   "name_en": "Haku Besi",
+   "place": "hamlet",
+   "status": "unknown",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "Rasuwa District Hospital",
+   "km_before": 19.0,
+   "km_after": 19.0,
+   "extra_km": 0.0,
+   "min_before": 28.0,
+   "min_after": 28.0,
+   "extra_min": 0.0,
+   "buildings": 139,
+   "snap_m": 435,
+   "priority": 36,
+   "status_label": "Unknown (the only remaining route runs through roads the radar could not see)"
+  },
+  {
+   "name": "\u0938\u093e\u0928\u093e\u0947 \u092d\u093e\u0930\u094d\u0916\u0941",
+   "name_en": "Sano Bharkhu",
+   "place": "hamlet",
+   "status": "unknown",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "Rasuwa District Hospital",
+   "km_before": 9.4,
+   "km_after": 9.4,
+   "extra_km": 0.0,
+   "min_before": 13.0,
+   "min_after": 13.0,
+   "extra_min": 0.0,
+   "buildings": 132,
+   "snap_m": 17,
+   "priority": 37,
+   "status_label": "Unknown (the only remaining route runs through roads the radar could not see)"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "detour",
+   "target_before": "Bhagwati Memorial Hospital",
+   "target_after": "Katunje Health Post",
+   "km_before": 7.9,
+   "km_after": 39.0,
+   "extra_km": 31.1,
+   "min_before": 16.0,
+   "min_after": 80.0,
+   "extra_min": 64.0,
+   "buildings": 700,
+   "snap_m": 29,
+   "priority": 38,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "detour",
+   "target_before": "Bhagwati Memorial Hospital",
+   "target_after": "Katunje Health Post",
+   "km_before": 6.7,
+   "km_after": 36.5,
+   "extra_km": 29.8,
+   "min_before": 21.0,
+   "min_after": 80.0,
+   "extra_min": 59.0,
+   "buildings": 546,
+   "snap_m": 47,
+   "priority": 39,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "\u092d\u094d\u092f\u093e\u0917\u0941\u0924\u0947",
+   "name_en": "Bhyagute",
+   "place": "hamlet",
+   "status": "detour",
+   "target_before": "Bhagwati Memorial Hospital",
+   "target_after": "hospital #81",
+   "km_before": 9.0,
+   "km_after": 28.8,
+   "extra_km": 19.8,
+   "min_before": 19.0,
+   "min_after": 66.0,
+   "extra_min": 48.0,
+   "buildings": 432,
+   "snap_m": 16,
+   "priority": 40,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "detour",
+   "target_before": "Bhagwati Memorial Hospital",
+   "target_after": "Katunje Health Post",
+   "km_before": 6.9,
+   "km_after": 38.0,
+   "extra_km": 31.1,
+   "min_before": 14.0,
+   "min_after": 78.0,
+   "extra_min": 64.0,
+   "buildings": 408,
+   "snap_m": 137,
+   "priority": 41,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "\u0917\u0948\u0930\u093e\u0925\u094b\u0915",
+   "name_en": "Gairathok",
+   "place": "village",
+   "status": "detour",
+   "target_before": "Bhagwati Memorial Hospital",
+   "target_after": "hospital #81",
+   "km_before": 12.5,
+   "km_after": 25.4,
+   "extra_km": 12.9,
+   "min_before": 27.0,
+   "min_after": 61.0,
+   "extra_min": 34.0,
+   "buildings": 402,
+   "snap_m": 31,
+   "priority": 42,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "\u0917\u0917\u0924\u0947",
+   "name_en": "Gagate",
+   "place": "hamlet",
+   "status": "detour",
+   "target_before": "Bhagwati Memorial Hospital",
+   "target_after": "hospital #81",
+   "km_before": 9.6,
+   "km_after": 28.3,
+   "extra_km": 18.6,
+   "min_before": 20.0,
+   "min_after": 68.0,
+   "extra_min": 48.0,
+   "buildings": 210,
+   "snap_m": 132,
+   "priority": 43,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "\u092d\u0948\u0930\u092e\u0915\u094b\u091f",
+   "name_en": "Bhairamkot",
+   "place": "hamlet",
+   "status": "detour",
+   "target_before": "Bhagwati Memorial Hospital",
+   "target_after": "hospital #81",
+   "km_before": 10.9,
+   "km_after": 28.1,
+   "extra_km": 17.2,
+   "min_before": 23.0,
+   "min_after": 68.0,
+   "extra_min": 45.0,
+   "buildings": 55,
+   "snap_m": 50,
+   "priority": 44,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "\u092c\u093f\u0926\u0941\u0930",
+   "name_en": "Bidur",
+   "place": "town",
+   "status": "reachable",
+   "target_before": "Sanjivani Hospital",
+   "target_after": "Sanjivani Hospital",
+   "km_before": 0.5,
+   "km_after": 0.5,
+   "extra_km": 0.0,
+   "min_before": 1.0,
+   "min_after": 1.0,
+   "extra_min": 0.0,
+   "buildings": 2508,
+   "snap_m": 25,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u092c\u0941\u0919\u0924\u093e\u0919",
+   "name_en": "Bungtang",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Bhagwati Memorial Hospital",
+   "target_after": "hospital #81",
+   "km_before": 22.7,
+   "km_after": 25.0,
+   "extra_km": 2.3,
+   "min_before": 49.0,
+   "min_after": 60.0,
+   "extra_min": 11.0,
+   "buildings": 2010,
+   "snap_m": 20,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0915\u093f\u0938\u094d\u092a\u093e\u0919",
+   "name_en": "Kispang",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "hospital #81",
+   "target_after": "hospital #81",
+   "km_before": 7.1,
+   "km_after": 7.1,
+   "extra_km": 0.0,
+   "min_before": 17.0,
+   "min_after": 17.0,
+   "extra_min": 0.0,
+   "buildings": 1688,
+   "snap_m": 80,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0928\u0941\u091a\u0947\u0924 \u0917\u093e\u0909\u0901",
+   "name_en": "Nyuchet Gaon",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #81",
+   "target_after": "hospital #81",
+   "km_before": 7.4,
+   "km_after": 7.4,
+   "extra_km": 0.0,
+   "min_before": 18.0,
+   "min_after": 18.0,
+   "extra_min": 0.0,
+   "buildings": 1544,
+   "snap_m": 15,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0909\u0924\u094d\u0924\u0930\u0917\u092f\u093e",
+   "name_en": "Uttargaya",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Kalika Community Hospital \u0915\u093e\u0932\u093f\u0915\u093e \u0938\u093e\u092e\u0941\u0926\u093e\u092f\u093f\u0915 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+   "target_after": "Kalika Community Hospital \u0915\u093e\u0932\u093f\u0915\u093e \u0938\u093e\u092e\u0941\u0926\u093e\u092f\u093f\u0915 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+   "km_before": 7.4,
+   "km_after": 7.4,
+   "extra_km": 0.0,
+   "min_before": 16.0,
+   "min_after": 16.0,
+   "extra_min": 0.0,
+   "buildings": 1361,
+   "snap_m": 11,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0924\u093e\u0926\u0940",
+   "name_en": "Tadi",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "target_after": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "km_before": 15.3,
+   "km_after": 15.3,
+   "extra_km": 0.0,
+   "min_before": 21.0,
+   "min_after": 21.0,
+   "extra_min": 0.0,
+   "buildings": 1225,
+   "snap_m": 69,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0932\u093f\u0916\u0941",
+   "name_en": "Likhu",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 8.3,
+   "km_after": 8.3,
+   "extra_km": 0.0,
+   "min_before": 13.0,
+   "min_after": 13.0,
+   "extra_min": 0.0,
+   "buildings": 1093,
+   "snap_m": 37,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0915\u093e\u0930\u094d\u0915\u0940 \u0917\u093e\u0909\u0901",
+   "name_en": "Karki Gaun",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #81",
+   "target_after": "hospital #81",
+   "km_before": 5.3,
+   "km_after": 5.3,
+   "extra_km": 0.0,
+   "min_before": 13.0,
+   "min_after": 13.0,
+   "extra_min": 0.0,
+   "buildings": 1085,
+   "snap_m": 24,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0917\u0923\u0947\u0936\u0938\u094d\u0925\u093e\u0928",
+   "name_en": "Ganeshthan",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 12.5,
+   "km_after": 12.5,
+   "extra_km": 0.0,
+   "min_before": 37.0,
+   "min_after": 37.0,
+   "extra_min": 0.0,
+   "buildings": 1028,
+   "snap_m": 56,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0938\u093e\u0924\u0926\u094b\u092c\u093e\u091f\u094b",
+   "name_en": "Satdobato",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #81",
+   "target_after": "hospital #81",
+   "km_before": 3.9,
+   "km_after": 3.9,
+   "extra_km": 0.0,
+   "min_before": 9.0,
+   "min_after": 9.0,
+   "extra_min": 0.0,
+   "buildings": 995,
+   "snap_m": 23,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u092a\u091e\u094d\u091a\u0915\u0928\u094d\u092f\u093e",
+   "name_en": "Panchakanya",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "target_after": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "km_before": 20.7,
+   "km_after": 20.7,
+   "extra_km": 0.0,
+   "min_before": 41.0,
+   "min_after": 41.0,
+   "extra_min": 0.0,
+   "buildings": 995,
+   "snap_m": 48,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0922\u0941\u0919\u094d\u0917\u0947",
+   "name_en": "Dhunge",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Kalika Community Hospital \u0915\u093e\u0932\u093f\u0915\u093e \u0938\u093e\u092e\u0941\u0926\u093e\u092f\u093f\u0915 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+   "target_after": "Kalika Community Hospital \u0915\u093e\u0932\u093f\u0915\u093e \u0938\u093e\u092e\u0941\u0926\u093e\u092f\u093f\u0915 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+   "km_before": 3.1,
+   "km_after": 3.1,
+   "extra_km": 0.0,
+   "min_before": 6.0,
+   "min_after": 6.0,
+   "extra_min": 0.0,
+   "buildings": 992,
+   "snap_m": 35,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0936\u093f\u0935\u092a\u0941\u0930\u0940",
+   "name_en": "Shivapuri",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "\u091f\u094b\u0916\u093e \u091a\u0928\u094d\u0926\u0947\u0936\u094d\u0935\u0930\u0940 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+   "target_after": "\u091f\u094b\u0916\u093e \u091a\u0928\u094d\u0926\u0947\u0936\u094d\u0935\u0930\u0940 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+   "km_before": 22.6,
+   "km_after": 22.6,
+   "extra_km": 0.0,
+   "min_before": 32.0,
+   "min_after": 32.0,
+   "extra_min": 0.0,
+   "buildings": 984,
+   "snap_m": 51,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u092a\u093f\u092a\u0932\u091f\u093e\u0930",
+   "name_en": "Pipaltar",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Sanjivani Hospital",
+   "target_after": "Sanjivani Hospital",
+   "km_before": 4.9,
+   "km_after": 4.9,
+   "extra_km": 0.0,
+   "min_before": 5.0,
+   "min_after": 5.0,
+   "extra_min": 0.0,
+   "buildings": 927,
+   "snap_m": 14,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0927\u0907\u092c\u0941\u0919",
+   "name_en": "Dhaibung",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Kalika Community Hospital \u0915\u093e\u0932\u093f\u0915\u093e \u0938\u093e\u092e\u0941\u0926\u093e\u092f\u093f\u0915 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+   "target_after": "Kalika Community Hospital \u0915\u093e\u0932\u093f\u0915\u093e \u0938\u093e\u092e\u0941\u0926\u093e\u092f\u093f\u0915 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+   "km_before": 1.9,
+   "km_after": 1.9,
+   "extra_km": 0.0,
+   "min_before": 2.0,
+   "min_after": 2.0,
+   "extra_min": 0.0,
+   "buildings": 895,
+   "snap_m": 10,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0916\u093e\u0932\u091a\u0947\u0924",
+   "name_en": "Khalchet",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 3.0,
+   "km_after": 3.0,
+   "extra_km": 0.0,
+   "min_before": 10.0,
+   "min_after": 10.0,
+   "extra_min": 0.0,
+   "buildings": 829,
+   "snap_m": 45,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0926\u093e\u0919\u092e\u093e\u0908",
+   "name_en": "Dangmai",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 12.2,
+   "km_after": 12.2,
+   "extra_km": 0.0,
+   "min_before": 25.0,
+   "min_after": 25.0,
+   "extra_min": 0.0,
+   "buildings": 802,
+   "snap_m": 57,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0938\u0942\u0930\u094d\u092f\u0917\u0922\u0940",
+   "name_en": "Suryagadhi",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 10.0,
+   "km_after": 10.0,
+   "extra_km": 0.0,
+   "min_before": 28.0,
+   "min_after": 28.0,
+   "extra_min": 0.0,
+   "buildings": 780,
+   "snap_m": 36,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 4.6,
+   "km_after": 4.6,
+   "extra_km": 0.0,
+   "min_before": 11.0,
+   "min_after": 11.0,
+   "extra_min": 0.0,
+   "buildings": 769,
+   "snap_m": 136,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0916\u0930\u0938\u093e",
+   "name_en": "Kharsa",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Healthpost",
+   "target_after": "Healthpost",
+   "km_before": 0.3,
+   "km_after": 0.3,
+   "extra_km": 0.0,
+   "min_before": 2.0,
+   "min_after": 2.0,
+   "extra_min": 0.0,
+   "buildings": 738,
+   "snap_m": 986,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Dumre",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 16.7,
+   "km_after": 16.7,
+   "extra_km": 0.0,
+   "min_before": 23.0,
+   "min_after": 23.0,
+   "extra_min": 0.0,
+   "buildings": 737,
+   "snap_m": 8,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0926\u0928\u0941\u0938\u094d\u0935\u093e\u0930\u093e",
+   "name_en": "Danuswara",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 18.5,
+   "km_after": 18.5,
+   "extra_km": 0.0,
+   "min_before": 46.0,
+   "min_after": 46.0,
+   "extra_min": 0.0,
+   "buildings": 716,
+   "snap_m": 70,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u092e\u093e\u0925\u093f\u0932\u094d\u0932\u094b \u091a\u094c\u0930",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "target_after": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "km_before": 15.2,
+   "km_after": 15.2,
+   "extra_km": 0.0,
+   "min_before": 21.0,
+   "min_after": 21.0,
+   "extra_min": 0.0,
+   "buildings": 678,
+   "snap_m": 36,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0926\u0941\u092a\u094d\u091a\u0947\u0936\u094d\u0935\u0930",
+   "name_en": "Ducheshwar",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "target_after": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "km_before": 6.8,
+   "km_after": 6.8,
+   "extra_km": 0.0,
+   "min_before": 12.0,
+   "min_after": 12.0,
+   "extra_min": 0.0,
+   "buildings": 674,
+   "snap_m": 9,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u092c\u0921\u0939\u0930\u0947",
+   "name_en": "Badare",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 1.2,
+   "km_after": 1.2,
+   "extra_km": 0.0,
+   "min_before": 3.0,
+   "min_after": 3.0,
+   "extra_min": 0.0,
+   "buildings": 629,
+   "snap_m": 224,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0932\u093e\u0935\u093e\u0921\u0941\u0919",
+   "name_en": "Lawadun",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Healthpost",
+   "target_after": "Healthpost",
+   "km_before": 3.6,
+   "km_after": 3.6,
+   "extra_km": 0.0,
+   "min_before": 22.0,
+   "min_after": 22.0,
+   "extra_min": 0.0,
+   "buildings": 567,
+   "snap_m": 57,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0917\u094b\u0938\u093e\u0907\u0901\u0915\u0941\u0923\u094d\u0921",
+   "name_en": "Gosaikunda",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "Rasuwa District Hospital",
+   "km_before": 0.2,
+   "km_after": 0.2,
+   "extra_km": 0.0,
+   "min_before": 0.0,
+   "min_after": 0.0,
+   "extra_min": 0.0,
+   "buildings": 555,
+   "snap_m": 22,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0915\u093e\u0932\u093f\u0915\u093e",
+   "name_en": "Kalika",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Kalika Community Hospital \u0915\u093e\u0932\u093f\u0915\u093e \u0938\u093e\u092e\u0941\u0926\u093e\u092f\u093f\u0915 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+   "target_after": "Kalika Community Hospital \u0915\u093e\u0932\u093f\u0915\u093e \u0938\u093e\u092e\u0941\u0926\u093e\u092f\u093f\u0915 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+   "km_before": 4.1,
+   "km_after": 4.1,
+   "extra_km": 0.0,
+   "min_before": 7.0,
+   "min_after": 7.0,
+   "extra_min": 0.0,
+   "buildings": 535,
+   "snap_m": 69,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 14.2,
+   "km_after": 14.2,
+   "extra_km": 0.0,
+   "min_before": 27.0,
+   "min_after": 27.0,
+   "extra_min": 0.0,
+   "buildings": 534,
+   "snap_m": 67,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0938\u0930\u0938\u093f\u0909",
+   "name_en": "Sarsyu",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 4.4,
+   "km_after": 4.4,
+   "extra_km": 0.0,
+   "min_before": 14.0,
+   "min_after": 14.0,
+   "extra_min": 0.0,
+   "buildings": 516,
+   "snap_m": 33,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0917\u094d\u0930\u093e\u0919",
+   "name_en": "Grang",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Kalika Community Hospital \u0915\u093e\u0932\u093f\u0915\u093e \u0938\u093e\u092e\u0941\u0926\u093e\u092f\u093f\u0915 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+   "target_after": "Kalika Community Hospital \u0915\u093e\u0932\u093f\u0915\u093e \u0938\u093e\u092e\u0941\u0926\u093e\u092f\u093f\u0915 \u0905\u0938\u094d\u092a\u0924\u093e\u0932",
+   "km_before": 12.8,
+   "km_after": 12.8,
+   "extra_km": 0.0,
+   "min_before": 12.0,
+   "min_after": 12.0,
+   "extra_min": 0.0,
+   "buildings": 500,
+   "snap_m": 181,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Bhagwati Memorial Hospital",
+   "target_after": "Bhagwati Memorial Hospital",
+   "km_before": 4.6,
+   "km_after": 4.6,
+   "extra_km": 0.0,
+   "min_before": 12.0,
+   "min_after": 12.0,
+   "extra_min": 0.0,
+   "buildings": 475,
+   "snap_m": 13,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0915\u093e\u091c\u093f\u0928 \u0921\u093e\u0901\u0921\u093e",
+   "name_en": "Kajindada",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 10.8,
+   "km_after": 10.8,
+   "extra_km": 0.0,
+   "min_before": 22.0,
+   "min_after": 22.0,
+   "extra_min": 0.0,
+   "buildings": 473,
+   "snap_m": 12,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "target_after": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "km_before": 10.5,
+   "km_after": 10.5,
+   "extra_km": 0.0,
+   "min_before": 22.0,
+   "min_after": 22.0,
+   "extra_min": 0.0,
+   "buildings": 462,
+   "snap_m": 14,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0915\u093e\u092e\u093f\u0902 \u0917\u093e\u0909\u0901",
+   "name_en": "Kamingau",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Healthpost",
+   "target_after": "Healthpost",
+   "km_before": 0.1,
+   "km_after": 0.1,
+   "extra_km": 0.0,
+   "min_before": 1.0,
+   "min_after": 1.0,
+   "extra_min": 0.0,
+   "buildings": 447,
+   "snap_m": 97,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0925\u093e\u092a\u093e \u0917\u093e\u0909\u0901",
+   "name_en": "Th\u0101p\u0101g\u0101on",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 16.9,
+   "km_after": 16.9,
+   "extra_km": 0.0,
+   "min_before": 25.0,
+   "min_after": 25.0,
+   "extra_min": 0.0,
+   "buildings": 424,
+   "snap_m": 179,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0905\u0930\u094d\u091a\u0932\u0947",
+   "name_en": "Archale",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #81",
+   "target_after": "hospital #81",
+   "km_before": 2.8,
+   "km_after": 2.8,
+   "extra_km": 0.0,
+   "min_before": 13.0,
+   "min_after": 13.0,
+   "extra_min": 0.0,
+   "buildings": 423,
+   "snap_m": 47,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 15.7,
+   "km_after": 15.7,
+   "extra_km": 0.0,
+   "min_before": 35.0,
+   "min_after": 35.0,
+   "extra_min": 0.0,
+   "buildings": 420,
+   "snap_m": 34,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 16.0,
+   "km_after": 16.0,
+   "extra_km": 0.0,
+   "min_before": 39.0,
+   "min_after": 39.0,
+   "extra_min": 0.0,
+   "buildings": 411,
+   "snap_m": 16,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 14.2,
+   "km_after": 14.2,
+   "extra_km": 0.0,
+   "min_before": 27.0,
+   "min_after": 27.0,
+   "extra_min": 0.0,
+   "buildings": 408,
+   "snap_m": 88,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0921\u094b\u0917\u094d\u0932\u093e\u0919",
+   "name_en": "Dogl\u0101ng",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 17.7,
+   "km_after": 17.7,
+   "extra_km": 0.0,
+   "min_before": 49.0,
+   "min_after": 49.0,
+   "extra_min": 0.0,
+   "buildings": 383,
+   "snap_m": 491,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 16.2,
+   "km_after": 16.2,
+   "extra_km": 0.0,
+   "min_before": 42.0,
+   "min_after": 42.0,
+   "extra_min": 0.0,
+   "buildings": 377,
+   "snap_m": 39,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Sanjivani Hospital",
+   "target_after": "Sanjivani Hospital",
+   "km_before": 3.4,
+   "km_after": 3.4,
+   "extra_km": 0.0,
+   "min_before": 4.0,
+   "min_after": 4.0,
+   "extra_min": 0.0,
+   "buildings": 365,
+   "snap_m": 5,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "National Rainbow Trout Research Station, Dhunche",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "Rasuwa District Hospital",
+   "km_before": 2.9,
+   "km_after": 2.9,
+   "extra_km": 0.0,
+   "min_before": 5.0,
+   "min_after": 5.0,
+   "extra_min": 0.0,
+   "buildings": 364,
+   "snap_m": 49,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 0.1,
+   "km_after": 0.1,
+   "extra_km": 0.0,
+   "min_before": 0.0,
+   "min_after": 0.0,
+   "extra_min": 0.0,
+   "buildings": 358,
+   "snap_m": 26,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0918\u094b\u0930\u094d\u092e\u0941",
+   "name_en": "Ghormu",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 5.9,
+   "km_after": 5.9,
+   "extra_km": 0.0,
+   "min_before": 18.0,
+   "min_after": 18.0,
+   "extra_min": 0.0,
+   "buildings": 340,
+   "snap_m": 31,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0932\u094c\u0915\u0947 \u0915\u094b\u091f\u0918\u093e\u0921\u0947\u0930\u0940",
+   "name_en": "Lauke Kotghaderi",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 13.8,
+   "km_after": 13.8,
+   "extra_km": 0.0,
+   "min_before": 24.0,
+   "min_after": 24.0,
+   "extra_min": 0.0,
+   "buildings": 330,
+   "snap_m": 6,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "target_after": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "km_before": 9.4,
+   "km_after": 9.4,
+   "extra_km": 0.0,
+   "min_before": 19.0,
+   "min_after": 19.0,
+   "extra_min": 0.0,
+   "buildings": 320,
+   "snap_m": 13,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 7.2,
+   "km_after": 7.2,
+   "extra_km": 0.0,
+   "min_before": 9.0,
+   "min_after": 31.0,
+   "extra_min": 22.0,
+   "buildings": 305,
+   "snap_m": 118,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "target_after": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "km_before": 13.2,
+   "km_after": 13.2,
+   "extra_km": 0.0,
+   "min_before": 28.0,
+   "min_after": 28.0,
+   "extra_min": 0.0,
+   "buildings": 301,
+   "snap_m": 9,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u091a\u094d\u092f\u0941\u092a\u0930 \u0916\u094b\u0932\u093e",
+   "name_en": "Chyupar Khola",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 15.1,
+   "km_after": 15.1,
+   "extra_km": 0.0,
+   "min_before": 39.0,
+   "min_after": 39.0,
+   "extra_min": 0.0,
+   "buildings": 294,
+   "snap_m": 466,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 25.1,
+   "km_after": 25.1,
+   "extra_km": 0.0,
+   "min_before": 50.0,
+   "min_after": 50.0,
+   "extra_min": 0.0,
+   "buildings": 279,
+   "snap_m": 23,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0936\u093e\u0928\u094d\u0924\u093f \u092c\u091c\u093e\u0930",
+   "name_en": "Shanti Bazar",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #81",
+   "target_after": "hospital #81",
+   "km_before": 3.9,
+   "km_after": 3.9,
+   "extra_km": 0.0,
+   "min_before": 21.0,
+   "min_after": 21.0,
+   "extra_min": 0.0,
+   "buildings": 245,
+   "snap_m": 49,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "hospital #81",
+   "target_after": "hospital #81",
+   "km_before": 14.9,
+   "km_after": 14.9,
+   "extra_km": 0.0,
+   "min_before": 36.0,
+   "min_after": 36.0,
+   "extra_min": 0.0,
+   "buildings": 244,
+   "snap_m": 1024,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0920\u0941\u0932\u094b \u0938\u094d\u092f\u093e\u092a\u094d\u0930\u0941",
+   "name_en": "Thulo Sy\u0101bru",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #8",
+   "target_after": "hospital #8",
+   "km_before": 3.8,
+   "km_after": 3.8,
+   "extra_km": 0.0,
+   "min_before": 9.0,
+   "min_after": 9.0,
+   "extra_min": 0.0,
+   "buildings": 243,
+   "snap_m": 34,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u091a\u093f\u092a\u094d\u0932\u0947\u091f\u0940",
+   "name_en": "Chipleti",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #81",
+   "target_after": "hospital #81",
+   "km_before": 15.0,
+   "km_after": 15.0,
+   "extra_km": 0.0,
+   "min_before": 81.0,
+   "min_after": 85.0,
+   "extra_min": 4.0,
+   "buildings": 239,
+   "snap_m": 334,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u092a\u093e\u0930\u091a\u094d\u092f\u093e\u0919\u094d\u0917",
+   "name_en": "Parchyang",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 20.7,
+   "km_after": 20.7,
+   "extra_km": 0.0,
+   "min_before": 53.0,
+   "min_after": 53.0,
+   "extra_min": 0.0,
+   "buildings": 218,
+   "snap_m": 50,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0920\u093e\u0921\u0947",
+   "name_en": "Thade",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "Rasuwa District Hospital",
+   "km_before": 9.5,
+   "km_after": 9.5,
+   "extra_km": 0.0,
+   "min_before": 10.0,
+   "min_after": 10.0,
+   "extra_min": 0.0,
+   "buildings": 203,
+   "snap_m": 59,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 15.3,
+   "km_after": 15.3,
+   "extra_km": 0.0,
+   "min_before": 37.0,
+   "min_after": 37.0,
+   "extra_min": 0.0,
+   "buildings": 192,
+   "snap_m": 186,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "target_after": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "km_before": 7.9,
+   "km_after": 7.9,
+   "extra_km": 0.0,
+   "min_before": 15.0,
+   "min_after": 15.0,
+   "extra_min": 0.0,
+   "buildings": 189,
+   "snap_m": 31,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0926\u0941\u0930\u094d\u0938\u093e\u0917\u093e\u0919",
+   "name_en": "Dursagang",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #8",
+   "target_after": "hospital #8",
+   "km_before": 3.5,
+   "km_after": 3.5,
+   "extra_km": 0.0,
+   "min_before": 8.0,
+   "min_after": 8.0,
+   "extra_min": 0.0,
+   "buildings": 184,
+   "snap_m": 833,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u092a\u0932\u094d\u0932\u094b \u0926\u093e\u0919\u092e\u093e\u0908",
+   "name_en": "Pallo Dangmai",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 10.5,
+   "km_after": 10.5,
+   "extra_km": 0.0,
+   "min_before": 21.0,
+   "min_after": 21.0,
+   "extra_min": 0.0,
+   "buildings": 183,
+   "snap_m": 22,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0915\u094b\u092e\u0941",
+   "name_en": "Komu",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 5.3,
+   "km_after": 5.3,
+   "extra_km": 0.0,
+   "min_before": 16.0,
+   "min_after": 16.0,
+   "extra_min": 0.0,
+   "buildings": 151,
+   "snap_m": 35,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Pasture and Fodder Research Station, Dhunche",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "Rasuwa District Hospital",
+   "km_before": 3.3,
+   "km_after": 3.3,
+   "extra_km": 0.0,
+   "min_before": 6.0,
+   "min_after": 6.0,
+   "extra_min": 0.0,
+   "buildings": 132,
+   "snap_m": 16,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0918\u093f\u091a\u0947\u0924",
+   "name_en": "Ghichet",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 22.1,
+   "km_after": 22.1,
+   "extra_km": 0.0,
+   "min_before": 56.0,
+   "min_after": 56.0,
+   "extra_min": 0.0,
+   "buildings": 129,
+   "snap_m": 571,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0938\u093e\u0932\u093f\u092e \u092d\u093f\u0924\u094d\u0924\u093e",
+   "name_en": "Salim Bhitta",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #81",
+   "target_after": "hospital #81",
+   "km_before": 6.5,
+   "km_after": 6.5,
+   "extra_km": 0.0,
+   "min_before": 30.0,
+   "min_after": 34.0,
+   "extra_min": 4.0,
+   "buildings": 123,
+   "snap_m": 21,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "target_after": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "km_before": 14.0,
+   "km_after": 14.0,
+   "extra_km": 0.0,
+   "min_before": 32.0,
+   "min_after": 32.0,
+   "extra_min": 0.0,
+   "buildings": 119,
+   "snap_m": 35,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 15.5,
+   "km_after": 15.5,
+   "extra_km": 0.0,
+   "min_before": 35.0,
+   "min_after": 35.0,
+   "extra_min": 0.0,
+   "buildings": 109,
+   "snap_m": 17,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "target_after": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "km_before": 8.5,
+   "km_after": 8.5,
+   "extra_km": 0.0,
+   "min_before": 17.0,
+   "min_after": 17.0,
+   "extra_min": 0.0,
+   "buildings": 107,
+   "snap_m": 30,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u092e\u093e\u0928\u094d\u0921\u0941\u091a\u0947\u091f",
+   "name_en": "Manduchet",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 24.5,
+   "km_after": 24.5,
+   "extra_km": 0.0,
+   "min_before": 59.0,
+   "min_after": 59.0,
+   "extra_min": 0.0,
+   "buildings": 101,
+   "snap_m": 29,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Sanjivani Hospital",
+   "target_after": "Sanjivani Hospital",
+   "km_before": 3.9,
+   "km_after": 3.9,
+   "extra_km": 0.0,
+   "min_before": 7.0,
+   "min_after": 7.0,
+   "extra_min": 0.0,
+   "buildings": 86,
+   "snap_m": 31,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u092c\u094d\u0930\u093e\u092c\u0932",
+   "name_en": "Brabal",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "hospital #8",
+   "target_after": "hospital #8",
+   "km_before": 0.5,
+   "km_after": 0.5,
+   "extra_km": 0.0,
+   "min_before": 1.0,
+   "min_after": 1.0,
+   "extra_min": 0.0,
+   "buildings": 85,
+   "snap_m": 42,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0918\u093f\u091a\u0947\u0924 \u0918\u091f\u0947\u0932\u0941\u0919",
+   "name_en": "Ghichet Ghattelung",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 27.1,
+   "km_after": 27.1,
+   "extra_km": 0.0,
+   "min_before": 53.0,
+   "min_after": 53.0,
+   "extra_min": 0.0,
+   "buildings": 84,
+   "snap_m": 214,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 8.3,
+   "km_after": 8.3,
+   "extra_km": 0.0,
+   "min_before": 13.0,
+   "min_after": 38.0,
+   "extra_min": 24.0,
+   "buildings": 77,
+   "snap_m": 24,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u090f\u0915\u094d\u092a\u093e\u0916\u0947",
+   "name_en": "Ekpakhe",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 24.1,
+   "km_after": 24.1,
+   "extra_km": 0.0,
+   "min_before": 61.0,
+   "min_after": 61.0,
+   "extra_min": 0.0,
+   "buildings": 77,
+   "snap_m": 293,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0938\u093f\u0930\u0941\u091a\u0947\u0924",
+   "name_en": "Siruchet",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #81",
+   "target_after": "hospital #81",
+   "km_before": 16.5,
+   "km_after": 16.5,
+   "extra_km": 0.0,
+   "min_before": 90.0,
+   "min_after": 94.0,
+   "extra_min": 4.0,
+   "buildings": 75,
+   "snap_m": 324,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "target_after": "\u0936\u093f\u0916\u0930\u092c\u0947\u0902\u0938\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u091a\u094c\u0915\u0940",
+   "km_before": 8.9,
+   "km_after": 8.9,
+   "extra_km": 0.0,
+   "min_before": 18.0,
+   "min_after": 18.0,
+   "extra_min": 0.0,
+   "buildings": 72,
+   "snap_m": 159,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 15.5,
+   "km_after": 15.5,
+   "extra_km": 0.0,
+   "min_before": 35.0,
+   "min_after": 35.0,
+   "extra_min": 0.0,
+   "buildings": 67,
+   "snap_m": 8,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 6.9,
+   "km_after": 6.9,
+   "extra_km": 0.0,
+   "min_before": 12.0,
+   "min_after": 29.0,
+   "extra_min": 17.0,
+   "buildings": 64,
+   "snap_m": 16,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 6.4,
+   "km_after": 6.4,
+   "extra_km": 0.0,
+   "min_before": 15.0,
+   "min_after": 26.0,
+   "extra_min": 11.0,
+   "buildings": 42,
+   "snap_m": 26,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 7.8,
+   "km_after": 7.8,
+   "extra_km": 0.0,
+   "min_before": 15.0,
+   "min_after": 35.0,
+   "extra_min": 19.0,
+   "buildings": 37,
+   "snap_m": 21,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0915\u092a\u094d\u0924\u093e\u0932\u0940",
+   "name_en": "Kapthali",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "target_after": "Chiti Health Post \u091a\u0940\u0924\u0940 \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u0947\u0928\u094d\u0926\u094d\u0930",
+   "km_before": 24.1,
+   "km_after": 24.1,
+   "extra_km": 0.0,
+   "min_before": 61.0,
+   "min_after": 61.0,
+   "extra_min": 0.0,
+   "buildings": 37,
+   "snap_m": 561,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 15.4,
+   "km_after": 15.4,
+   "extra_km": 0.0,
+   "min_before": 35.0,
+   "min_after": 35.0,
+   "extra_min": 0.0,
+   "buildings": 25,
+   "snap_m": 31,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u0927\u0930\u094d\u0928\u093e\u092d\u0926\u094c\u0930\u0947",
+   "name_en": "Dharna bhadaure",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #81",
+   "target_after": "hospital #81",
+   "km_before": 15.9,
+   "km_after": 15.9,
+   "extra_km": 0.0,
+   "min_before": 87.0,
+   "min_after": 91.0,
+   "extra_min": 4.0,
+   "buildings": 18,
+   "snap_m": 366,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Phyang Gaon",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Healthpost",
+   "target_after": "Healthpost",
+   "km_before": 0.7,
+   "km_after": 0.7,
+   "extra_km": 0.0,
+   "min_before": 4.0,
+   "min_after": 4.0,
+   "extra_min": 0.0,
+   "buildings": 15,
+   "snap_m": 962,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 5.8,
+   "km_after": 5.8,
+   "extra_km": 0.0,
+   "min_before": 18.0,
+   "min_after": 23.0,
+   "extra_min": 5.0,
+   "buildings": 9,
+   "snap_m": 21,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 5.3,
+   "km_after": 5.3,
+   "extra_km": 0.0,
+   "min_before": 20.0,
+   "min_after": 20.0,
+   "extra_min": 0.0,
+   "buildings": 9,
+   "snap_m": 35,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 15.6,
+   "km_after": 15.6,
+   "extra_km": 0.0,
+   "min_before": 35.0,
+   "min_after": 35.0,
+   "extra_min": 0.0,
+   "buildings": 7,
+   "snap_m": 20,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 15.4,
+   "km_after": 15.4,
+   "extra_km": 0.0,
+   "min_before": 35.0,
+   "min_after": 35.0,
+   "extra_min": 0.0,
+   "buildings": 3,
+   "snap_m": 111,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #10",
+   "target_after": "hospital #10",
+   "km_before": 15.4,
+   "km_after": 15.4,
+   "extra_km": 0.0,
+   "min_before": 35.0,
+   "min_after": 35.0,
+   "extra_min": 0.0,
+   "buildings": 1,
+   "snap_m": 35,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 6.5,
+   "km_after": 6.5,
+   "extra_km": 0.0,
+   "min_before": 24.0,
+   "min_after": 27.0,
+   "extra_min": 3.0,
+   "buildings": 0,
+   "snap_m": 23,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "hospital #102",
+   "target_after": "hospital #102",
+   "km_before": 6.5,
+   "km_after": 6.5,
+   "extra_km": 0.0,
+   "min_before": 26.0,
+   "min_after": 27.0,
+   "extra_min": 0.0,
+   "buildings": 0,
+   "snap_m": 9,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u091c\u092b\u093e\u0924\u0940",
+   "name_en": "Jafati",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 928,
+   "snap_m": 36,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 722,
+   "snap_m": 120,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 706,
+   "snap_m": 263,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "None",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 616,
+   "snap_m": 318,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u091d\u0930\u094d\u0915\u0932\u0947\u0930\u0940",
+   "name_en": "Jharkaleri",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 494,
+   "snap_m": 37,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u092f\u0941\u092c\u094d\u0930\u093e",
+   "name_en": "Yubra",
+   "place": "village",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 247,
+   "snap_m": 266,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u091c\u094b\u0919\u094d\u0938\u093e",
+   "name_en": "Jongsa",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 231,
+   "snap_m": 469,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u0917\u0941\u092e\u094d\u0938\u093e",
+   "name_en": "Gumsa",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 218,
+   "snap_m": 315,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u0939\u094b\u092a",
+   "name_en": "Hop",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 211,
+   "snap_m": 230,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u0925\u093e\u0919\u094d\u0938\u0947\u0928 \u092f\u0941\u0935\u093e",
+   "name_en": "Thangsen Yubra",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 191,
+   "snap_m": 528,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u092c\u094b\u0932\u094d\u0921\u094b\u0917\u093e\u0919",
+   "name_en": "Boldogang",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 189,
+   "snap_m": 125,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u091a\u093f\u092a\u0941\u091f",
+   "name_en": "Chiput",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 125,
+   "snap_m": 5,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "Bagale",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 121,
+   "snap_m": 512,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u0905\u092e\u094d\u092c\u0941\u091a\u0947\u091f",
+   "name_en": "Ambuchet",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 115,
+   "snap_m": 526,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u091a\u094b\u0916\u094b\u0930",
+   "name_en": "Chokhor",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 104,
+   "snap_m": 474,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u092f\u093e\u0930\u094d\u0938\u093e",
+   "name_en": "Yarsa",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 88,
+   "snap_m": 434,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u0928\u094c\u0915\u0941\u0923\u094d\u0921",
+   "name_en": "Naukunda",
+   "place": "village",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 86,
+   "snap_m": 8,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u0918\u0932\u0947 \u0917\u093e\u0909\u0901",
+   "name_en": "Ghale Gau",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 73,
+   "snap_m": 520,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u0916\u093e\u0919\u091c\u093f\u092e",
+   "name_en": "Khangjim",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 48,
+   "snap_m": 68,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "Dimdungkhor",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 40,
+   "snap_m": 438,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u0936\u0947\u0930\u094d\u092a\u093e\u0917\u093e\u0909\u0901",
+   "name_en": "Sherpagaun",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 38,
+   "snap_m": 1071,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u0925\u0941\u0932\u094b \u0917\u093e\u0909\u0901",
+   "name_en": "Thulo gaun",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 33,
+   "snap_m": 448,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u0938\u0941\u0930\u094d\u0915\u093e",
+   "name_en": "Surka",
+   "place": "hamlet",
+   "status": "isolated_before",
+   "target_before": "",
+   "target_after": "",
+   "km_before": null,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": null,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 15,
+   "snap_m": 57,
+   "priority": 0,
+   "status_label": "No road to a hospital even before the flood (in OSM)"
+  },
+  {
+   "name": "\u091a\u093e\u0932\u093f\u0938 \u0917\u093e\u0909\u0901",
+   "name_en": "Chalish Gaon",
+   "place": "hamlet",
+   "status": "no_road_data",
+   "target_before": "Healthpost",
+   "target_after": "Healthpost",
+   "km_before": 0.1,
+   "km_after": 0.1,
+   "extra_km": 0.0,
+   "min_before": 1.0,
+   "min_after": 1.0,
+   "extra_min": 0.0,
+   "buildings": 259,
+   "snap_m": 1512,
+   "priority": 0,
+   "status_label": "No mapped road nearby"
+  },
+  {
+   "name": "\u0932\u093f\u0919\u094d\u091c\u094b",
+   "name_en": "Linjo",
+   "place": "hamlet",
+   "status": "no_road_data",
+   "target_before": "Healthpost",
+   "target_after": "Healthpost",
+   "km_before": 3.7,
+   "km_after": 3.7,
+   "extra_km": 0.0,
+   "min_before": 22.0,
+   "min_after": 22.0,
+   "extra_min": 0.0,
+   "buildings": 184,
+   "snap_m": 3695,
+   "priority": 0,
+   "status_label": "No mapped road nearby"
+  },
+  {
+   "name": "\u0938\u093e\u0928\u094b \u0939\u093e\u0915\u0941",
+   "name_en": "Sano Haku",
+   "place": "hamlet",
+   "status": "no_road_data",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "Rasuwa District Hospital",
+   "km_before": 18.9,
+   "km_after": 18.9,
+   "extra_km": 0.0,
+   "min_before": 28.0,
+   "min_after": 28.0,
+   "extra_min": 0.0,
+   "buildings": 155,
+   "snap_m": 1644,
+   "priority": 0,
+   "status_label": "No mapped road nearby"
+  },
+  {
+   "name": "\u0939\u093f\u0928\u094d\u0926\u0941\u0919\u094d\u0917",
+   "name_en": "Hindung",
+   "place": "hamlet",
+   "status": "no_road_data",
+   "target_before": "Healthpost",
+   "target_after": "Healthpost",
+   "km_before": 0.1,
+   "km_after": 0.1,
+   "extra_km": 0.0,
+   "min_before": 1.0,
+   "min_after": 1.0,
+   "extra_min": 0.0,
+   "buildings": 104,
+   "snap_m": 3929,
+   "priority": 0,
+   "status_label": "No mapped road nearby"
+  },
+  {
+   "name": "\u091a\u0902\u0926\u0928 \u092c\u093e\u0921\u0940",
+   "name_en": "Chandanbari",
+   "place": "hamlet",
+   "status": "no_road_data",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "Rasuwa District Hospital",
+   "km_before": 3.9,
+   "km_after": 3.9,
+   "extra_km": 0.0,
+   "min_before": 5.0,
+   "min_after": 5.0,
+   "extra_min": 0.0,
+   "buildings": 55,
+   "snap_m": 2713,
+   "priority": 0,
+   "status_label": "No mapped road nearby"
+  },
+  {
+   "name": "\u092c\u093e\u092c\u093f\u0932 \u0916\u0930\u094d\u0915",
+   "name_en": "Babil Kharka",
+   "place": "hamlet",
+   "status": "no_road_data",
+   "target_before": "Healthpost",
+   "target_after": "Healthpost",
+   "km_before": 3.7,
+   "km_after": 3.7,
+   "extra_km": 0.0,
+   "min_before": 22.0,
+   "min_after": 22.0,
+   "extra_min": 0.0,
+   "buildings": 41,
+   "snap_m": 6788,
+   "priority": 0,
+   "status_label": "No mapped road nearby"
+  },
+  {
+   "name": "Puru",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "no_road_data",
+   "target_before": "Healthpost",
+   "target_after": "Healthpost",
+   "km_before": 0.7,
+   "km_after": 0.7,
+   "extra_km": 0.0,
+   "min_before": 4.0,
+   "min_after": 4.0,
+   "extra_min": 0.0,
+   "buildings": 37,
+   "snap_m": 2118,
+   "priority": 0,
+   "status_label": "No mapped road nearby"
+  },
+  {
+   "name": "\u0932\u094c\u0930\u093f\u092c\u093f\u0928\u093e",
+   "name_en": "Laurebina",
+   "place": "hamlet",
+   "status": "no_road_data",
+   "target_before": "hospital #8",
+   "target_after": "hospital #8",
+   "km_before": 3.7,
+   "km_after": 3.7,
+   "extra_km": 0.0,
+   "min_before": 9.0,
+   "min_after": 9.0,
+   "extra_min": 0.0,
+   "buildings": 16,
+   "snap_m": 5813,
+   "priority": 0,
+   "status_label": "No mapped road nearby"
+  },
+  {
+   "name": "Awan",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "no_road_data",
+   "target_before": "Healthpost",
+   "target_after": "Healthpost",
+   "km_before": 3.7,
+   "km_after": 3.7,
+   "extra_km": 0.0,
+   "min_before": 22.0,
+   "min_after": 22.0,
+   "extra_min": 0.0,
+   "buildings": 12,
+   "snap_m": 4670,
+   "priority": 0,
+   "status_label": "No mapped road nearby"
+  },
+  {
+   "name": "Dalgaun",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "no_road_data",
+   "target_before": "Rasuwa District Hospital",
+   "target_after": "",
+   "km_before": 26.0,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 27.0,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 0,
+   "snap_m": 2075,
+   "priority": 0,
+   "status_label": "No mapped road nearby"
+  }
+ ],
+ "notes": [
+  "OpenStreetMap snapshot of 2026-07-27 (before the event)."
+ ],
+ "web": {
+  "flood": {
+   "png": "layers/flood_web.png",
+   "bounds": [
+    [
+     27.84578485388951,
+     85.07195548617328
+    ],
+    [
+     28.294274842709076,
+     85.40653728839408
+    ]
+   ]
+  },
+  "before": {
+   "png": "layers/before_web.png",
+   "bounds": [
+    [
+     27.84578485388951,
+     85.07195548617328
+    ],
+    [
+     28.294274842709076,
+     85.40653728839408
+    ]
+   ]
+  },
+  "after": {
+   "png": "layers/after_web.png",
+   "bounds": [
+    [
+     27.84578485388951,
+     85.07195548617328
+    ],
+    [
+     28.294274842709076,
+     85.40653728839408
+    ]
+   ]
+  },
+  "change": {
+   "png": "layers/change_web.png",
+   "bounds": [
+    [
+     27.84578485388951,
+     85.07195548617328
+    ],
+    [
+     28.294274842709076,
+     85.40653728839408
+    ]
+   ]
+  },
+  "stretch_db": [
+   -16.8,
+   4.7
+  ],
+  "model": {
+   "png": "layers/model_web.png",
+   "bounds": [
+    [
+     27.84578485388951,
+     85.07195548617328
+    ],
+    [
+     28.294274842709076,
+     85.40653728839408
+    ]
+   ]
+  },
+  "rules": {
+   "png": "layers/rules_web.png",
+   "bounds": [
+    [
+     27.84578485388951,
+     85.07195548617328
+    ],
+    [
+     28.294274842709076,
+     85.40653728839408
+    ]
+   ]
+  },
+  "zoom": {
+   "before": "layers/zoom_before.png",
+   "after": "layers/zoom_after.png",
+   "change": "layers/zoom_change.png",
+   "stretch_db": [
+    -13.7,
+    0.5
+   ],
+   "stats": {
+    "inside_change_db": -0.5,
+    "outside_change_db": 0.5,
+    "flood_before_db": -8.1,
+    "flood_after_db": -8.9,
+    "flood_px": 222,
+    "debris_before_db": -8.2,
+    "debris_after_db": -8.9,
+    "debris_px": 3573
+   },
+   "optical_clear_fraction": 0.93,
+   "opt_before": "layers/zoom_opt_before.png",
+   "opt_after": "layers/zoom_opt_after.png",
+   "size_km": [
+    4.4,
+    5.7
+   ],
+   "bbox": [
+    85.1257,
+    27.9057,
+    85.1713,
+    27.9563
+   ]
+  }
+ },
+ "vectors": {
+  "buildings": "vectors\\buildings_hit.geojson",
+  "roads": "vectors\\roads_hit.geojson",
+  "settlements": "vectors\\settlements.geojson",
+  "broken_roads": "vectors\\broken_roads.geojson",
+  "routes": "vectors\\routes.geojson",
+  "route_blocks": "vectors\\route_blocks.geojson",
+  "priority_csv": "vectors\\priority_list.csv",
+  "health": "vectors\\health.geojson",
+  "places": "vectors\\places.geojson",
+  "landing": "vectors\\landing.geojson"
+ },
+ "attributions": [
+  "Contains modified Copernicus Sentinel data 2026.",
+  "Produced using Copernicus WorldDEM-30 \u00a9 DLR e.V. 2010\u20132014 and \u00a9 Airbus Defence and Space GmbH 2014\u20132018 provided under COPERNICUS by the European Union and ESA; all rights reserved.",
+  "\u00a9 OpenStreetMap contributors.",
+  "Model trained on Kuro Siwo: Bountos et al., 2024 (NeurIPS Datasets & Benchmarks)."
+ ],
+ "helicopter_access": {
+  "helipads": [
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.74401,
+     85.29015
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.73745,
+     85.33198
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     28.00916,
+     84.95872
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.75271,
+     85.32495
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     28.03149,
+     85.10745
+    ],
+    "state": "no damage detected",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.96722,
+     85.36866
+    ],
+    "state": "no damage detected",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.7169,
+     85.32191
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.90248,
+     85.15061
+    ],
+    "state": "no damage detected",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     28.11147,
+     85.29459
+    ],
+    "state": "no damage detected",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.9865,
+     85.53583
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.96398,
+     85.17174
+    ],
+    "state": "no damage detected",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.7815,
+     85.3487
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "Rimche",
+    "lat_lon": [
+     28.15886,
+     85.42168
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     28.16264,
+     85.24308
+    ],
+    "state": "no damage detected",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.72619,
+     85.32854
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.78187,
+     85.34835
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.77979,
+     85.48887
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.71647,
+     85.32172
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.78823,
+     85.34207
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.74238,
+     85.3786
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.78187,
+     85.3481
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "Helipad in Samari",
+    "lat_lon": [
+     27.94938,
+     85.04733
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.8017,
+     84.99459
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.82358,
+     85.44817
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     28.14622,
+     85.31968
+    ],
+    "state": "no damage detected",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.74357,
+     85.29091
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     28.08287,
+     85.41003
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.88705,
+     85.13319
+    ],
+    "state": "flood/water/debris detected at the pad",
+    "usable": false
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     27.78505,
+     85.43498
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     28.02931,
+     85.10658
+    ],
+    "state": "no damage detected",
+    "usable": true
+   }
+  ],
+  "zones_total": 588,
+  "zones": [
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.28771,
+     85.26886
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.28753,
+     85.26907
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.6,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     28.28088,
+     85.14705
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.28016,
+     85.22923
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     28.27752,
+     85.1257
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.27742,
+     85.22662
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.27511,
+     85.12085
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.27549,
+     85.203
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.2,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     28.27186,
+     85.18777
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.26725,
+     85.36644
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.25904,
+     85.20124
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.25849,
+     85.20043
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.25832,
+     85.20084
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 27200,
+    "lat_lon": [
+     28.25623,
+     85.2072
+    ]
+   },
+   {
+    "clear_radius_m": 140.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 108800,
+    "lat_lon": [
+     28.25099,
+     85.20627
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 12000,
+    "lat_lon": [
+     28.25024,
+     85.19099
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.24934,
+     85.19101
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 25200,
+    "lat_lon": [
+     28.24816,
+     85.21121
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.24541,
+     85.20779
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 4.4,
+    "centre_area_m2": 5600,
+    "lat_lon": [
+     28.24506,
+     85.2084
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.23986,
+     85.21094
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     28.23968,
+     85.21155
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.23553,
+     85.19735
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.23262,
+     85.19577
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.23244,
+     85.19557
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.23212,
+     85.18518
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.23225,
+     85.19537
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.23193,
+     85.18498
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 10400,
+    "lat_lon": [
+     28.2179,
+     85.21599
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     28.20822,
+     85.13954
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     28.18416,
+     85.30211
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     28.17975,
+     85.32499
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 6400,
+    "lat_lon": [
+     28.15772,
+     85.10254
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     28.1583,
+     85.10579
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.15755,
+     85.10335
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     28.15655,
+     85.14919
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.15435,
+     85.15962
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.1475,
+     85.14731
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 6400,
+    "lat_lon": [
+     28.139,
+     85.24153
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     28.13917,
+     85.24071
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.12633,
+     85.40095
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     28.10683,
+     85.16959
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.08612,
+     85.22815
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.08466,
+     85.22715
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.08448,
+     85.22695
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 0.0,
+    "centre_area_m2": 6800,
+    "lat_lon": [
+     28.07993,
+     85.40001
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.07614,
+     85.40027
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.06616,
+     85.38068
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.0639,
+     85.37258
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 5200,
+    "lat_lon": [
+     28.05892,
+     85.39361
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.05563,
+     85.39061
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.05545,
+     85.39081
+    ]
+   },
+   {
+    "clear_radius_m": 85.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 32000,
+    "lat_lon": [
+     28.05265,
+     85.39777
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.05338,
+     85.39837
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 4800,
+    "lat_lon": [
+     28.05206,
+     85.39351
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 38000,
+    "lat_lon": [
+     28.04973,
+     85.39517
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 11600,
+    "lat_lon": [
+     28.04525,
+     85.39809
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     28.04001,
+     85.39735
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.04043,
+     85.40243
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.03947,
+     85.39756
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 4800,
+    "lat_lon": [
+     28.03821,
+     85.39799
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.02971,
+     85.39669
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.02954,
+     85.39771
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     28.02606,
+     85.19008
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 6400,
+    "lat_lon": [
+     28.01816,
+     85.29191
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     27.99337,
+     85.23007
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.99352,
+     85.27033
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     27.99029,
+     85.13374
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.98994,
+     85.13476
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 4.5,
+    "centre_area_m2": 12800,
+    "lat_lon": [
+     27.98912,
+     85.14088
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 8000,
+    "lat_lon": [
+     27.98921,
+     85.14759
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.98915,
+     85.1425
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     27.98804,
+     85.15452
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.98737,
+     85.15839
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.98402,
+     85.16394
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.98384,
+     85.16415
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 10000,
+    "lat_lon": [
+     27.98315,
+     85.16619
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.98281,
+     85.16762
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 5.3,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     27.98176,
+     85.1839
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 5200,
+    "lat_lon": [
+     27.977,
+     85.26287
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.2,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.97537,
+     85.19235
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.97539,
+     85.19377
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     27.97532,
+     85.20251
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 14400,
+    "lat_lon": [
+     27.97516,
+     85.21756
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.97608,
+     85.26146
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.97538,
+     85.22061
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.9759,
+     85.26126
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     27.97502,
+     85.20719
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.9752,
+     85.22081
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.97554,
+     85.26106
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 23200,
+    "lat_lon": [
+     27.97404,
+     85.22896
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 5.5,
+    "centre_area_m2": 6800,
+    "lat_lon": [
+     27.97429,
+     85.23445
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 5.4,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     27.97504,
+     85.23627
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.97452,
+     85.20985
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 5.5,
+    "centre_area_m2": 9200,
+    "lat_lon": [
+     27.97399,
+     85.21107
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.97472,
+     85.2255
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.97469,
+     85.23688
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 12800,
+    "lat_lon": [
+     27.97282,
+     85.17694
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 5.8,
+    "centre_area_m2": 3600,
+    "lat_lon": [
+     27.97347,
+     85.25459
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.97357,
+     85.23446
+    ]
+   },
+   {
+    "clear_radius_m": 85.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 15200,
+    "lat_lon": [
+     27.97099,
+     85.17514
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     27.97246,
+     85.24627
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     27.97208,
+     85.24465
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.97226,
+     85.24506
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 3600,
+    "lat_lon": [
+     27.96625,
+     85.32749
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.96203,
+     85.39789
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.95856,
+     85.16295
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     27.95819,
+     85.16235
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 5.9,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     27.95876,
+     85.3953
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.9,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.95784,
+     85.3943
+    ]
+   },
+   {
+    "clear_radius_m": 126.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 119200,
+    "lat_lon": [
+     27.94854,
+     85.15661
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.9573,
+     85.3943
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.95425,
+     85.39577
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.2,
+    "centre_area_m2": 5600,
+    "lat_lon": [
+     27.95207,
+     85.39438
+    ]
+   },
+   {
+    "clear_radius_m": 152.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 60000,
+    "lat_lon": [
+     27.94545,
+     85.15443
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.9476,
+     85.23631
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     27.94459,
+     85.1579
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 14400,
+    "lat_lon": [
+     27.94309,
+     85.15346
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 5.6,
+    "centre_area_m2": 3600,
+    "lat_lon": [
+     27.94118,
+     85.07971
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.94082,
+     85.08012
+    ]
+   },
+   {
+    "clear_radius_m": 102.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 42400,
+    "lat_lon": [
+     27.9398,
+     85.16408
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 3.6,
+    "centre_area_m2": 3600,
+    "lat_lon": [
+     27.9403,
+     85.08135
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.94074,
+     85.10045
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.94056,
+     85.10066
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.94125,
+     85.15105
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.94013,
+     85.08217
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.94039,
+     85.10086
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.94021,
+     85.10107
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93978,
+     85.08339
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.9,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     27.94052,
+     85.15065
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93961,
+     85.0838
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     27.94,
+     85.15168
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 10000,
+    "lat_lon": [
+     27.93909,
+     85.08544
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.94033,
+     85.15005
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.94015,
+     85.14985
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 6.2,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.93997,
+     85.14965
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.9398,
+     85.15067
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93962,
+     85.15047
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 6400,
+    "lat_lon": [
+     27.94173,
+     85.39047
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 8400,
+    "lat_lon": [
+     27.93673,
+     85.15031
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.93735,
+     85.17022
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93717,
+     85.16981
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 19600,
+    "lat_lon": [
+     27.93642,
+     85.16759
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93631,
+     85.14625
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.93578,
+     85.16049
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93586,
+     85.16618
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.93499,
+     85.11498
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93471,
+     85.16173
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.9,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.9333,
+     85.12395
+    ]
+   },
+   {
+    "clear_radius_m": 85.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 30800,
+    "lat_lon": [
+     27.93181,
+     85.12052
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93306,
+     85.15952
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93288,
+     85.15932
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93246,
+     85.14144
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93269,
+     85.15912
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93227,
+     85.14124
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.93251,
+     85.15892
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93209,
+     85.14104
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.93232,
+     85.15831
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93191,
+     85.14084
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93132,
+     85.12378
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93112,
+     85.12297
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93113,
+     85.12358
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.93082,
+     85.12745
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     27.93066,
+     85.12887
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93033,
+     85.13091
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.93015,
+     85.13132
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 10800,
+    "lat_lon": [
+     27.92722,
+     85.15494
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.92623,
+     85.13484
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.92605,
+     85.13464
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.92586,
+     85.13444
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 8800,
+    "lat_lon": [
+     27.92468,
+     85.15357
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.92496,
+     85.13446
+    ]
+   },
+   {
+    "clear_radius_m": 113.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 27200,
+    "lat_lon": [
+     27.9239,
+     85.1357
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     27.92609,
+     85.30514
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.92247,
+     85.13735
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 6.1,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.92445,
+     85.31919
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 7200,
+    "lat_lon": [
+     27.92104,
+     85.13778
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     27.92389,
+     85.33241
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.92434,
+     85.38483
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.92415,
+     85.38443
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 18000,
+    "lat_lon": [
+     27.9217,
+     85.31537
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.92397,
+     85.38423
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.0,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.92307,
+     85.32409
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.92379,
+     85.38403
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.9236,
+     85.38383
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.92342,
+     85.38363
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.92246,
+     85.37897
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91882,
+     85.13436
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.92037,
+     85.25219
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91865,
+     85.13457
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.92134,
+     85.36069
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.9,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.91881,
+     85.21503
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 4400,
+    "lat_lon": [
+     27.91972,
+     85.30158
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91988,
+     85.31459
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91945,
+     85.29366
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     27.91927,
+     85.29407
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.91969,
+     85.31357
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.9197,
+     85.31439
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.91952,
+     85.31398
+    ]
+   },
+   {
+    "clear_radius_m": 85.0,
+    "slope_deg": 3.0,
+    "centre_area_m2": 21200,
+    "lat_lon": [
+     27.91802,
+     85.25203
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 6.7,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.91937,
+     85.31663
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.91918,
+     85.31602
+    ]
+   },
+   {
+    "clear_radius_m": 134.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 90000,
+    "lat_lon": [
+     27.9174,
+     85.28861
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91861,
+     85.29896
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91809,
+     85.301
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91812,
+     85.30303
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 3600,
+    "lat_lon": [
+     27.9176,
+     85.30467
+    ]
+   },
+   {
+    "clear_radius_m": 160.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 157200,
+    "lat_lon": [
+     27.91479,
+     85.28195
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 5200,
+    "lat_lon": [
+     27.91689,
+     85.29106
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91724,
+     85.30487
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.91639,
+     85.29432
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 6400,
+    "lat_lon": [
+     27.91538,
+     85.30023
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 27600,
+    "lat_lon": [
+     27.91539,
+     85.27219
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91616,
+     85.29046
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.6,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.91625,
+     85.3122
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91597,
+     85.29026
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91602,
+     85.29412
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91584,
+     85.29392
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.91548,
+     85.29373
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91582,
+     85.30672
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 5.4,
+    "centre_area_m2": 20800,
+    "lat_lon": [
+     27.91473,
+     85.2917
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.91529,
+     85.29352
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     27.91507,
+     85.3043
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 8000,
+    "lat_lon": [
+     27.91516,
+     85.31202
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 5600,
+    "lat_lon": [
+     27.91468,
+     85.28784
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91493,
+     85.29333
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.915,
+     85.29881
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91475,
+     85.29313
+    ]
+   },
+   {
+    "clear_radius_m": 102.0,
+    "slope_deg": 4.5,
+    "centre_area_m2": 35600,
+    "lat_lon": [
+     27.91391,
+     85.29822
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91456,
+     85.29293
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91473,
+     85.30654
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 6.0,
+    "centre_area_m2": 5200,
+    "lat_lon": [
+     27.91313,
+     85.25089
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91391,
+     85.26937
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91384,
+     85.2781
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     27.91345,
+     85.27628
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91407,
+     85.31122
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.9134,
+     85.27222
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.91342,
+     85.3027
+    ]
+   },
+   {
+    "clear_radius_m": 170.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 439200,
+    "lat_lon": [
+     27.90677,
+     85.26156
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.91301,
+     85.28421
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 22400,
+    "lat_lon": [
+     27.91236,
+     85.28951
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91282,
+     85.28361
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91234,
+     85.25923
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 59200,
+    "lat_lon": [
+     27.91148,
+     85.27733
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91264,
+     85.28341
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 14400,
+    "lat_lon": [
+     27.91191,
+     85.28281
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91046,
+     85.14344
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     27.9117,
+     85.28078
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 4400,
+    "lat_lon": [
+     27.91084,
+     85.26921
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91125,
+     85.27307
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 4400,
+    "lat_lon": [
+     27.90872,
+     85.13494
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91117,
+     85.28119
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.91042,
+     85.25052
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.91052,
+     85.28669
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.91015,
+     85.27186
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.91034,
+     85.27288
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 16800,
+    "lat_lon": [
+     27.90951,
+     85.27817
+    ]
+   },
+   {
+    "clear_radius_m": 184.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 166400,
+    "lat_lon": [
+     27.90708,
+     85.27212
+    ]
+   },
+   {
+    "clear_radius_m": 171.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 344000,
+    "lat_lon": [
+     27.90688,
+     85.24144
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.90955,
+     85.28163
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 14800,
+    "lat_lon": [
+     27.90824,
+     85.24914
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90906,
+     85.27107
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90723,
+     85.14452
+    ]
+   },
+   {
+    "clear_radius_m": 253.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 313600,
+    "lat_lon": [
+     27.90476,
+     85.20328
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 3.0,
+    "centre_area_m2": 10000,
+    "lat_lon": [
+     27.90651,
+     85.14473
+    ]
+   },
+   {
+    "clear_radius_m": 228.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 283200,
+    "lat_lon": [
+     27.90581,
+     85.21484
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90839,
+     85.2467
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90861,
+     85.26457
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 4.6,
+    "centre_area_m2": 5200,
+    "lat_lon": [
+     27.90848,
+     85.28286
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90821,
+     85.2469
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90844,
+     85.26478
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 4800,
+    "lat_lon": [
+     27.90827,
+     85.28022
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90803,
+     85.24711
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.1,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.90636,
+     85.13376
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.90785,
+     85.24732
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 19200,
+    "lat_lon": [
+     27.90602,
+     85.18944
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.90664,
+     85.19532
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 12000,
+    "lat_lon": [
+     27.90713,
+     85.27618
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 26000,
+    "lat_lon": [
+     27.90595,
+     85.19777
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90616,
+     85.2002
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90513,
+     85.13622
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 4.2,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.90504,
+     85.14252
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90598,
+     85.2
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90694,
+     85.27517
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     27.90534,
+     85.1925
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     27.90404,
+     85.13583
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90613,
+     85.25405
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90518,
+     85.19372
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 9200,
+    "lat_lon": [
+     27.90552,
+     85.24837
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90597,
+     85.25507
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 10000,
+    "lat_lon": [
+     27.90424,
+     85.1913
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 48800,
+    "lat_lon": [
+     27.90484,
+     85.25143
+    ]
+   },
+   {
+    "clear_radius_m": 156.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 62800,
+    "lat_lon": [
+     27.90401,
+     85.25754
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90452,
+     85.19881
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90523,
+     85.25386
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90434,
+     85.19902
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90505,
+     85.25366
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 30000,
+    "lat_lon": [
+     27.90322,
+     85.19599
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.9049,
+     85.2561
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 10400,
+    "lat_lon": [
+     27.90311,
+     85.24353
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     27.90345,
+     85.18623
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 0.3,
+    "centre_area_m2": 22000,
+    "lat_lon": [
+     27.90296,
+     85.1899
+    ]
+   },
+   {
+    "clear_radius_m": 241.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 454000,
+    "lat_lon": [
+     27.90098,
+     85.21817
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90392,
+     85.22239
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 22000,
+    "lat_lon": [
+     27.90315,
+     85.24638
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     27.90243,
+     85.13667
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     27.90289,
+     85.18482
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90318,
+     85.19274
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90224,
+     85.13566
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 3600,
+    "lat_lon": [
+     27.90246,
+     85.19295
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 18400,
+    "lat_lon": [
+     27.90245,
+     85.20636
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90334,
+     85.21874
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90321,
+     85.22281
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90334,
+     85.23296
+    ]
+   },
+   {
+    "clear_radius_m": 134.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 106400,
+    "lat_lon": [
+     27.89815,
+     85.2363
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.90323,
+     85.23845
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 5.5,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     27.90357,
+     85.26567
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90377,
+     85.26709
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90302,
+     85.22261
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90359,
+     85.26689
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90272,
+     85.21265
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     27.90229,
+     85.19397
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     27.90251,
+     85.23866
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.9029,
+     85.2413
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 22000,
+    "lat_lon": [
+     27.90164,
+     85.24132
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90277,
+     85.24537
+    ]
+   },
+   {
+    "clear_radius_m": 128.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 60000,
+    "lat_lon": [
+     27.90039,
+     85.22834
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.90164,
+     85.19926
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90147,
+     85.19988
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.9011,
+     85.18566
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90128,
+     85.19927
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90129,
+     85.20028
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90189,
+     85.2464
+    ]
+   },
+   {
+    "clear_radius_m": 113.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 82800,
+    "lat_lon": [
+     27.89932,
+     85.20133
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.9017,
+     85.2462
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90016,
+     85.1426
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90048,
+     85.17978
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     27.89993,
+     85.17918
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.90088,
+     85.23869
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 6400,
+    "lat_lon": [
+     27.90045,
+     85.23281
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.90061,
+     85.23118
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 4.4,
+    "centre_area_m2": 5600,
+    "lat_lon": [
+     27.89862,
+     85.13511
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 4800,
+    "lat_lon": [
+     27.90007,
+     85.23139
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 22800,
+    "lat_lon": [
+     27.89892,
+     85.17127
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.89913,
+     85.17289
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 22000,
+    "lat_lon": [
+     27.89897,
+     85.18813
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.89959,
+     85.20864
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.89924,
+     85.19524
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.89871,
+     85.16863
+    ]
+   },
+   {
+    "clear_radius_m": 260.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 360800,
+    "lat_lon": [
+     27.8962,
+     85.18371
+    ]
+   },
+   {
+    "clear_radius_m": 108.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 35600,
+    "lat_lon": [
+     27.89836,
+     85.19708
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.89893,
+     85.19931
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.89875,
+     85.19911
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.89908,
+     85.23892
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.89828,
+     85.17738
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.89857,
+     85.19891
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     27.89733,
+     85.17333
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.89747,
+     85.17028
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     27.89782,
+     85.23915
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 32400,
+    "lat_lon": [
+     27.8967,
+     85.16664
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 6.5,
+    "centre_area_m2": 18800,
+    "lat_lon": [
+     27.89622,
+     85.17193
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.89753,
+     85.21619
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 17200,
+    "lat_lon": [
+     27.89663,
+     85.23043
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 11200,
+    "lat_lon": [
+     27.89606,
+     85.2282
+    ]
+   },
+   {
+    "clear_radius_m": 209.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 188800,
+    "lat_lon": [
+     27.89438,
+     85.23819
+    ]
+   },
+   {
+    "clear_radius_m": 316.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 1121200,
+    "lat_lon": [
+     27.88339,
+     85.1567
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.6,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     27.8941,
+     85.1618
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.89374,
+     85.1614
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.89355,
+     85.1612
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.89241,
+     85.16976
+    ]
+   },
+   {
+    "clear_radius_m": 300.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 1512400,
+    "lat_lon": [
+     27.87481,
+     85.27466
+    ]
+   },
+   {
+    "clear_radius_m": 156.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 200000,
+    "lat_lon": [
+     27.8845,
+     85.14531
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 14400,
+    "lat_lon": [
+     27.8899,
+     85.17163
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     27.88957,
+     85.13303
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     27.89044,
+     85.24028
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88955,
+     85.17244
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88938,
+     85.17265
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.89042,
+     85.25349
+    ]
+   },
+   {
+    "clear_radius_m": 152.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 113200,
+    "lat_lon": [
+     27.88757,
+     85.17288
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 19600,
+    "lat_lon": [
+     27.88973,
+     85.25553
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     27.88844,
+     85.2393
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88732,
+     85.154
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 4800,
+    "lat_lon": [
+     27.88817,
+     85.24621
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 20000,
+    "lat_lon": [
+     27.88738,
+     85.24135
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88832,
+     85.24458
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88848,
+     85.25677
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.8883,
+     85.25697
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88777,
+     85.2578
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88759,
+     85.258
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88693,
+     85.24867
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88675,
+     85.24887
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88382,
+     85.13496
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88437,
+     85.17639
+    ]
+   },
+   {
+    "clear_radius_m": 122.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 92400,
+    "lat_lon": [
+     27.88243,
+     85.17947
+    ]
+   },
+   {
+    "clear_radius_m": 120.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 144000,
+    "lat_lon": [
+     27.88387,
+     85.19346
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.88331,
+     85.15122
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.88391,
+     85.18249
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 21600,
+    "lat_lon": [
+     27.88404,
+     85.24811
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88373,
+     85.1829
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 8400,
+    "lat_lon": [
+     27.88233,
+     85.13214
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88255,
+     85.12158
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88257,
+     85.12279
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88325,
+     85.17377
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88259,
+     85.13803
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88312,
+     85.17722
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 8000,
+    "lat_lon": [
+     27.88286,
+     85.25503
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88257,
+     85.19003
+    ]
+   },
+   {
+    "clear_radius_m": 171.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 136000,
+    "lat_lon": [
+     27.87945,
+     85.1326
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88323,
+     85.25523
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88157,
+     85.14252
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     27.88279,
+     85.24975
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88139,
+     85.14272
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.88114,
+     85.15065
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88117,
+     85.13927
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88122,
+     85.14293
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 6000,
+    "lat_lon": [
+     27.88159,
+     85.18456
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.88104,
+     85.14313
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88243,
+     85.24915
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     27.88035,
+     85.11918
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 16800,
+    "lat_lon": [
+     27.87972,
+     85.13909
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.88047,
+     85.14111
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 15200,
+    "lat_lon": [
+     27.88102,
+     85.25201
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 10800,
+    "lat_lon": [
+     27.88142,
+     85.25485
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 9200,
+    "lat_lon": [
+     27.87967,
+     85.14884
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88011,
+     85.14092
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88089,
+     85.20022
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 16400,
+    "lat_lon": [
+     27.88054,
+     85.20103
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87978,
+     85.13016
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87988,
+     85.15067
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.88106,
+     85.25567
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 3.9,
+    "centre_area_m2": 15200,
+    "lat_lon": [
+     27.87763,
+     85.11821
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.88012,
+     85.25243
+    ]
+   },
+   {
+    "clear_radius_m": 117.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 38400,
+    "lat_lon": [
+     27.87889,
+     85.25509
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.9,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     27.8776,
+     85.12877
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     27.87802,
+     85.14664
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.8794,
+     85.25285
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 3.7,
+    "centre_area_m2": 15600,
+    "lat_lon": [
+     27.87732,
+     85.12146
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87727,
+     85.11781
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87743,
+     85.1432
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.87738,
+     85.15274
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.7,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.87769,
+     85.20352
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87702,
+     85.15295
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.0,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.8762,
+     85.11925
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.8764,
+     85.12026
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 7600,
+    "lat_lon": [
+     27.87627,
+     85.13732
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     27.87612,
+     85.15297
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.8775,
+     85.20312
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87751,
+     85.20393
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     27.87581,
+     85.11722
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87622,
+     85.12047
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87646,
+     85.13793
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87732,
+     85.20292
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87733,
+     85.20413
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87602,
+     85.11885
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87604,
+     85.12067
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87615,
+     85.12859
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87716,
+     85.20434
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87698,
+     85.20455
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87596,
+     85.1416
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 7600,
+    "lat_lon": [
+     27.87647,
+     85.20679
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87578,
+     85.1414
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87593,
+     85.15277
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87666,
+     85.2078
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.87541,
+     85.141
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 33600,
+    "lat_lon": [
+     27.87419,
+     85.14386
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 22000,
+    "lat_lon": [
+     27.87406,
+     85.13432
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87487,
+     85.1408
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87497,
+     85.14811
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87647,
+     85.26366
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87469,
+     85.1406
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87616,
+     85.25331
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87629,
+     85.26346
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     27.87404,
+     85.13269
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 5600,
+    "lat_lon": [
+     27.87432,
+     85.1402
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.87356,
+     85.13757
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.8735,
+     85.1329
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.6,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     27.8737,
+     85.14773
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 10800,
+    "lat_lon": [
+     27.87249,
+     85.1252
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.8732,
+     85.13738
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.87415,
+     85.26533
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.2,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     27.87234,
+     85.14024
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 6.2,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     27.87415,
+     85.28015
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 29600,
+    "lat_lon": [
+     27.87045,
+     85.12077
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87177,
+     85.12481
+    ]
+   },
+   {
+    "clear_radius_m": 128.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 79600,
+    "lat_lon": [
+     27.86966,
+     85.12911
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87299,
+     85.23142
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87166,
+     85.1439
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     27.87149,
+     85.14431
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     27.87051,
+     85.12544
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 0.3,
+    "centre_area_m2": 9600,
+    "lat_lon": [
+     27.87085,
+     85.13721
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 10000,
+    "lat_lon": [
+     27.87081,
+     85.14757
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.8705,
+     85.13803
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 18400,
+    "lat_lon": [
+     27.87078,
+     85.27026
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87027,
+     85.13418
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     27.87016,
+     85.13926
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87034,
+     85.13966
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     27.86991,
+     85.13459
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87012,
+     85.13682
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87027,
+     85.14799
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     27.87029,
+     85.1488
+    ]
+   }
+  ],
+  "per_settlement": [
+   {
+    "name": "\u092c\u0947\u0924\u094d\u0930\u093e\u0935\u0924\u0940",
+    "status": "cut_off",
+    "priority": 1,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 1.73,
+     "lat_lon": [
+      27.96398,
+      85.17174
+     ]
+    },
+    "zone": {
+     "km": 0.68,
+     "lat_lon": [
+      27.97537,
+      85.19235
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 4.2
+    }
+   },
+   {
+    "name": "\u0926\u0947\u0935\u0940\u0918\u093e\u091f",
+    "status": "cut_off",
+    "priority": 2,
+    "helipad": null,
+    "zone": {
+     "km": 0.55,
+     "lat_lon": [
+      27.86225,
+      85.11502
+     ],
+     "clear_radius_m": 82.0,
+     "slope_deg": 1.9
+    }
+   },
+   {
+    "name": "\u0917\u094b\u0926\u093e\u092e",
+    "status": "cut_off",
+    "priority": 3,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 3.37,
+     "lat_lon": [
+      28.16264,
+      85.24308
+     ]
+    },
+    "zone": {
+     "km": 3.87,
+     "lat_lon": [
+      28.18416,
+      85.30211
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 3.2
+    }
+   },
+   {
+    "name": "\u0917\u094b\u0920\u0947\u0928",
+    "status": "cut_off",
+    "priority": 4,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 1.47,
+     "lat_lon": [
+      28.16264,
+      85.24308
+     ]
+    },
+    "zone": {
+     "km": 2.61,
+     "lat_lon": [
+      28.139,
+      85.24153
+     ],
+     "clear_radius_m": 72.0,
+     "slope_deg": 1.1
+    }
+   },
+   {
+    "name": "\u0906\u092e\u093e\u091b\u094b\u0926\u093f\u0919\u094d\u092e\u094b",
+    "status": "cut_off",
+    "priority": 5,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 2.78,
+     "lat_lon": [
+      28.14622,
+      85.31968
+     ]
+    },
+    "zone": {
+     "km": 1.55,
+     "lat_lon": [
+      28.17975,
+      85.32499
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 5.0
+    }
+   },
+   {
+    "name": "Chyamdole",
+    "status": "cut_off",
+    "priority": 6,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 3.96,
+     "lat_lon": [
+      28.14622,
+      85.31968
+     ]
+    },
+    "zone": {
+     "km": 1.13,
+     "lat_lon": [
+      28.18416,
+      85.30211
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 3.2
+    }
+   },
+   {
+    "name": "\u0917\u094d\u0930\u0947",
+    "status": "cut_off",
+    "priority": 7,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 2.4,
+     "lat_lon": [
+      28.14622,
+      85.31968
+     ]
+    },
+    "zone": {
+     "km": 4.66,
+     "lat_lon": [
+      28.18416,
+      85.30211
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 3.2
+    }
+   },
+   {
+    "name": "\u092c\u093e\u0939\u0941\u0928\u0921\u093e\u0901\u0921\u093e",
+    "status": "cut_off",
+    "priority": 8,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 2.26,
+     "lat_lon": [
+      28.14622,
+      85.31968
+     ]
+    },
+    "zone": {
+     "km": 1.49,
+     "lat_lon": [
+      28.17975,
+      85.32499
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 5.0
+    }
+   },
+   {
+    "name": "\u0932\u093f\u0919\u0932\u093f\u0919",
+    "status": "cut_off",
+    "priority": 9,
+    "helipad": null,
+    "zone": {
+     "km": 4.71,
+     "lat_lon": [
+      28.17975,
+      85.32499
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 5.0
+    }
+   },
+   {
+    "name": "\u0917\u094b\u0917\u0928\u0947",
+    "status": "cut_off",
+    "priority": 10,
+    "helipad": null,
+    "zone": {
+     "km": 0.65,
+     "lat_lon": [
+      28.08612,
+      85.22815
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 4.1
+    }
+   },
+   {
+    "name": "\u0924\u0947\u091f\u093e\u0919\u091a\u0947\u091f",
+    "status": "cut_off",
+    "priority": 11,
+    "helipad": null,
+    "zone": {
+     "km": 3.98,
+     "lat_lon": [
+      28.18416,
+      85.30211
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 3.2
+    }
+   },
+   {
+    "name": "\u0930\u0938\u0941\u0935\u093e\u0917\u0922\u0940",
+    "status": "cut_off",
+    "priority": 12,
+    "helipad": null,
+    "zone": {
+     "km": 1.61,
+     "lat_lon": [
+      28.26725,
+      85.36644
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 1.6
+    }
+   },
+   {
+    "name": "\u0921\u093e\u0932\u094d\u092b\u0947\u0921\u0940",
+    "status": "cut_off",
+    "priority": 13,
+    "helipad": null,
+    "zone": {
+     "km": 4.43,
+     "lat_lon": [
+      28.26725,
+      85.36644
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 1.6
+    }
+   },
+   {
+    "name": "\u0924\u093e\u0924\u094b\u092a\u093e\u0928\u0940",
+    "status": "cut_off",
+    "priority": 14,
+    "helipad": null,
+    "zone": {
+     "km": 3.99,
+     "lat_lon": [
+      28.18416,
+      85.30211
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 3.2
+    }
+   },
+   {
+    "name": "\u0917\u094b\u0919\u094d\u0917\u093e\u0919",
+    "status": "cut_off",
+    "priority": 15,
+    "helipad": null,
+    "zone": {
+     "km": 1.69,
+     "lat_lon": [
+      28.18416,
+      85.30211
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 3.2
+    }
+   },
+   {
+    "name": "\u092a\u093e\u0919\u0932\u093f\u0919",
+    "status": "cut_off",
+    "priority": 16,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 2.56,
+     "lat_lon": [
+      28.11147,
+      85.29459
+     ]
+    },
+    "zone": {
+     "km": 3.98,
+     "lat_lon": [
+      28.139,
+      85.24153
+     ],
+     "clear_radius_m": 72.0,
+     "slope_deg": 1.1
+    }
+   },
+   {
+    "name": "\u092a\u093e\u091c\u0941\u0919",
+    "status": "cut_off",
+    "priority": 17,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 4.48,
+     "lat_lon": [
+      28.14622,
+      85.31968
+     ]
+    },
+    "zone": {
+     "km": 0.74,
+     "lat_lon": [
+      28.17975,
+      85.32499
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 5.0
+    }
+   },
+   {
+    "name": "None",
+    "status": "cut_off",
+    "priority": 18,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 4.26,
+     "lat_lon": [
+      28.14622,
+      85.31968
+     ]
+    },
+    "zone": {
+     "km": 2.09,
+     "lat_lon": [
+      28.17975,
+      85.32499
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 5.0
+    }
+   },
+   {
+    "name": "\u092d\u094d\u0930\u091c\u092e",
+    "status": "cut_off",
+    "priority": 19,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 4.61,
+     "lat_lon": [
+      28.14622,
+      85.31968
+     ]
+    },
+    "zone": {
+     "km": 1.19,
+     "lat_lon": [
+      28.17975,
+      85.32499
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 5.0
+    }
+   },
+   {
+    "name": "\u092d\u091e\u094d\u091c\u094d\u092f\u093e\u0919",
+    "status": "cut_off",
+    "priority": 20,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 4.28,
+     "lat_lon": [
+      28.14622,
+      85.31968
+     ]
+    },
+    "zone": {
+     "km": 3.21,
+     "lat_lon": [
+      28.17975,
+      85.32499
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 5.0
+    }
+   },
+   {
+    "name": "\u70ed\u7d22",
+    "status": "cut_off",
+    "priority": 21,
+    "helipad": null,
+    "zone": {
+     "km": 1.85,
+     "lat_lon": [
+      28.26725,
+      85.36644
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 1.6
+    }
+   },
+   {
+    "name": "\u092e\u0948\u0932\u0941\u0919",
+    "status": "cut_off",
+    "priority": 22,
+    "helipad": null,
+    "zone": {
+     "km": 2.41,
+     "lat_lon": [
+      28.08448,
+      85.22695
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 1.7
+    }
+   },
+   {
+    "name": "Somdang",
+    "status": "cut_off",
+    "priority": 23,
+    "helipad": null,
+    "zone": {
+     "km": 3.49,
+     "lat_lon": [
+      28.2179,
+      85.21599
+     ],
+     "clear_radius_m": 80.0,
+     "slope_deg": 1.7
+    }
+   },
+   {
+    "name": "\u091c\u0930\u094d\u0938\u093e \u0921\u093e\u0901\u0921\u093e",
+    "status": "cut_off",
+    "priority": 24,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 0.03,
+     "lat_lon": [
+      28.16264,
+      85.24308
+     ]
+    },
+    "zone": {
+     "km": 2.64,
+     "lat_lon": [
+      28.13917,
+      85.24071
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 3.1
+    }
+   },
+   {
+    "name": "\u092c\u094d\u0930\u093f\u092e\u0921\u093e\u0919",
+    "status": "cut_off",
+    "priority": 25,
+    "helipad": null,
+    "zone": {
+     "km": 2.29,
+     "lat_lon": [
+      28.18416,
+      85.30211
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 3.2
+    }
+   },
+   {
+    "name": "None",
+    "status": "cut_off",
+    "priority": 26,
+    "helipad": null,
+    "zone": {
+     "km": 1.37,
+     "lat_lon": [
+      28.18416,
+      85.30211
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 3.2
+    }
+   },
+   {
+    "name": "\u0928\u093e\u0917\u0925\u0932\u0940",
+    "status": "cut_off",
+    "priority": 27,
+    "helipad": null,
+    "zone": {
+     "km": 2.96,
+     "lat_lon": [
+      28.18416,
+      85.30211
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 3.2
+    }
+   },
+   {
+    "name": "None",
+    "status": "cut_off",
+    "priority": 28,
+    "helipad": null,
+    "zone": {
+     "km": 2.76,
+     "lat_lon": [
+      28.18416,
+      85.30211
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 3.2
+    }
+   },
+   {
+    "name": "\u0928\u094c\u0935\u093f\u0938\u0947 \u092b\u093e\u0901\u091f",
+    "status": "likely_cut_off",
+    "priority": 29,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 2.53,
+     "lat_lon": [
+      27.96398,
+      85.17174
+     ]
+    },
+    "zone": {
+     "km": 0.35,
+     "lat_lon": [
+      27.98176,
+      85.1839
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 5.3
+    }
+   },
+   {
+    "name": "\u092d\u0948\u0902\u0938\u0947",
+    "status": "likely_cut_off",
+    "priority": 30,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 0.42,
+     "lat_lon": [
+      27.96398,
+      85.17174
+     ]
+    },
+    "zone": {
+     "km": 0.75,
+     "lat_lon": [
+      27.95856,
+      85.16295
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 2.0
+    }
+   },
+   {
+    "name": "\u0938\u093f\u092e\u094d\u0932\u0947",
+    "status": "likely_cut_off",
+    "priority": 31,
+    "helipad": null,
+    "zone": {
+     "km": 0.36,
+     "lat_lon": [
+      28.02606,
+      85.19008
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 0.3
+    }
+   },
+   {
+    "name": "None",
+    "status": "likely_cut_off",
+    "priority": 32,
+    "helipad": null,
+    "zone": {
+     "km": 0.28,
+     "lat_lon": [
+      27.86023,
+      85.08622
+     ],
+     "clear_radius_m": 72.0,
+     "slope_deg": 6.2
+    }
+   },
+   {
+    "name": "None",
+    "status": "likely_cut_off",
+    "priority": 33,
+    "helipad": null,
+    "zone": {
+     "km": 0.29,
+     "lat_lon": [
+      27.85333,
+      85.0837
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 3.4
+    }
+   },
+   {
+    "name": "None",
+    "status": "unknown",
+    "priority": 34,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 3.05,
+     "lat_lon": [
+      28.11147,
+      85.29459
+     ]
+    },
+    "zone": {
+     "km": 3.42,
+     "lat_lon": [
+      28.139,
+      85.24153
+     ],
+     "clear_radius_m": 72.0,
+     "slope_deg": 1.1
+    }
+   },
+   {
+    "name": "\u0920\u0941\u0932\u094b \u092d\u093e\u0930\u094d\u0916\u0941",
+    "status": "unknown",
+    "priority": 35,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 1.97,
+     "lat_lon": [
+      28.14622,
+      85.31968
+     ]
+    },
+    "zone": null
+   },
+   {
+    "name": "\u0939\u093e\u0915\u0941 \u092c\u0947\u0938\u0940",
+    "status": "unknown",
+    "priority": 36,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 1.62,
+     "lat_lon": [
+      28.11147,
+      85.29459
+     ]
+    },
+    "zone": {
+     "km": 4.45,
+     "lat_lon": [
+      28.139,
+      85.24153
+     ],
+     "clear_radius_m": 72.0,
+     "slope_deg": 1.1
+    }
+   },
+   {
+    "name": "\u0938\u093e\u0928\u093e\u0947 \u092d\u093e\u0930\u094d\u0916\u0941",
+    "status": "unknown",
+    "priority": 37,
+    "helipad": {
+     "name": "unnamed helipad",
+     "km": 0.97,
+     "lat_lon": [
+      28.14622,
+      85.31968
+     ]
+    },
+    "zone": {
+     "km": 4.72,
+     "lat_lon": [
+      28.17975,
+      85.32499
+     ],
+     "clear_radius_m": 45.0,
+     "slope_deg": 5.0
+    }
+   }
+  ],
+  "criteria": {
+   "max_slope_deg": 7,
+   "clear_diameter_m": 60,
+   "flood_clearance_m": 50,
+   "building_clearance_m": 15,
+   "max_distance_km": 5,
+   "power_line_clearance_m": 30,
+   "power_lines_mapped": 60,
+   "slope_source": "US Army FM 3-21.38 Pathfinder Operations: ground slope up to 7 degrees acceptable for landing"
+  },
+  "not_checked": "trees, buildings or power lines missing from OpenStreetMap, soft or loose ground, wind, the approach path, and flood or debris our map missed (it misses much of the debris in mountain valleys)"
+ },
+ "reports": {
+  "en": "report\\situation_report_en.pdf",
+  "ne": "report\\situation_report_ne.pdf",
+  "map": "report\\map.png"
+ },
+ "timings": {
+  "Searching the Sentinel-1 catalogue": 3.06,
+  "Downloading satellite, elevation and map data": 14.39,
+  "Terrain analysis (slope, drainage, HAND)": 19.83,
+  "Detecting flood water and debris": 29.45,
+  "Segmentation model (Siamese U-Net)": 16.89,
+  "Adding Sentinel-2 optical evidence": 0.71,
+  "Assessing buildings, roads and bridges": 11.2,
+  "Finding cut-off settlements": 10.12,
+  "Writing maps and results": 8.41,
+  "Generating situation reports": 6.59,
+  "total": 135.4
+ }
+}

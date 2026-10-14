@@ -1,0 +1,79 @@
+{
+ "run": "slo_mura",
+ "products": [
+  "AOI04_DEL_PRODUCT_v1",
+  "AOI10_GRA_PRODUCT_v1",
+  "AOI11_GRA_PRODUCT_v1",
+  "AOI12_GRA_PRODUCT_v1",
+  "AOI13_GRA_PRODUCT_v1"
+ ],
+ "ems_km2": 2.47,
+ "buckets": {
+  "found": {
+   "km2": 0.906,
+   "pct": 36.7
+  },
+  "radar blind spot": {
+   "km2": 0.0,
+   "pct": 0.0
+  },
+  "called permanent water": {
+   "km2": 0.007,
+   "pct": 0.3
+  },
+  "no radar change": {
+   "km2": 0.341,
+   "pct": 13.8
+  },
+  "weak change (1.5-3 dB)": {
+   "km2": 0.746,
+   "pct": 30.2
+  },
+  "removed: slope": {
+   "km2": 0.001,
+   "pct": 0.0
+  },
+  "removed: height above river": {
+   "km2": 0.0,
+   "pct": 0.0
+  },
+  "removed: other filters": {
+   "km2": 0.47,
+   "pct": 19.0
+  }
+ },
+ "radar_change_available": true,
+ "ems_on_slope_gt20_pct": 0.2,
+ "position_tolerance_m": 40.0,
+ "strict": {
+  "precision": 0.603,
+  "recall": 0.367
+ },
+ "with_tolerance": {
+  "precision": 0.714,
+  "recall": 0.53
+ },
+ "ems_in_features_below_min_size_pct": 30.3,
+ "ours_km2_in_aoi": 1.502,
+ "model_on_ems_area": {
+  "median_p_flood": 0.101,
+  "share_p_ge_0.8": 0.32,
+  "share_p_ge_0.5": 0.399,
+  "median_p_where_rules_found_it": 0.989,
+  "km2_p_ge_thr_outside_ems": 0.196
+ },
+ "tracks": [
+  {
+   "track": "des-124",
+   "before": "2023-07-23",
+   "after": "2023-08-04",
+   "after_days_after_event": 0
+  },
+  {
+   "track": "asc-146",
+   "before": "2023-07-24",
+   "after": "2023-08-05",
+   "after_days_after_event": 1
+  }
+ ]
+}

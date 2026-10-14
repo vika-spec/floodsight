@@ -1,0 +1,17 @@
+.git
+.env
+runs
+validation_data
+data
+_backups
+web/node_modules
+**/__pycache__
+.pytest_cache
+*.part
+*.part.tif
+models/cmp_*
+models/*.last.pt
+web/src
+tests
+*.docx
+*.pdf

@@ -1,0 +1,30 @@
+# Core (tested versions in comments). PyTorch is installed separately - see README.
+numpy>=1.26          # 2.4.4
+scipy>=1.11          # 1.17.1
+scikit-image>=0.22   # 0.26.0
+pandas>=2.1          # 2.3.3
+rasterio>=1.3.9      # 1.4.4
+geopandas>=0.14      # 1.2.0
+pyarrow>=14          # reads GeoParquet from the ohsome API v2
+pyogrio>=0.7         # 0.13.0
+shapely>=2.0         # 2.1.2
+pyproj>=3.6          # 3.7.2
+affine>=2.4
+networkx>=3.2        # 3.6.1
+pysheds>=0.4         # 0.5
+openeo>=0.30         # 0.52.0
+requests>=2.31
+python-dotenv>=1.0
+PyYAML>=6.0
+matplotlib>=3.8
+Pillow>=10.0
+fpdf2>=2.8           # 2.8.9
+uharfbuzz>=0.39      # Devanagari text shaping in the Nepali PDF
+fonttools>=4.40
+fastapi>=0.110       # web app API (python serve.py)
+uvicorn>=0.29        # web server
+httpx>=0.27          # API tests
+tqdm>=4.60           # progress bars during training
+pytest>=7
+# optional, only for the model comparison (scripts/compare_models.py):
+# segmentation-models-pytorch>=0.5   scikit-learn>=1.4

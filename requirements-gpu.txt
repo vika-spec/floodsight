@@ -1,0 +1,6 @@
+# PyTorch with CUDA 12.8 (required for RTX 50-series GPUs such as the RTX 5050).
+# Install AFTER requirements.txt:   pip install -r requirements-gpu.txt
+# Plain `pip install torch` on Windows gives a CPU-only build, which is why this lives in its own file.
+--index-url https://download.pytorch.org/whl/cu128
+torch>=2.7
+torchvision>=0.22

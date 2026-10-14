@@ -1,0 +1,35 @@
+﻿name,name_en,place,status,target_before,target_after,km_before,km_after,extra_km,min_before,min_after,extra_min,buildings,snap_m,priority,lon,lat,status_label
+Lokowitzen,,hamlet,likely_cut_off,Splošna Bolnišnica Slovenj Gradec,,30.7,,,36,,,22,35,1,14.82202,46.55128,Likely cut off (only low-confidence detections block the last route)
+Poljana,,hamlet,detour,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,20.5,29.9,9.3,22,44.0,22.0,80,18,2,14.87366,46.5451,Reachable only by a long detour
+Sdoutz,,village,detour,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,26.0,33.5,7.5,30,41.0,11.0,18,0,3,14.83004,46.5629,Reachable only by a long detour
+Kralj,,village,detour,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,23.6,31.3,7.7,25,41.0,16.0,16,21,4,14.8503,46.56158,Reachable only by a long detour
+Koprivna,,hamlet,detour,Bolnišnica Topolšica,Bolnišnica Topolšica,31.7,39.8,8.1,49,82.0,33.0,15,18,5,14.74143,46.4584,Reachable only by a long detour
+Holmec,,village,detour,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,24.5,32.1,7.5,26,40.0,14.0,11,35,6,14.84154,46.56704,Reachable only by a long detour
+Topla,,hamlet,detour,Bolnišnica Topolšica,Bolnišnica Topolšica,29.7,46.0,16.3,48,116.0,68.0,9,5,7,14.77233,46.47862,Reachable only by a long detour
+Prevalje,,town,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,16.7,17.6,0.9,18,21.0,2.0,1554,16,0,14.91698,46.54606,Road access unchanged
+Ravne na Koroškem,,town,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,13.1,13.3,0.2,15,16.0,1.0,1103,21,0,14.96229,46.54465,Road access unchanged
+Mežica,,town,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,24.7,26.4,1.8,27,47.0,20.0,532,43,0,14.85215,46.5195,Road access unchanged
+Črna na Koroškem,,village,reachable,Bolnišnica Topolšica,Bolnišnica Topolšica,22.3,24.4,2.2,34,54.0,20.0,519,15,0,14.85026,46.46963,Road access unchanged
+Globasnitz/Globasnica,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,36.7,43.0,6.3,40,46.0,6.0,297,25,0,14.70127,46.55759,Road access unchanged
+Tolsti Vrh pri Ravnah na Koroškem,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,15.2,17.1,1.9,20,20.0,1.0,280,31,0,14.95452,46.55882,Road access unchanged
+Feistritz ob Bleiburg/Bistrica pri Pliberku,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,31.6,35.8,4.2,36,42.0,6.0,204,59,0,14.76298,46.56143,Road access unchanged
+Oberloibach,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,29.0,32.5,3.5,32,40.0,8.0,191,33,0,14.80612,46.5545,Road access unchanged
+Penk/Ponikva,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,29.7,34.4,4.7,35,42.0,8.0,149,10,0,14.78694,46.56121,Road access unchanged
+Wackendorf/Večna vas,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,35.1,39.3,4.2,39,45.0,6.0,112,40,0,14.7224,46.55555,Road access unchanged
+Kleindorf/Mala vas,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,36.2,42.0,5.8,39,45.0,6.0,105,10,0,14.70529,46.56478,Road access unchanged
+Sankt Georgen/Šentjur,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,29.3,31.3,2.0,34,46.0,12.0,97,3,0,14.81703,46.54725,Road access unchanged
+Žerjav,,village,reachable,Bolnišnica Topolšica,Bolnišnica Topolšica,24.8,26.3,1.5,32,88.0,56.0,93,100,0,14.86912,46.48325,Road access unchanged
+Podrain/Podroje,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,37.3,43.8,6.4,42,48.0,6.0,87,52,0,14.70498,46.5494,Road access unchanged
+Pirkdorf/Breška vas,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,33.4,37.7,4.2,37,43.0,6.0,78,8,0,14.74095,46.56112,Road access unchanged
+Loibach/Libuče,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,27.7,33.9,6.2,30,38.0,8.0,69,47,0,14.80521,46.56702,Road access unchanged
+Dolintschitschach/Dolinčiče,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,30.5,34.4,3.9,36,43.0,7.0,67,26,0,14.77797,46.55622,Road access unchanged
+Spodnji Breg,,hamlet,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,26.6,28.3,1.7,29,49.0,20.0,61,15,0,14.85933,46.50896,Road access unchanged
+Podpeca,,hamlet,reachable,Bolnišnica Topolšica,Bolnišnica Topolšica,27.2,33.8,6.5,43,70.0,26.0,60,23,0,14.82829,46.48914,Road access unchanged
+Ruttach-Schmelz/Rute,,hamlet,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,33.4,36.8,3.4,41,47.0,6.0,56,46,0,14.75641,46.54824,Road access unchanged
+Unterort/Podkraj,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,31.6,33.7,2.1,38,46.0,8.0,44,12,0,14.78263,46.54146,Road access unchanged
+Zagrad,,village,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,20.2,20.8,0.6,27,29.0,2.0,44,52,0,14.92311,46.53347,Road access unchanged
+Winkel/Kot,,hamlet,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,30.8,34.2,3.4,37,45.0,8.0,39,7,0,14.78441,46.55237,Road access unchanged
+Unterbergen/Podgora,,hamlet,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,34.7,40.1,5.4,38,46.0,8.0,32,45,0,14.7367,46.55233,Road access unchanged
+Zgornji Breg,,hamlet,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,27.9,29.6,1.7,33,53.0,20.0,14,17,0,14.84842,46.50552,Road access unchanged
+Breg,,hamlet,reachable,Splošna Bolnišnica Slovenj Gradec,Splošna Bolnišnica Slovenj Gradec,27.8,29.5,1.7,33,53.0,20.0,13,28,0,14.85402,46.50624,Road access unchanged
+Koprein Sonnseite/Koprivna,,hamlet,reachable,Bolnišnica Topolšica,Bolnišnica Topolšica,45.5,53.5,8.1,86,91.0,6.0,11,46,0,14.69659,46.49004,Road access unchanged

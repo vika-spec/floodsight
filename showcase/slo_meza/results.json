@@ -1,0 +1,4585 @@
+{
+ "floodsight_version": "1.0.0",
+ "run_id": "slo_meza",
+ "generated_utc": "2026-10-10 03:51 UTC",
+ "aoi": {
+  "bbox": [
+   14.695,
+   46.4438,
+   14.9756,
+   46.5671
+  ],
+  "area_km2": 293.1,
+  "center": [
+   14.8353,
+   46.50545
+  ]
+ },
+ "flood_date": "2023-08-04",
+ "before_images_until": "2023-08-03",
+ "grid": {
+  "crs": "EPSG:32633",
+  "transform": [
+   20.0,
+   0.0,
+   476560.0,
+   0.0,
+   -20.0,
+   5157120.0
+  ],
+  "width": 1079,
+  "height": 689,
+  "resolution_m": 20.0
+ },
+ "verdict": "flood_detected",
+ "inputs": {
+  "sentinel1_pairs": [
+   {
+    "track": "asc-146",
+    "pre_date": "2023-07-24",
+    "post_date": "2023-08-05",
+    "gap_days": 12,
+    "coverage": 1.0,
+    "incidence_deg": 35.9,
+    "heading_deg": -12.0,
+    "pre_scenes": [
+     "S1A_IW_GRDH_1SDV_20230724T165056_20230724T165121_049568_05F5D7_A99F_COG.SAFE",
+     "S1A_IW_GRDH_1SDV_20230724T165056_20230724T165121_049568_05F5D7_97E5.SAFE"
+    ],
+    "post_scenes": [
+     "S1A_IW_GRDH_1SDV_20230805T165057_20230805T165122_049743_05FB3C_A958_COG.SAFE",
+     "S1A_IW_GRDH_1SDV_20230805T165057_20230805T165122_049743_05FB3C_AB7B.SAFE"
+    ],
+    "pre_stack_dates": [
+     "2023-07-24"
+    ]
+   },
+   {
+    "track": "des-022",
+    "pre_date": "2023-07-28",
+    "post_date": "2023-08-09",
+    "gap_days": 12,
+    "coverage": 1.0,
+    "incidence_deg": 38.4,
+    "heading_deg": 192.0,
+    "pre_scenes": [
+     "S1A_IW_GRDH_1SDV_20230728T051048_20230728T051113_049619_05F775_04B2.SAFE",
+     "S1A_IW_GRDH_1SDV_20230728T051048_20230728T051113_049619_05F775_5FF5_COG.SAFE"
+    ],
+    "post_scenes": [
+     "S1A_IW_GRDH_1SDV_20230809T051048_20230809T051113_049794_05FCF7_47A7.SAFE",
+     "S1A_IW_GRDH_1SDV_20230809T051048_20230809T051113_049794_05FCF7_941C_COG.SAFE"
+    ],
+    "pre_stack_dates": [
+     "2023-07-28"
+    ]
+   }
+  ],
+  "sentinel1_backend": "sentinelhub",
+  "sentinel1_backend_per_track": {
+   "asc-146": "sentinelhub",
+   "des-022": "sentinelhub"
+  },
+  "sentinel1_calibration": "SIGMA0_ELLIPSOID",
+  "sentinelhub_processing_units": 0.0,
+  "sentinel2": {
+   "used": true,
+   "clear_fraction": 0.972,
+   "confirmed_flood_km2": 0.0,
+   "confirmed_debris_km2": 0.031,
+   "contradicted_km2": 0.052,
+   "blind_filled_km2": 0.0,
+   "added_flood_km2": 0.005,
+   "added_debris_km2": 0.43
+  },
+  "osm_snapshot": "2023-08-03",
+  "model": {
+   "used": true,
+   "weights": "siamese_unet.pt",
+   "epoch": 6,
+   "tracks": [
+    {
+     "track": "asc-146",
+     "after": "2023-08-05",
+     "flood_km2_p_ge_thr": 0.008,
+     "input_speckle_matching": null
+    },
+    {
+     "track": "des-022",
+     "after": "2023-08-09",
+     "flood_km2_p_ge_thr": 0.0,
+     "input_speckle_matching": null
+    }
+   ],
+   "combine": "per-pixel maximum over tracks that see the pixel",
+   "threshold": 0.8,
+   "vs_rules": {
+    "threshold": 0.8,
+    "both_km2": 0.007,
+    "model_only_km2": 0.002,
+    "rules_only_km2": 0.0,
+    "added_to_map_km2": 0.001,
+    "confidence_raised_km2": 0.002,
+    "confidence_lowered_km2": 0.0,
+    "agreement_iou": 0.81,
+    "note": "Flood water only: the model was trained on water labels and does not detect debris; model-only water is added to the map only where water can pond (low and flat), at low confidence."
+   }
+  },
+  "detection_stats": [
+   {
+    "water_threshold_db": -15.0,
+    "water_threshold_method": "global Otsu (clamped)",
+    "valid_fraction": 0.9839,
+    "blind_fraction": 0.0161,
+    "has_vh": true,
+    "track": "asc-146"
+   },
+   {
+    "water_threshold_db": -15.0,
+    "water_threshold_method": "global Otsu (clamped)",
+    "valid_fraction": 0.9872,
+    "blind_fraction": 0.0128,
+    "has_vh": true,
+    "track": "des-022"
+   }
+  ],
+  "debris_terrain": {
+   "definition": "UNEP-WCMC mountain classes (Kapos et al. 2000)",
+   "source": "DEM with 8 km margin (250 m)",
+   "mountain_fraction": 0.999,
+   "applied": true
+  }
+ },
+ "areas": {
+  "flood_km2": 0.013,
+  "flood_high_conf_km2": 0.007,
+  "debris_km2": 0.73,
+  "debris_high_conf_km2": 0.039,
+  "permanent_water_km2": 0.01,
+  "nodata_km2": 0.073,
+  "aoi_km2": 297.372,
+  "nodata_fraction": 0.0002
+ },
+ "damage": {
+  "buildings_total": 6810,
+  "buildings_likely_hit": 3,
+  "buildings_possibly_hit": 131,
+  "buildings_not_observed": 1669,
+  "road_km_affected": 7.59,
+  "road_segments_hit": 177,
+  "bridges_total": 283,
+  "bridges_hit": 15
+ },
+ "access": {
+  "settlements_cut_off": 0,
+  "settlements_likely_cut_off": 1,
+  "settlements_unknown": 0,
+  "settlements_detour": 6,
+  "settlements_reachable": 27,
+  "settlements_isolated_before": 0,
+  "settlements_no_road_data": 0,
+  "settlements_total": 34,
+  "target_kind": "hospital",
+  "targets_used": 5,
+  "broken_road_edges": 387,
+  "broken_road_edges_confident": 7,
+  "unseen_road_edges": 0,
+  "buildings_in_cut_off_settlements": 0,
+  "buildings_in_likely_cut_off_settlements": 22,
+  "speeds": "nominal free-flow speeds per OSM road class (OSRM car-profile defaults)"
+ },
+ "blockages": {
+  "roads": [
+   {
+    "name": "Poljana",
+    "highway": "service",
+    "km_affected": 0.63,
+    "certain": true,
+    "lat_lon": [
+     46.5473,
+     14.8952
+    ]
+   },
+   {
+    "name": "unnamed primary",
+    "highway": "primary",
+    "km_affected": 0.19,
+    "certain": true,
+    "lat_lon": [
+     46.5465,
+     14.8992
+    ]
+   },
+   {
+    "name": "Trg svobode",
+    "highway": "footway",
+    "km_affected": 0.28,
+    "certain": true,
+    "lat_lon": [
+     46.5441,
+     14.9662
+    ]
+   },
+   {
+    "name": "Mariborska cesta",
+    "highway": "secondary",
+    "km_affected": 0.05,
+    "certain": true,
+    "lat_lon": [
+     46.5241,
+     14.8535
+    ]
+   },
+   {
+    "name": "unnamed secondary",
+    "highway": "secondary",
+    "km_affected": 0.39,
+    "certain": true,
+    "lat_lon": [
+     46.4613,
+     14.8701
+    ]
+   },
+   {
+    "name": "Unterbergerstra\u00dfe",
+    "highway": "tertiary",
+    "km_affected": 0.13,
+    "certain": true,
+    "lat_lon": [
+     46.5534,
+     14.7344
+    ]
+   }
+  ],
+  "bridges": [
+   {
+    "name": "Koro\u0161ka cesta",
+    "highway": "primary",
+    "lat_lon": [
+     46.5472,
+     14.9658
+    ]
+   },
+   {
+    "name": "bridge on unnamed secondary",
+    "highway": "secondary",
+    "lat_lon": [
+     46.4662,
+     14.8606
+    ]
+   },
+   {
+    "name": "bridge on unnamed secondary",
+    "highway": "secondary",
+    "lat_lon": [
+     46.4771,
+     14.8526
+    ]
+   },
+   {
+    "name": "bridge on unnamed tertiary",
+    "highway": "tertiary",
+    "lat_lon": [
+     46.4705,
+     14.8484
+    ]
+   },
+   {
+    "name": "Topla",
+    "highway": "unclassified",
+    "lat_lon": [
+     46.4776,
+     14.7731
+    ]
+   },
+   {
+    "name": "bridge on unnamed unclassified",
+    "highway": "unclassified",
+    "lat_lon": [
+     46.4675,
+     14.8349
+    ]
+   }
+  ],
+  "roads_total": 34,
+  "bridges_total": 15
+ },
+ "settlements": [
+  {
+   "name": "Lokowitzen",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "likely_cut_off",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "",
+   "km_before": 30.7,
+   "km_after": null,
+   "extra_km": null,
+   "min_before": 36,
+   "min_after": null,
+   "extra_min": null,
+   "buildings": 22,
+   "snap_m": 35,
+   "priority": 1,
+   "status_label": "Likely cut off (only low-confidence detections block the last route)"
+  },
+  {
+   "name": "Poljana",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "detour",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 20.5,
+   "km_after": 29.9,
+   "extra_km": 9.3,
+   "min_before": 22,
+   "min_after": 44.0,
+   "extra_min": 22.0,
+   "buildings": 80,
+   "snap_m": 18,
+   "priority": 2,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "Sdoutz",
+   "name_en": "",
+   "place": "village",
+   "status": "detour",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 26.0,
+   "km_after": 33.5,
+   "extra_km": 7.5,
+   "min_before": 30,
+   "min_after": 41.0,
+   "extra_min": 11.0,
+   "buildings": 18,
+   "snap_m": 0,
+   "priority": 3,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "Kralj",
+   "name_en": "",
+   "place": "village",
+   "status": "detour",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 23.6,
+   "km_after": 31.3,
+   "extra_km": 7.7,
+   "min_before": 25,
+   "min_after": 41.0,
+   "extra_min": 16.0,
+   "buildings": 16,
+   "snap_m": 21,
+   "priority": 4,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "Koprivna",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "detour",
+   "target_before": "Bolni\u0161nica Topol\u0161ica",
+   "target_after": "Bolni\u0161nica Topol\u0161ica",
+   "km_before": 31.7,
+   "km_after": 39.8,
+   "extra_km": 8.1,
+   "min_before": 49,
+   "min_after": 82.0,
+   "extra_min": 33.0,
+   "buildings": 15,
+   "snap_m": 18,
+   "priority": 5,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "Holmec",
+   "name_en": "",
+   "place": "village",
+   "status": "detour",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 24.5,
+   "km_after": 32.1,
+   "extra_km": 7.5,
+   "min_before": 26,
+   "min_after": 40.0,
+   "extra_min": 14.0,
+   "buildings": 11,
+   "snap_m": 35,
+   "priority": 6,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "Topla",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "detour",
+   "target_before": "Bolni\u0161nica Topol\u0161ica",
+   "target_after": "Bolni\u0161nica Topol\u0161ica",
+   "km_before": 29.7,
+   "km_after": 46.0,
+   "extra_km": 16.3,
+   "min_before": 48,
+   "min_after": 116.0,
+   "extra_min": 68.0,
+   "buildings": 9,
+   "snap_m": 5,
+   "priority": 7,
+   "status_label": "Reachable only by a long detour"
+  },
+  {
+   "name": "Prevalje",
+   "name_en": "",
+   "place": "town",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 16.7,
+   "km_after": 17.6,
+   "extra_km": 0.9,
+   "min_before": 18,
+   "min_after": 21.0,
+   "extra_min": 2.0,
+   "buildings": 1554,
+   "snap_m": 16,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Ravne na Koro\u0161kem",
+   "name_en": "",
+   "place": "town",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 13.1,
+   "km_after": 13.3,
+   "extra_km": 0.2,
+   "min_before": 15,
+   "min_after": 16.0,
+   "extra_min": 1.0,
+   "buildings": 1103,
+   "snap_m": 21,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Me\u017eica",
+   "name_en": "",
+   "place": "town",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 24.7,
+   "km_after": 26.4,
+   "extra_km": 1.8,
+   "min_before": 27,
+   "min_after": 47.0,
+   "extra_min": 20.0,
+   "buildings": 532,
+   "snap_m": 43,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u010crna na Koro\u0161kem",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Bolni\u0161nica Topol\u0161ica",
+   "target_after": "Bolni\u0161nica Topol\u0161ica",
+   "km_before": 22.3,
+   "km_after": 24.4,
+   "extra_km": 2.2,
+   "min_before": 34,
+   "min_after": 54.0,
+   "extra_min": 20.0,
+   "buildings": 519,
+   "snap_m": 15,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Globasnitz/Globasnica",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 36.7,
+   "km_after": 43.0,
+   "extra_km": 6.3,
+   "min_before": 40,
+   "min_after": 46.0,
+   "extra_min": 6.0,
+   "buildings": 297,
+   "snap_m": 25,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Tolsti Vrh pri Ravnah na Koro\u0161kem",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 15.2,
+   "km_after": 17.1,
+   "extra_km": 1.9,
+   "min_before": 20,
+   "min_after": 20.0,
+   "extra_min": 1.0,
+   "buildings": 280,
+   "snap_m": 31,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Feistritz ob Bleiburg/Bistrica pri Pliberku",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 31.6,
+   "km_after": 35.8,
+   "extra_km": 4.2,
+   "min_before": 36,
+   "min_after": 42.0,
+   "extra_min": 6.0,
+   "buildings": 204,
+   "snap_m": 59,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Oberloibach",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 29.0,
+   "km_after": 32.5,
+   "extra_km": 3.5,
+   "min_before": 32,
+   "min_after": 40.0,
+   "extra_min": 8.0,
+   "buildings": 191,
+   "snap_m": 33,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Penk/Ponikva",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 29.7,
+   "km_after": 34.4,
+   "extra_km": 4.7,
+   "min_before": 35,
+   "min_after": 42.0,
+   "extra_min": 8.0,
+   "buildings": 149,
+   "snap_m": 10,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Wackendorf/Ve\u010dna vas",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 35.1,
+   "km_after": 39.3,
+   "extra_km": 4.2,
+   "min_before": 39,
+   "min_after": 45.0,
+   "extra_min": 6.0,
+   "buildings": 112,
+   "snap_m": 40,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Kleindorf/Mala vas",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 36.2,
+   "km_after": 42.0,
+   "extra_km": 5.8,
+   "min_before": 39,
+   "min_after": 45.0,
+   "extra_min": 6.0,
+   "buildings": 105,
+   "snap_m": 10,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Sankt Georgen/\u0160entjur",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 29.3,
+   "km_after": 31.3,
+   "extra_km": 2.0,
+   "min_before": 34,
+   "min_after": 46.0,
+   "extra_min": 12.0,
+   "buildings": 97,
+   "snap_m": 3,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "\u017derjav",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Bolni\u0161nica Topol\u0161ica",
+   "target_after": "Bolni\u0161nica Topol\u0161ica",
+   "km_before": 24.8,
+   "km_after": 26.3,
+   "extra_km": 1.5,
+   "min_before": 32,
+   "min_after": 88.0,
+   "extra_min": 56.0,
+   "buildings": 93,
+   "snap_m": 100,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Podrain/Podroje",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 37.3,
+   "km_after": 43.8,
+   "extra_km": 6.4,
+   "min_before": 42,
+   "min_after": 48.0,
+   "extra_min": 6.0,
+   "buildings": 87,
+   "snap_m": 52,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Pirkdorf/Bre\u0161ka vas",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 33.4,
+   "km_after": 37.7,
+   "extra_km": 4.2,
+   "min_before": 37,
+   "min_after": 43.0,
+   "extra_min": 6.0,
+   "buildings": 78,
+   "snap_m": 8,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Loibach/Libu\u010de",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 27.7,
+   "km_after": 33.9,
+   "extra_km": 6.2,
+   "min_before": 30,
+   "min_after": 38.0,
+   "extra_min": 8.0,
+   "buildings": 69,
+   "snap_m": 47,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Dolintschitschach/Dolin\u010di\u010de",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 30.5,
+   "km_after": 34.4,
+   "extra_km": 3.9,
+   "min_before": 36,
+   "min_after": 43.0,
+   "extra_min": 7.0,
+   "buildings": 67,
+   "snap_m": 26,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Spodnji Breg",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 26.6,
+   "km_after": 28.3,
+   "extra_km": 1.7,
+   "min_before": 29,
+   "min_after": 49.0,
+   "extra_min": 20.0,
+   "buildings": 61,
+   "snap_m": 15,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Podpeca",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Bolni\u0161nica Topol\u0161ica",
+   "target_after": "Bolni\u0161nica Topol\u0161ica",
+   "km_before": 27.2,
+   "km_after": 33.8,
+   "extra_km": 6.5,
+   "min_before": 43,
+   "min_after": 70.0,
+   "extra_min": 26.0,
+   "buildings": 60,
+   "snap_m": 23,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Ruttach-Schmelz/Rute",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 33.4,
+   "km_after": 36.8,
+   "extra_km": 3.4,
+   "min_before": 41,
+   "min_after": 47.0,
+   "extra_min": 6.0,
+   "buildings": 56,
+   "snap_m": 46,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Unterort/Podkraj",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 31.6,
+   "km_after": 33.7,
+   "extra_km": 2.1,
+   "min_before": 38,
+   "min_after": 46.0,
+   "extra_min": 8.0,
+   "buildings": 44,
+   "snap_m": 12,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Zagrad",
+   "name_en": "",
+   "place": "village",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 20.2,
+   "km_after": 20.8,
+   "extra_km": 0.6,
+   "min_before": 27,
+   "min_after": 29.0,
+   "extra_min": 2.0,
+   "buildings": 44,
+   "snap_m": 52,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Winkel/Kot",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 30.8,
+   "km_after": 34.2,
+   "extra_km": 3.4,
+   "min_before": 37,
+   "min_after": 45.0,
+   "extra_min": 8.0,
+   "buildings": 39,
+   "snap_m": 7,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Unterbergen/Podgora",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 34.7,
+   "km_after": 40.1,
+   "extra_km": 5.4,
+   "min_before": 38,
+   "min_after": 46.0,
+   "extra_min": 8.0,
+   "buildings": 32,
+   "snap_m": 45,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Zgornji Breg",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 27.9,
+   "km_after": 29.6,
+   "extra_km": 1.7,
+   "min_before": 33,
+   "min_after": 53.0,
+   "extra_min": 20.0,
+   "buildings": 14,
+   "snap_m": 17,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Breg",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "target_after": "Splo\u0161na Bolni\u0161nica Slovenj Gradec",
+   "km_before": 27.8,
+   "km_after": 29.5,
+   "extra_km": 1.7,
+   "min_before": 33,
+   "min_after": 53.0,
+   "extra_min": 20.0,
+   "buildings": 13,
+   "snap_m": 28,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  },
+  {
+   "name": "Koprein Sonnseite/Koprivna",
+   "name_en": "",
+   "place": "hamlet",
+   "status": "reachable",
+   "target_before": "Bolni\u0161nica Topol\u0161ica",
+   "target_after": "Bolni\u0161nica Topol\u0161ica",
+   "km_before": 45.5,
+   "km_after": 53.5,
+   "extra_km": 8.1,
+   "min_before": 86,
+   "min_after": 91.0,
+   "extra_min": 6.0,
+   "buildings": 11,
+   "snap_m": 46,
+   "priority": 0,
+   "status_label": "Road access unchanged"
+  }
+ ],
+ "notes": [
+  "OpenStreetMap snapshot of 2023-08-03 (before the event)."
+ ],
+ "web": {
+  "flood": {
+   "png": "layers/flood_web.png",
+   "bounds": [
+    [
+     46.443194147549185,
+     14.694143431544084
+    ],
+    [
+     46.56764341521405,
+     14.975715905874623
+    ]
+   ]
+  },
+  "before": {
+   "png": "layers/before_web.png",
+   "bounds": [
+    [
+     46.443194147549185,
+     14.694143431544084
+    ],
+    [
+     46.56764341521405,
+     14.975715905874623
+    ]
+   ]
+  },
+  "after": {
+   "png": "layers/after_web.png",
+   "bounds": [
+    [
+     46.443194147549185,
+     14.694143431544084
+    ],
+    [
+     46.56764341521405,
+     14.975715905874623
+    ]
+   ]
+  },
+  "change": {
+   "png": "layers/change_web.png",
+   "bounds": [
+    [
+     46.443194147549185,
+     14.694143431544084
+    ],
+    [
+     46.56764341521405,
+     14.975715905874623
+    ]
+   ]
+  },
+  "stretch_db": [
+   -14.0,
+   1.4
+  ],
+  "model": {
+   "png": "layers/model_web.png",
+   "bounds": [
+    [
+     46.443194147549185,
+     14.694143431544084
+    ],
+    [
+     46.56764341521405,
+     14.975715905874623
+    ]
+   ]
+  },
+  "rules": {
+   "png": "layers/rules_web.png",
+   "bounds": [
+    [
+     46.443194147549185,
+     14.694143431544084
+    ],
+    [
+     46.56764341521405,
+     14.975715905874623
+    ]
+   ]
+  },
+  "zoom": {
+   "before": "layers/zoom_before.png",
+   "after": "layers/zoom_after.png",
+   "change": "layers/zoom_change.png",
+   "stretch_db": [
+    -12.2,
+    -4.5
+   ],
+   "stats": {
+    "inside_change_db": 2.3,
+    "outside_change_db": 0.6,
+    "flood_before_db": -9.1,
+    "flood_after_db": -17.3,
+    "flood_px": 19,
+    "debris_before_db": -9.4,
+    "debris_after_db": -7.2,
+    "debris_px": 347
+   },
+   "optical_clear_fraction": 1.0,
+   "opt_before": "layers/zoom_opt_before.png",
+   "opt_after": "layers/zoom_opt_after.png",
+   "size_km": [
+    4.0,
+    2.2
+   ],
+   "bbox": [
+    14.7774,
+    46.5477,
+    14.8296,
+    46.5674
+   ]
+  }
+ },
+ "vectors": {
+  "buildings": "vectors\\buildings_hit.geojson",
+  "roads": "vectors\\roads_hit.geojson",
+  "settlements": "vectors\\settlements.geojson",
+  "broken_roads": "vectors\\broken_roads.geojson",
+  "routes": "vectors\\routes.geojson",
+  "route_blocks": "vectors\\route_blocks.geojson",
+  "priority_csv": "vectors\\priority_list.csv",
+  "health": "vectors\\health.geojson",
+  "places": "vectors\\places.geojson",
+  "landing": "vectors\\landing.geojson"
+ },
+ "attributions": [
+  "Contains modified Copernicus Sentinel data 2026.",
+  "Produced using Copernicus WorldDEM-30 \u00a9 DLR e.V. 2010\u20132014 and \u00a9 Airbus Defence and Space GmbH 2014\u20132018 provided under COPERNICUS by the European Union and ESA; all rights reserved.",
+  "\u00a9 OpenStreetMap contributors.",
+  "Model trained on Kuro Siwo: Bountos et al., 2024 (NeurIPS Datasets & Benchmarks)."
+ ],
+ "helicopter_access": {
+  "helipads": [
+   {
+    "name": "unnamed helipad",
+    "lat_lon": [
+     46.64722,
+     14.91124
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "Febau Heliport",
+    "lat_lon": [
+     46.66111,
+     14.61583
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   },
+   {
+    "name": "LJHS, heliport SB Slovenj Gradec",
+    "lat_lon": [
+     46.5079,
+     15.08233
+    ],
+    "state": "outside the analysed area",
+    "usable": true
+   }
+  ],
+  "zones_total": 383,
+  "zones": [
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 8400,
+    "lat_lon": [
+     46.5668,
+     14.69715
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     46.56682,
+     14.70576
+    ]
+   },
+   {
+    "clear_radius_m": 400.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 1666400,
+    "lat_lon": [
+     46.5669,
+     14.73968
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 5600,
+    "lat_lon": [
+     46.56656,
+     14.74647
+    ]
+   },
+   {
+    "clear_radius_m": 340.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 208800,
+    "lat_lon": [
+     46.56695,
+     14.76134
+    ]
+   },
+   {
+    "clear_radius_m": 120.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 72000,
+    "lat_lon": [
+     46.56625,
+     14.77179
+    ]
+   },
+   {
+    "clear_radius_m": 386.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 396400,
+    "lat_lon": [
+     46.56701,
+     14.79527
+    ]
+   },
+   {
+    "clear_radius_m": 300.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 566400,
+    "lat_lon": [
+     46.56706,
+     14.82084
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56708,
+     14.83624
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56708,
+     14.83702
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.56714,
+     14.88713
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56716,
+     14.91349
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56698,
+     14.91375
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5668,
+     14.91401
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.56626,
+     14.77674
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.56591,
+     14.70289
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 31600,
+    "lat_lon": [
+     46.56475,
+     14.84382
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 4.2,
+    "centre_area_m2": 15200,
+    "lat_lon": [
+     46.56566,
+     14.84903
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56607,
+     14.89314
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.56572,
+     14.78014
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.56536,
+     14.69872
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56554,
+     14.77649
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56555,
+     14.78118
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.56501,
+     14.70238
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56537,
+     14.78145
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56483,
+     14.70159
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56483,
+     14.7029
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.56465,
+     14.70133
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.4,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.56464,
+     14.77832
+    ]
+   },
+   {
+    "clear_radius_m": 156.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 81200,
+    "lat_lon": [
+     46.56303,
+     14.78198
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.3,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.56444,
+     14.76814
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56444,
+     14.76866
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56448,
+     14.78562
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 5.4,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.56408,
+     14.76919
+    ]
+   },
+   {
+    "clear_radius_m": 140.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 155600,
+    "lat_lon": [
+     46.55832,
+     14.76921
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5639,
+     14.76945
+    ]
+   },
+   {
+    "clear_radius_m": 160.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 132000,
+    "lat_lon": [
+     46.56179,
+     14.7919
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 4800,
+    "lat_lon": [
+     46.56358,
+     14.94637
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 4800,
+    "lat_lon": [
+     46.56319,
+     14.7731
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56361,
+     14.80755
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.56331,
+     14.84565
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56322,
+     14.78798
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 60000,
+    "lat_lon": [
+     46.56292,
+     14.82425
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56301,
+     14.77467
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 38800,
+    "lat_lon": [
+     46.56222,
+     14.83469
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 21200,
+    "lat_lon": [
+     46.56177,
+     14.70448
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.56266,
+     14.77519
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56289,
+     14.80442
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.5626,
+     14.85426
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.5628,
+     14.87018
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5623,
+     14.7765
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 5600,
+    "lat_lon": [
+     46.56193,
+     14.77024
+    ]
+   },
+   {
+    "clear_radius_m": 126.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 73600,
+    "lat_lon": [
+     46.55852,
+     14.77521
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.56212,
+     14.91297
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5619,
+     14.75641
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56172,
+     14.75615
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 6.0,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     46.56175,
+     14.7718
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     46.56104,
+     14.69744
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56134,
+     14.74702
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 18800,
+    "lat_lon": [
+     46.55926,
+     14.70606
+    ]
+   },
+   {
+    "clear_radius_m": 144.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 91600,
+    "lat_lon": [
+     46.56018,
+     14.79973
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56134,
+     14.85479
+    ]
+   },
+   {
+    "clear_radius_m": 206.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 172800,
+    "lat_lon": [
+     46.55812,
+     14.75643
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.56085,
+     14.7705
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56096,
+     14.836
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.4,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.56087,
+     14.91637
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 12000,
+    "lat_lon": [
+     46.56057,
+     14.81878
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56078,
+     14.83626
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56084,
+     14.88871
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56086,
+     14.91141
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5606,
+     14.83652
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.56045,
+     14.85609
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 5600,
+    "lat_lon": [
+     46.55983,
+     14.80756
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56042,
+     14.83704
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56044,
+     14.85505
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 6.4,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.56032,
+     14.91115
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.56051,
+     14.92394
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55995,
+     14.69692
+    ]
+   },
+   {
+    "clear_radius_m": 117.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 31200,
+    "lat_lon": [
+     46.55869,
+     14.69641
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     46.55975,
+     14.87593
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55965,
+     14.80652
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55957,
+     14.87645
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55939,
+     14.87671
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.55874,
+     14.7152
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.5587,
+     14.77886
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 6000,
+    "lat_lon": [
+     46.55862,
+     14.74155
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55821,
+     14.80757
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55799,
+     14.78174
+    ]
+   },
+   {
+    "clear_radius_m": 146.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 106800,
+    "lat_lon": [
+     46.55637,
+     14.78383
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.0,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.55786,
+     14.80783
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     46.55741,
+     14.76321
+    ]
+   },
+   {
+    "clear_radius_m": 141.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 77200,
+    "lat_lon": [
+     46.55693,
+     14.79609
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55763,
+     14.78017
+    ]
+   },
+   {
+    "clear_radius_m": 200.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 170800,
+    "lat_lon": [
+     46.55641,
+     14.80183
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 4.3,
+    "centre_area_m2": 16800,
+    "lat_lon": [
+     46.55614,
+     14.86576
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.55693,
+     14.70999
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 22000,
+    "lat_lon": [
+     46.55512,
+     14.78749
+    ]
+   },
+   {
+    "clear_radius_m": 126.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 61600,
+    "lat_lon": [
+     46.55592,
+     14.74052
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     46.55658,
+     14.71338
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55666,
+     14.74626
+    ]
+   },
+   {
+    "clear_radius_m": 200.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 306000,
+    "lat_lon": [
+     46.55501,
+     14.73322
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.55672,
+     14.90907
+    ]
+   },
+   {
+    "clear_radius_m": 85.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 16800,
+    "lat_lon": [
+     46.55549,
+     14.70947
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55636,
+     14.776
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55638,
+     14.79009
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.55605,
+     14.71912
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.556,
+     14.77574
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 24400,
+    "lat_lon": [
+     46.55476,
+     14.70504
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5556,
+     14.86706
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.4,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.55497,
+     14.71939
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55542,
+     14.86733
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 5.4,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     46.55443,
+     14.71965
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55491,
+     14.76975
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55504,
+     14.84985
+    ]
+   },
+   {
+    "clear_radius_m": 128.0,
+    "slope_deg": 0.2,
+    "centre_area_m2": 82400,
+    "lat_lon": [
+     46.55288,
+     14.85194
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     46.55415,
+     14.75462
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55419,
+     14.76975
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.5542,
+     14.90568
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.55366,
+     14.69905
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.554,
+     14.76662
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.55382,
+     14.76949
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.55384,
+     14.77497
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.55404,
+     14.79036
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55405,
+     14.79401
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55419,
+     14.90046
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55385,
+     14.78358
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55364,
+     14.76897
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.55367,
+     14.78306
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.55364,
+     14.88455
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55349,
+     14.78175
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     46.55336,
+     14.81228
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55314,
+     14.70583
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 4400,
+    "lat_lon": [
+     46.55313,
+     14.78123
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55346,
+     14.88429
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 16000,
+    "lat_lon": [
+     46.55239,
+     14.69566
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 10400,
+    "lat_lon": [
+     46.55152,
+     14.7061
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55298,
+     14.7147
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55314,
+     14.78906
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55323,
+     14.84437
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 5600,
+    "lat_lon": [
+     46.55274,
+     14.76584
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 5200,
+    "lat_lon": [
+     46.55224,
+     14.78698
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55307,
+     14.85663
+    ]
+   },
+   {
+    "clear_radius_m": 122.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 42000,
+    "lat_lon": [
+     46.55168,
+     14.77759
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.55262,
+     14.79741
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55289,
+     14.8569
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 6.3,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.55275,
+     14.89812
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55271,
+     14.8582
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 16400,
+    "lat_lon": [
+     46.55131,
+     14.77237
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 33600,
+    "lat_lon": [
+     46.55135,
+     14.79559
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 5200,
+    "lat_lon": [
+     46.55235,
+     14.85898
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5524,
+     14.90751
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55202,
+     14.76558
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.55203,
+     14.77445
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55184,
+     14.76532
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 11600,
+    "lat_lon": [
+     46.55067,
+     14.81438
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55193,
+     14.81594
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55199,
+     14.86133
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 26000,
+    "lat_lon": [
+     46.55115,
+     14.70193
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55166,
+     14.76506
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 26800,
+    "lat_lon": [
+     46.55081,
+     14.79116
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55171,
+     14.7922
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55148,
+     14.7648
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55156,
+     14.80785
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55166,
+     14.88247
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55138,
+     14.80811
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 4400,
+    "lat_lon": [
+     46.55107,
+     14.84725
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 4.6,
+    "centre_area_m2": 13600,
+    "lat_lon": [
+     46.55055,
+     14.86238
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5512,
+     14.80837
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55125,
+     14.84177
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55098,
+     14.78829
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     46.55084,
+     14.80864
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 4800,
+    "lat_lon": [
+     46.55023,
+     14.77003
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.5508,
+     14.78803
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 5200,
+    "lat_lon": [
+     46.55048,
+     14.81072
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5504,
+     14.76637
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55018,
+     14.74733
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55022,
+     14.76664
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55035,
+     14.84516
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55004,
+     14.7669
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.55005,
+     14.77081
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.55017,
+     14.84699
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5502,
+     14.86395
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54986,
+     14.76716
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.54992,
+     14.79794
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5496,
+     14.73011
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54974,
+     14.79742
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54991,
+     14.95787
+    ]
+   },
+   {
+    "clear_radius_m": 128.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 128400,
+    "lat_lon": [
+     46.54662,
+     14.76822
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54956,
+     14.79716
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     46.54902,
+     14.79664
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 7200,
+    "lat_lon": [
+     46.54923,
+     14.81856
+    ]
+   },
+   {
+    "clear_radius_m": 82.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 12800,
+    "lat_lon": [
+     46.54917,
+     14.92395
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54954,
+     14.94378
+    ]
+   },
+   {
+    "clear_radius_m": 102.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 33600,
+    "lat_lon": [
+     46.54832,
+     14.81256
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     46.54936,
+     14.94482
+    ]
+   },
+   {
+    "clear_radius_m": 140.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 119600,
+    "lat_lon": [
+     46.54792,
+     14.7896
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     46.54861,
+     14.77343
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54883,
+     14.79482
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54886,
+     14.81047
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5489,
+     14.83421
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54882,
+     14.94535
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 16000,
+    "lat_lon": [
+     46.5477,
+     14.76508
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 5.8,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     46.54852,
+     14.82221
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54863,
+     14.92239
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54864,
+     14.94561
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.5481,
+     14.9383
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.4,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.54786,
+     14.75856
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5481,
+     14.94587
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54751,
+     14.76247
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.54754,
+     14.90361
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 23600,
+    "lat_lon": [
+     46.54701,
+     14.92526
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 25200,
+    "lat_lon": [
+     46.5472,
+     14.93439
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 5200,
+    "lat_lon": [
+     46.54666,
+     14.70482
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.54726,
+     14.73273
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54744,
+     14.82013
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54717,
+     14.77056
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.54681,
+     14.77082
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 10400,
+    "lat_lon": [
+     46.54629,
+     14.78335
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.54703,
+     14.94978
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54658,
+     14.74943
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54671,
+     14.81491
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 4400,
+    "lat_lon": [
+     46.54666,
+     14.94587
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5464,
+     14.7497
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54621,
+     14.7437
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.6,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     46.54624,
+     14.86891
+    ]
+   },
+   {
+    "clear_radius_m": 102.0,
+    "slope_deg": 0.4,
+    "centre_area_m2": 59600,
+    "lat_lon": [
+     46.54554,
+     14.88196
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5463,
+     14.93204
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54576,
+     14.70457
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54612,
+     14.93178
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54578,
+     14.79744
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54589,
+     14.877
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54594,
+     14.93152
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 6000,
+    "lat_lon": [
+     46.54558,
+     14.94039
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54552,
+     14.86944
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 3600,
+    "lat_lon": [
+     46.54553,
+     14.87596
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 12000,
+    "lat_lon": [
+     46.54486,
+     14.94431
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 8400,
+    "lat_lon": [
+     46.54419,
+     14.81544
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54463,
+     14.87544
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54436,
+     14.80762
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.54427,
+     14.87518
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54449,
+     14.92396
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.2,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     46.54449,
+     14.92657
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54431,
+     14.92422
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54392,
+     14.76718
+    ]
+   },
+   {
+    "clear_radius_m": 113.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 33200,
+    "lat_lon": [
+     46.54306,
+     14.78988
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.54382,
+     14.80736
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.54408,
+     14.86866
+    ]
+   },
+   {
+    "clear_radius_m": 80.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 11200,
+    "lat_lon": [
+     46.54285,
+     14.77215
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5439,
+     14.86761
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5436,
+     14.78571
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     46.54329,
+     14.81805
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54355,
+     14.87362
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54322,
+     14.77527
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 16800,
+    "lat_lon": [
+     46.54192,
+     14.86788
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54336,
+     14.86996
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54337,
+     14.87335
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.2,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.54288,
+     14.78545
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.54308,
+     14.79875
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.543,
+     14.86657
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     46.54282,
+     14.87049
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.9,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.54269,
+     14.78362
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5427,
+     14.78728
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54253,
+     14.79301
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54246,
+     14.86997
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54197,
+     14.78232
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54214,
+     14.90336
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.0,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.54163,
+     14.79484
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54145,
+     14.79511
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.6,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.54109,
+     14.79537
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54026,
+     14.83841
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54019,
+     14.95944
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.54001,
+     14.9584
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     46.53983,
+     14.95918
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.53974,
+     14.85067
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     46.53951,
+     14.81833
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.53947,
+     14.9597
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.53881,
+     14.8285
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.53432,
+     14.83399
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 4400,
+    "lat_lon": [
+     46.53393,
+     14.81522
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.53406,
+     14.93988
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.53333,
+     14.92371
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.6,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     46.53267,
+     14.81679
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.53315,
+     14.92137
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 6.7,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.53106,
+     14.82331
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 6000,
+    "lat_lon": [
+     46.52998,
+     14.82357
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.53034,
+     14.82488
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.53016,
+     14.82462
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     46.53026,
+     14.90181
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52957,
+     14.94823
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.0,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.52904,
+     14.79828
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52921,
+     14.95267
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52891,
+     14.82749
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52903,
+     14.95241
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 1.7,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     46.52848,
+     14.93493
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     46.52867,
+     14.95189
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.52832,
+     14.9751
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52819,
+     14.83114
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52829,
+     14.92059
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52801,
+     14.8314
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52761,
+     14.80376
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52776,
+     14.93441
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52687,
+     14.96675
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 4800,
+    "lat_lon": [
+     46.52611,
+     14.89061
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52618,
+     14.8069
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     46.52589,
+     14.85462
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 5600,
+    "lat_lon": [
+     46.5256,
+     14.93155
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.52576,
+     14.90338
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52541,
+     14.92477
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52522,
+     14.90651
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 5.4,
+    "centre_area_m2": 18400,
+    "lat_lon": [
+     46.52389,
+     14.84133
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 9600,
+    "lat_lon": [
+     46.52362,
+     14.93103
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52452,
+     14.93233
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52454,
+     14.97301
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52434,
+     14.93207
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 40800,
+    "lat_lon": [
+     46.52327,
+     14.96415
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5239,
+     14.84706
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 6.3,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     46.52399,
+     14.94485
+    ]
+   },
+   {
+    "clear_radius_m": 100.0,
+    "slope_deg": 4.3,
+    "centre_area_m2": 33200,
+    "lat_lon": [
+     46.52363,
+     14.9571
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52334,
+     14.83324
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.0,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     46.5228,
+     14.83246
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52318,
+     14.84915
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.523,
+     14.84941
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.8,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.52274,
+     14.7983
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52282,
+     14.84967
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52291,
+     14.94876
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52256,
+     14.79648
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52209,
+     14.84524
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52212,
+     14.86193
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     46.52201,
+     14.96884
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52183,
+     14.96232
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.1,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.52184,
+     14.97458
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52112,
+     14.79753
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     46.521,
+     14.83534
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.5213,
+     14.97458
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.521,
+     14.8369
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 3.4,
+    "centre_area_m2": 8000,
+    "lat_lon": [
+     46.5204,
+     14.97119
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.9,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.52058,
+     14.79779
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.52022,
+     14.79779
+    ]
+   },
+   {
+    "clear_radius_m": 89.0,
+    "slope_deg": 5.7,
+    "centre_area_m2": 16000,
+    "lat_lon": [
+     46.51949,
+     14.96597
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.2,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.51956,
+     14.83404
+    ]
+   },
+   {
+    "clear_radius_m": 141.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 83200,
+    "lat_lon": [
+     46.5168,
+     14.9751
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.51913,
+     14.95476
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 6.1,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.5167,
+     14.85308
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.5,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.51615,
+     14.84552
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.51616,
+     14.84761
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     46.51563,
+     14.85569
+    ]
+   },
+   {
+    "clear_radius_m": 63.0,
+    "slope_deg": 3.7,
+    "centre_area_m2": 3600,
+    "lat_lon": [
+     46.51551,
+     14.92061
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.51427,
+     14.96493
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     46.51327,
+     14.84084
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.51327,
+     14.84266
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 6.3,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     46.51302,
+     14.97119
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.51191,
+     14.92427
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.51173,
+     14.924
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 5.3,
+    "centre_area_m2": 1600,
+    "lat_lon": [
+     46.51122,
+     14.9751
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.511,
+     14.6972
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 5.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.51104,
+     14.97458
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.50841,
+     14.74387
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.9,
+    "centre_area_m2": 2800,
+    "lat_lon": [
+     46.50151,
+     14.71576
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 4.4,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     46.50079,
+     14.71602
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.50004,
+     14.92845
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 3.8,
+    "centre_area_m2": 2000,
+    "lat_lon": [
+     46.48523,
+     14.87088
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.4845,
+     14.75493
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.48432,
+     14.75519
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 3.0,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.48414,
+     14.75571
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 4.8,
+    "centre_area_m2": 1200,
+    "lat_lon": [
+     46.48396,
+     14.7565
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.9,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.48285,
+     14.74373
+    ]
+   },
+   {
+    "clear_radius_m": 57.0,
+    "slope_deg": 1.5,
+    "centre_area_m2": 4000,
+    "lat_lon": [
+     46.48249,
+     14.744
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.7,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.47747,
+     14.85345
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.4,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.46899,
+     14.84409
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 0.5,
+    "centre_area_m2": 2400,
+    "lat_lon": [
+     46.46827,
+     14.84253
+    ]
+   },
+   {
+    "clear_radius_m": 60.0,
+    "slope_deg": 2.0,
+    "centre_area_m2": 3200,
+    "lat_lon": [
+     46.46809,
+     14.83914
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 0.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.46791,
+     14.83836
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.7,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.46699,
+     14.82977
+    ]
+   },
+   {
+    "clear_radius_m": 72.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 7600,
+    "lat_lon": [
+     46.46682,
+     14.83185
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.1,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.46097,
+     14.70034
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.6,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.46007,
+     14.69982
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.8,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.45989,
+     14.69956
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 3.5,
+    "centre_area_m2": 800,
+    "lat_lon": [
+     46.46027,
+     14.94309
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.1,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.46003,
+     14.87511
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 2.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.45084,
+     14.86263
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 4.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.45066,
+     14.86237
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.3,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.45048,
+     14.86211
+    ]
+   },
+   {
+    "clear_radius_m": 45.0,
+    "slope_deg": 1.0,
+    "centre_area_m2": 400,
+    "lat_lon": [
+     46.44562,
+     14.85978
+    ]
+   }
+  ],
+  "per_settlement": [
+   {
+    "name": "Lokowitzen",
+    "status": "likely_cut_off",
+    "priority": 1,
+    "helipad": null,
+    "zone": {
+     "km": 0.31,
+     "lat_lon": [
+      46.54852,
+      14.82221
+     ],
+     "clear_radius_m": 57.0,
+     "slope_deg": 5.8
+    }
+   }
+  ],
+  "criteria": {
+   "max_slope_deg": 7,
+   "clear_diameter_m": 60,
+   "flood_clearance_m": 50,
+   "building_clearance_m": 15,
+   "max_distance_km": 5,
+   "power_line_clearance_m": 30,
+   "power_lines_mapped": 867,
+   "slope_source": "US Army FM 3-21.38 Pathfinder Operations: ground slope up to 7 degrees acceptable for landing"
+  },
+  "not_checked": "trees, buildings or power lines missing from OpenStreetMap, soft or loose ground, wind, the approach path, and flood or debris our map missed (it misses much of the debris in mountain valleys)"
+ },
+ "reports": {
+  "en": "report\\situation_report_en.pdf",
+  "ne": "report\\situation_report_ne.pdf",
+  "map": "report\\map.png"
+ },
+ "timings": {
+  "Searching the Sentinel-1 catalogue": 3.06,
+  "Downloading satellite, elevation and map data": 9.24,
+  "Terrain analysis (slope, drainage, HAND)": 27.39,
+  "Detecting flood water and debris": 18.73,
+  "Segmentation model (Siamese U-Net)": 20.77,
+  "Adding Sentinel-2 optical evidence": 0.4,
+  "Assessing buildings, roads and bridges": 17.65,
+  "Finding cut-off settlements": 29.01,
+  "Writing maps and results": 5.77,
+  "Generating situation reports": 13.24,
+  "total": 151.7
+ }
+}

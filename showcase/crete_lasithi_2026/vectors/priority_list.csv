@@ -1,0 +1,23 @@
+﻿name,name_en,place,status,target_before,target_after,km_before,km_after,extra_km,min_before,min_after,extra_min,buildings,snap_m,priority,lon,lat,status_label
+Καμινάκι,Kaminaki,village,likely_cut_off,hospital #3,,6.0,,,10,,,213,4,1,25.46627,35.15699,Likely cut off (only low-confidence detections block the last route)
+Άγιος Κωνσταντίνος,Agios Konstantinos,village,likely_cut_off,hospital #3,,4.0,,,5,,,112,12,2,25.50232,35.1752,Likely cut off (only low-confidence detections block the last route)
+Πλάτη,Plati,village,likely_cut_off,hospital #3,,6.4,,,10,,,106,25,3,25.43832,35.1693,Likely cut off (only low-confidence detections block the last route)
+Κάτω Μετόχι,Kato Metochi,village,likely_cut_off,hospital #3,,5.6,,,7,,,74,13,4,25.43145,35.18546,Likely cut off (only low-confidence detections block the last route)
+Άγιος Χαράλαμπος,Agios Charalambos,village,detour,hospital #3,hospital #3,5.9,8.8,2.9,9,18.0,9.0,62,10,5,25.43872,35.17657,Reachable only by a long detour
+Τζερμιάδο,Tzermiado,village,reachable,hospital #3,hospital #3,0.8,0.8,0.0,1,1.0,0.0,283,4,0,25.48901,35.19863,Road access unchanged
+Άγιος Γεώργιος,Agios Georgios,village,reachable,hospital #3,hospital #3,4.5,5.1,0.7,7,8.0,1.0,266,3,0,25.48389,35.16656,Road access unchanged
+Ψυχρό,Psichro,village,reachable,hospital #3,hospital #3,6.4,7.6,1.2,11,14.0,3.0,123,17,0,25.44971,35.16541,Road access unchanged
+Αβρακόντες,Avrakondes,village,reachable,hospital #3,hospital #3,5.3,6.1,0.7,8,10.0,1.0,90,14,0,25.47961,35.1608,Road access unchanged
+Πινακιανό,Pinakiano,hamlet,reachable,hospital #3,hospital #3,2.1,2.1,0.0,3,3.0,0.0,84,3,0,25.46488,35.19712,Road access unchanged
+Κουδουμαλιά,Koudoumalia,hamlet,reachable,hospital #3,hospital #3,5.3,5.7,0.5,8,9.0,1.0,83,17,0,25.48409,35.1613,Road access unchanged
+Μέσα Λασίθι,Mesa Lasithi,village,reachable,hospital #3,hospital #3,4.2,4.3,0.1,5,5.0,0.0,81,4,0,25.51296,35.18185,Road access unchanged
+Μαγουλάς,Magoulas,hamlet,reachable,hospital #3,hospital #3,6.2,7.9,1.7,11,13.0,2.0,80,9,0,25.4566,35.1608,Road access unchanged
+Μαρμακέτο,Marmaketo,village,reachable,hospital #3,hospital #3,2.3,2.3,0.0,3,3.0,0.0,72,6,0,25.49752,35.18791,Road access unchanged
+Mέσα Πoτάμoι,Mesa Potami,village,reachable,hospital #3,hospital #3,11.0,11.3,0.3,13,13.0,0.0,62,12,0,25.52136,35.21327,Road access unchanged
+Λαγού,Lagou,village,reachable,hospital #3,hospital #3,1.4,1.4,0.0,2,2.0,0.0,61,1,0,25.47052,35.1998,Road access unchanged
+Φαρσάρον,Farsaron,hamlet,reachable,hospital #3,hospital #3,2.1,2.1,0.0,3,3.0,0.0,49,17,0,25.49608,35.19086,Road access unchanged
+Ρουσσακιανά,Roussakiana,hamlet,reachable,hospital #3,hospital #3,12.1,12.4,0.3,14,14.0,0.0,40,10,0,25.53031,35.21056,Road access unchanged
+Μέσα Λασιθάκι,,hamlet,reachable,hospital #3,hospital #3,5.0,5.1,0.1,6,6.0,0.0,39,5,0,25.52002,35.17793,Road access unchanged
+Νικηφόρηδων,Nikiforidon,hamlet,reachable,hospital #3,hospital #3,4.5,4.8,0.3,6,6.0,0.0,20,4,0,25.51628,35.18363,Road access unchanged
+Επάνω Κερά,Epano Kera,village,reachable,hospital #3,hospital #3,6.4,6.4,0.0,8,8.0,0.0,19,6,0,25.4599,35.22015,Road access unchanged
+Σμαλιανόν,Smalianon,hamlet,reachable,hospital #3,hospital #3,5.0,5.3,0.3,6,6.0,0.0,9,29,0,25.51815,35.18233,Road access unchanged

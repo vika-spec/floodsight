@@ -1,0 +1,1681 @@
+[
+ {
+  "event": "205",
+  "area": "01",
+  "model_role": "not used",
+  "tiles": 40,
+  "flood_pct": 1.7,
+  "tiles_bbox": [
+   79.9875,
+   6.3828,
+   80.1283,
+   6.5028
+  ],
+  "tiles_bbox_km2": 207,
+  "suggested_bbox": [
+   79.9875,
+   6.4385,
+   80.0719,
+   6.5028
+  ],
+  "suggested_km2": 66,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2017-01-24"
+   ],
+   "sources.SL2.source_date": [
+    "2017-01-12"
+   ],
+   "sources.MS1.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.MS1_IVH_205_01_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MS1_IVH_205_01_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.SL1_IVH_205_01_20170124.name": [
+    "2017-01-24"
+   ],
+   "datasets.SL1_IVH_205_01_20170124.source_date": [
+    "2017-01-24"
+   ],
+   "datasets.SL2_IVH_205_01_20170112.name": [
+    "2017-01-12"
+   ],
+   "datasets.SL2_IVH_205_01_20170112.source_date": [
+    "2017-01-12"
+   ],
+   "datasets.MS1_IVV_205_01_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MS1_IVV_205_01_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.SL1_IVV_205_01_20170124.name": [
+    "2017-01-24"
+   ],
+   "datasets.SL1_IVV_205_01_20170124.source_date": [
+    "2017-01-24"
+   ],
+   "datasets.SL2_IVV_205_01_20170112.name": [
+    "2017-01-12"
+   ],
+   "datasets.SL2_IVV_205_01_20170112.source_date": [
+    "2017-01-12"
+   ],
+   "datasets.MK0_MNA_205_01_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_MNA_205_01_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_MLU_205_01_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_MLU_205_01_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_DEM_205_01_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_DEM_205_01_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "flood_date": [
+    "2017-05-24"
+   ],
+   "file:MK0_DEM": [
+    "2017-05-30"
+   ],
+   "file:MK0_MLU": [
+    "2017-05-30"
+   ],
+   "file:MK0_MNA": [
+    "2017-05-30"
+   ],
+   "file:MS1_IVH": [
+    "2017-05-30"
+   ],
+   "file:MS1_IVV": [
+    "2017-05-30"
+   ],
+   "file:SL1_IVH": [
+    "2017-01-24"
+   ],
+   "file:SL1_IVV": [
+    "2017-01-24"
+   ],
+   "file:SL2_IVH": [
+    "2017-01-12"
+   ],
+   "file:SL2_IVV": [
+    "2017-01-12"
+   ]
+  },
+  "post_dates": [
+   "2017-05-24",
+   "2017-05-30"
+  ]
+ },
+ {
+  "event": "205",
+  "area": "03",
+  "model_role": "not used",
+  "tiles": 30,
+  "flood_pct": 0.5,
+  "tiles_bbox": [
+   80.3141,
+   6.7632,
+   80.4147,
+   6.883
+  ],
+  "tiles_bbox_km2": 147,
+  "suggested_bbox": [
+   80.3141,
+   6.7632,
+   80.3784,
+   6.8274
+  ],
+  "suggested_km2": 51,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2017-01-24"
+   ],
+   "sources.SL2.source_date": [
+    "2017-01-12"
+   ],
+   "sources.MS1.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.MS1_IVH_205_03_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MS1_IVH_205_03_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.SL1_IVH_205_03_20170124.name": [
+    "2017-01-24"
+   ],
+   "datasets.SL1_IVH_205_03_20170124.source_date": [
+    "2017-01-24"
+   ],
+   "datasets.SL2_IVH_205_03_20170112.name": [
+    "2017-01-12"
+   ],
+   "datasets.SL2_IVH_205_03_20170112.source_date": [
+    "2017-01-12"
+   ],
+   "datasets.MS1_IVV_205_03_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MS1_IVV_205_03_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.SL1_IVV_205_03_20170124.name": [
+    "2017-01-24"
+   ],
+   "datasets.SL1_IVV_205_03_20170124.source_date": [
+    "2017-01-24"
+   ],
+   "datasets.SL2_IVV_205_03_20170112.name": [
+    "2017-01-12"
+   ],
+   "datasets.SL2_IVV_205_03_20170112.source_date": [
+    "2017-01-12"
+   ],
+   "datasets.MK0_MNA_205_03_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_MNA_205_03_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_MLU_205_03_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_MLU_205_03_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_DEM_205_03_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_DEM_205_03_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "flood_date": [
+    "2017-05-24"
+   ],
+   "file:MK0_DEM": [
+    "2017-05-30"
+   ],
+   "file:MK0_MLU": [
+    "2017-05-30"
+   ],
+   "file:MK0_MNA": [
+    "2017-05-30"
+   ],
+   "file:MS1_IVH": [
+    "2017-05-30"
+   ],
+   "file:MS1_IVV": [
+    "2017-05-30"
+   ],
+   "file:SL1_IVH": [
+    "2017-01-24"
+   ],
+   "file:SL1_IVV": [
+    "2017-01-24"
+   ],
+   "file:SL2_IVH": [
+    "2017-01-12"
+   ],
+   "file:SL2_IVV": [
+    "2017-01-12"
+   ]
+  },
+  "post_dates": [
+   "2017-05-24",
+   "2017-05-30"
+  ]
+ },
+ {
+  "event": "205",
+  "area": "04",
+  "model_role": "not used",
+  "tiles": 30,
+  "flood_pct": 3.3,
+  "tiles_bbox": [
+   80.2168,
+   6.6549,
+   80.3174,
+   6.7748
+  ],
+  "tiles_bbox_km2": 147,
+  "suggested_bbox": [
+   80.233,
+   6.6906,
+   80.3174,
+   6.7748
+  ],
+  "suggested_km2": 87,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2017-01-24"
+   ],
+   "sources.SL2.source_date": [
+    "2017-01-12"
+   ],
+   "sources.MS1.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.MS1_IVH_205_04_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MS1_IVH_205_04_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.SL1_IVH_205_04_20170124.name": [
+    "2017-01-24"
+   ],
+   "datasets.SL1_IVH_205_04_20170124.source_date": [
+    "2017-01-24"
+   ],
+   "datasets.SL2_IVH_205_04_20170112.name": [
+    "2017-01-12"
+   ],
+   "datasets.SL2_IVH_205_04_20170112.source_date": [
+    "2017-01-12"
+   ],
+   "datasets.MS1_IVV_205_04_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MS1_IVV_205_04_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.SL1_IVV_205_04_20170124.name": [
+    "2017-01-24"
+   ],
+   "datasets.SL1_IVV_205_04_20170124.source_date": [
+    "2017-01-24"
+   ],
+   "datasets.SL2_IVV_205_04_20170112.name": [
+    "2017-01-12"
+   ],
+   "datasets.SL2_IVV_205_04_20170112.source_date": [
+    "2017-01-12"
+   ],
+   "datasets.MK0_MNA_205_04_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_MNA_205_04_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_MLU_205_04_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_MLU_205_04_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_DEM_205_04_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_DEM_205_04_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "flood_date": [
+    "2017-05-24"
+   ],
+   "file:MK0_DEM": [
+    "2017-05-30"
+   ],
+   "file:MK0_MLU": [
+    "2017-05-30"
+   ],
+   "file:MK0_MNA": [
+    "2017-05-30"
+   ],
+   "file:MS1_IVH": [
+    "2017-05-30"
+   ],
+   "file:MS1_IVV": [
+    "2017-05-30"
+   ],
+   "file:SL1_IVH": [
+    "2017-01-24"
+   ],
+   "file:SL1_IVV": [
+    "2017-01-24"
+   ],
+   "file:SL2_IVH": [
+    "2017-01-12"
+   ],
+   "file:SL2_IVV": [
+    "2017-01-12"
+   ]
+  },
+  "post_dates": [
+   "2017-05-24",
+   "2017-05-30"
+  ]
+ },
+ {
+  "event": "205",
+  "area": "05",
+  "model_role": "not used",
+  "tiles": 30,
+  "flood_pct": 4.1,
+  "tiles_bbox": [
+   80.3142,
+   6.6549,
+   80.4148,
+   6.7748
+  ],
+  "tiles_bbox_km2": 147,
+  "suggested_bbox": [
+   80.3142,
+   6.6549,
+   80.3986,
+   6.7592
+  ],
+  "suggested_km2": 108,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2017-01-24"
+   ],
+   "sources.SL2.source_date": [
+    "2017-01-12"
+   ],
+   "sources.MS1.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.MS1_IVH_205_05_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MS1_IVH_205_05_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.SL1_IVH_205_05_20170124.name": [
+    "2017-01-24"
+   ],
+   "datasets.SL1_IVH_205_05_20170124.source_date": [
+    "2017-01-24"
+   ],
+   "datasets.SL2_IVH_205_05_20170112.name": [
+    "2017-01-12"
+   ],
+   "datasets.SL2_IVH_205_05_20170112.source_date": [
+    "2017-01-12"
+   ],
+   "datasets.MS1_IVV_205_05_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MS1_IVV_205_05_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.SL1_IVV_205_05_20170124.name": [
+    "2017-01-24"
+   ],
+   "datasets.SL1_IVV_205_05_20170124.source_date": [
+    "2017-01-24"
+   ],
+   "datasets.SL2_IVV_205_05_20170112.name": [
+    "2017-01-12"
+   ],
+   "datasets.SL2_IVV_205_05_20170112.source_date": [
+    "2017-01-12"
+   ],
+   "datasets.MK0_MNA_205_05_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_MNA_205_05_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_MLU_205_05_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_MLU_205_05_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_DEM_205_05_20170530.name": [
+    "2017-05-30"
+   ],
+   "datasets.MK0_DEM_205_05_20170530.source_date": [
+    "2017-05-30"
+   ],
+   "flood_date": [
+    "2017-05-24"
+   ],
+   "file:MK0_DEM": [
+    "2017-05-30"
+   ],
+   "file:MK0_MLU": [
+    "2017-05-30"
+   ],
+   "file:MK0_MNA": [
+    "2017-05-30"
+   ],
+   "file:MS1_IVH": [
+    "2017-05-30"
+   ],
+   "file:MS1_IVV": [
+    "2017-05-30"
+   ],
+   "file:SL1_IVH": [
+    "2017-01-24"
+   ],
+   "file:SL1_IVV": [
+    "2017-01-24"
+   ],
+   "file:SL2_IVH": [
+    "2017-01-12"
+   ],
+   "file:SL2_IVV": [
+    "2017-01-12"
+   ]
+  },
+  "post_dates": [
+   "2017-05-24",
+   "2017-05-30"
+  ]
+ },
+ {
+  "event": "411",
+  "area": "01",
+  "model_role": "train",
+  "tiles": 149,
+  "flood_pct": 1.4,
+  "tiles_bbox": [
+   6.5057,
+   43.3704,
+   6.7673,
+   43.5456
+  ],
+  "tiles_bbox_km2": 410,
+  "suggested_bbox": [
+   6.6227,
+   43.3819,
+   6.7673,
+   43.4904
+  ],
+  "suggested_km2": 140,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2019-10-20"
+   ],
+   "sources.SL2.source_date": [
+    "2019-09-02"
+   ],
+   "sources.MS1.source_date": [
+    "2019-11-25"
+   ],
+   "datasets.MS1_IVH_411_01_20191125.name": [
+    "2019-11-25"
+   ],
+   "datasets.MS1_IVH_411_01_20191125.source_date": [
+    "2019-11-25"
+   ],
+   "datasets.SL1_IVH_411_01_20191020.name": [
+    "2019-10-20"
+   ],
+   "datasets.SL1_IVH_411_01_20191020.source_date": [
+    "2019-10-20"
+   ],
+   "datasets.SL2_IVH_411_01_20190902.name": [
+    "2019-09-02"
+   ],
+   "datasets.SL2_IVH_411_01_20190902.source_date": [
+    "2019-09-02"
+   ],
+   "datasets.MS1_IVV_411_01_20191125.name": [
+    "2019-11-25"
+   ],
+   "datasets.MS1_IVV_411_01_20191125.source_date": [
+    "2019-11-25"
+   ],
+   "datasets.SL1_IVV_411_01_20191020.name": [
+    "2019-10-20"
+   ],
+   "datasets.SL1_IVV_411_01_20191020.source_date": [
+    "2019-10-20"
+   ],
+   "datasets.SL2_IVV_411_01_20190902.name": [
+    "2019-09-02"
+   ],
+   "datasets.SL2_IVV_411_01_20190902.source_date": [
+    "2019-09-02"
+   ],
+   "datasets.MK0_MNA_411_01_20191125.name": [
+    "2019-11-25"
+   ],
+   "datasets.MK0_MNA_411_01_20191125.source_date": [
+    "2019-11-25"
+   ],
+   "datasets.MK0_MLU_411_01_20191125.name": [
+    "2019-11-25"
+   ],
+   "datasets.MK0_MLU_411_01_20191125.source_date": [
+    "2019-11-25"
+   ],
+   "datasets.MK0_DEM_411_01_20191125.name": [
+    "2019-11-25"
+   ],
+   "datasets.MK0_DEM_411_01_20191125.source_date": [
+    "2019-11-25"
+   ],
+   "flood_date": [
+    "2019-11-23"
+   ],
+   "file:MK0_DEM": [
+    "2019-11-25"
+   ],
+   "file:MK0_MLU": [
+    "2019-11-25"
+   ],
+   "file:MK0_MNA": [
+    "2019-11-25"
+   ],
+   "file:MS1_IVH": [
+    "2019-11-25"
+   ],
+   "file:MS1_IVV": [
+    "2019-11-25"
+   ],
+   "file:SL1_IVH": [
+    "2019-10-20"
+   ],
+   "file:SL1_IVV": [
+    "2019-10-20"
+   ],
+   "file:SL2_IVH": [
+    "2019-09-02"
+   ],
+   "file:SL2_IVV": [
+    "2019-09-02"
+   ]
+  },
+  "post_dates": [
+   "2019-11-23",
+   "2019-11-25"
+  ]
+ },
+ {
+  "event": "421",
+  "area": "05",
+  "model_role": "not used",
+  "tiles": 137,
+  "flood_pct": 2.2,
+  "tiles_bbox": [
+   2.7976,
+   42.636,
+   3.0189,
+   42.8282
+  ],
+  "tiles_bbox_km2": 385,
+  "suggested_bbox": [
+   2.8852,
+   42.641,
+   3.0189,
+   42.7495
+  ],
+  "suggested_km2": 131,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2019-06-20"
+   ],
+   "sources.SL2.source_date": [
+    "2019-06-03"
+   ],
+   "sources.MS1.source_date": [
+    "2020-01-23"
+   ],
+   "datasets.MS1_IVH_421_05_20200123.name": [
+    "2020-01-23"
+   ],
+   "datasets.MS1_IVH_421_05_20200123.source_date": [
+    "2020-01-23"
+   ],
+   "datasets.SL1_IVH_421_05_20190620.name": [
+    "2019-06-20"
+   ],
+   "datasets.SL1_IVH_421_05_20190620.source_date": [
+    "2019-06-20"
+   ],
+   "datasets.SL2_IVH_421_05_20190603.name": [
+    "2019-06-03"
+   ],
+   "datasets.SL2_IVH_421_05_20190603.source_date": [
+    "2019-06-03"
+   ],
+   "datasets.MS1_IVV_421_05_20200123.name": [
+    "2020-01-23"
+   ],
+   "datasets.MS1_IVV_421_05_20200123.source_date": [
+    "2020-01-23"
+   ],
+   "datasets.SL1_IVV_421_05_20190620.name": [
+    "2019-06-20"
+   ],
+   "datasets.SL1_IVV_421_05_20190620.source_date": [
+    "2019-06-20"
+   ],
+   "datasets.SL2_IVV_421_05_20190603.name": [
+    "2019-06-03"
+   ],
+   "datasets.SL2_IVV_421_05_20190603.source_date": [
+    "2019-06-03"
+   ],
+   "datasets.MK0_MNA_421_05_20200123.name": [
+    "2020-01-23"
+   ],
+   "datasets.MK0_MNA_421_05_20200123.source_date": [
+    "2020-01-23"
+   ],
+   "datasets.MK0_MLU_421_05_20200123.name": [
+    "2020-01-23"
+   ],
+   "datasets.MK0_MLU_421_05_20200123.source_date": [
+    "2020-01-23"
+   ],
+   "datasets.MK0_DEM_421_05_20200123.name": [
+    "2020-01-23"
+   ],
+   "datasets.MK0_DEM_421_05_20200123.source_date": [
+    "2020-01-23"
+   ],
+   "flood_date": [
+    "2020-01-22"
+   ],
+   "file:MK0_DEM": [
+    "2020-01-23"
+   ],
+   "file:MK0_MLU": [
+    "2020-01-23"
+   ],
+   "file:MK0_MNA": [
+    "2020-01-23"
+   ],
+   "file:MS1_IVH": [
+    "2020-01-23"
+   ],
+   "file:MS1_IVV": [
+    "2020-01-23"
+   ],
+   "file:SL1_IVH": [
+    "2019-06-20"
+   ],
+   "file:SL1_IVV": [
+    "2019-06-20"
+   ],
+   "file:SL2_IVH": [
+    "2019-06-03"
+   ],
+   "file:SL2_IVV": [
+    "2019-06-03"
+   ]
+  },
+  "post_dates": [
+   "2020-01-22",
+   "2020-01-23"
+  ]
+ },
+ {
+  "event": "427",
+  "area": "03",
+  "model_role": "test",
+  "tiles": 2645,
+  "flood_pct": 0.4,
+  "tiles_bbox": [
+   13.0415,
+   57.9179,
+   14.1482,
+   58.8045
+  ],
+  "tiles_bbox_km2": 6335,
+  "suggested_bbox": [
+   13.8142,
+   58.2622,
+   14.0195,
+   58.3707
+  ],
+  "suggested_km2": 144,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2019-07-09"
+   ],
+   "sources.SL2.source_date": [
+    "2019-06-27"
+   ],
+   "sources.MS1.source_date": [
+    "2020-02-22"
+   ],
+   "datasets.MS1_IVH_427_03_20200222.name": [
+    "2020-02-22"
+   ],
+   "datasets.MS1_IVH_427_03_20200222.source_date": [
+    "2020-02-22"
+   ],
+   "datasets.SL1_IVH_427_03_20190709.name": [
+    "2019-07-09"
+   ],
+   "datasets.SL1_IVH_427_03_20190709.source_date": [
+    "2019-07-09"
+   ],
+   "datasets.SL2_IVH_427_03_20190627.name": [
+    "2019-06-27"
+   ],
+   "datasets.SL2_IVH_427_03_20190627.source_date": [
+    "2019-06-27"
+   ],
+   "datasets.MS1_IVV_427_03_20200222.name": [
+    "2020-02-22"
+   ],
+   "datasets.MS1_IVV_427_03_20200222.source_date": [
+    "2020-02-22"
+   ],
+   "datasets.SL1_IVV_427_03_20190709.name": [
+    "2019-07-09"
+   ],
+   "datasets.SL1_IVV_427_03_20190709.source_date": [
+    "2019-07-09"
+   ],
+   "datasets.SL2_IVV_427_03_20190627.name": [
+    "2019-06-27"
+   ],
+   "datasets.SL2_IVV_427_03_20190627.source_date": [
+    "2019-06-27"
+   ],
+   "datasets.MK0_MNA_427_03_20200222.name": [
+    "2020-02-22"
+   ],
+   "datasets.MK0_MNA_427_03_20200222.source_date": [
+    "2020-02-22"
+   ],
+   "datasets.MK0_MLU_427_03_20200222.name": [
+    "2020-02-22"
+   ],
+   "datasets.MK0_MLU_427_03_20200222.source_date": [
+    "2020-02-22"
+   ],
+   "datasets.MK0_DEM_427_03_20200222.name": [
+    "2020-02-22"
+   ],
+   "datasets.MK0_DEM_427_03_20200222.source_date": [
+    "2020-02-22"
+   ],
+   "flood_date": [
+    "2020-02-18"
+   ],
+   "file:MK0_DEM": [
+    "2020-02-22"
+   ],
+   "file:MK0_MLU": [
+    "2020-02-22"
+   ],
+   "file:MK0_MNA": [
+    "2020-02-22"
+   ],
+   "file:MS1_IVH": [
+    "2020-02-22"
+   ],
+   "file:MS1_IVV": [
+    "2020-02-22"
+   ],
+   "file:SL1_IVH": [
+    "2019-07-09"
+   ],
+   "file:SL1_IVV": [
+    "2019-07-09"
+   ],
+   "file:SL2_IVH": [
+    "2019-06-27"
+   ],
+   "file:SL2_IVV": [
+    "2019-06-27"
+   ]
+  },
+  "post_dates": [
+   "2020-02-18",
+   "2020-02-22"
+  ]
+ },
+ {
+  "event": "498",
+  "area": "01",
+  "model_role": "not used",
+  "tiles": 233,
+  "flood_pct": 0.6,
+  "tiles_bbox": [
+   1.6114,
+   44.8798,
+   2.2351,
+   45.1784
+  ],
+  "tiles_bbox_km2": 1621,
+  "suggested_bbox": [
+   1.6114,
+   44.9039,
+   1.7378,
+   45.0124
+  ],
+  "suggested_km2": 120,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2021-01-27"
+   ],
+   "sources.SL2.source_date": [
+    "2021-01-15"
+   ],
+   "sources.MS1.source_date": [
+    "2021-02-02"
+   ],
+   "datasets.MS1_IVH_498_01_20210202.name": [
+    "2021-02-02"
+   ],
+   "datasets.MS1_IVH_498_01_20210202.source_date": [
+    "2021-02-02"
+   ],
+   "datasets.SL1_IVH_498_01_20210127.name": [
+    "2021-01-27"
+   ],
+   "datasets.SL1_IVH_498_01_20210127.source_date": [
+    "2021-01-27"
+   ],
+   "datasets.SL2_IVH_498_01_20210115.name": [
+    "2021-01-15"
+   ],
+   "datasets.SL2_IVH_498_01_20210115.source_date": [
+    "2021-01-15"
+   ],
+   "datasets.MS1_IVV_498_01_20210202.name": [
+    "2021-02-02"
+   ],
+   "datasets.MS1_IVV_498_01_20210202.source_date": [
+    "2021-02-02"
+   ],
+   "datasets.SL1_IVV_498_01_20210127.name": [
+    "2021-01-27"
+   ],
+   "datasets.SL1_IVV_498_01_20210127.source_date": [
+    "2021-01-27"
+   ],
+   "datasets.SL2_IVV_498_01_20210115.name": [
+    "2021-01-15"
+   ],
+   "datasets.SL2_IVV_498_01_20210115.source_date": [
+    "2021-01-15"
+   ],
+   "datasets.MK0_MNA_498_01_20210202.name": [
+    "2021-02-02"
+   ],
+   "datasets.MK0_MNA_498_01_20210202.source_date": [
+    "2021-02-02"
+   ],
+   "datasets.MK0_MLU_498_01_20210202.name": [
+    "2021-02-02"
+   ],
+   "datasets.MK0_MLU_498_01_20210202.source_date": [
+    "2021-02-02"
+   ],
+   "datasets.MK0_DEM_498_01_20210202.name": [
+    "2021-02-02"
+   ],
+   "datasets.MK0_DEM_498_01_20210202.source_date": [
+    "2021-02-02"
+   ],
+   "flood_date": [
+    "2021-02-02"
+   ],
+   "file:MK0_DEM": [
+    "2021-02-02"
+   ],
+   "file:MK0_MLU": [
+    "2021-02-02"
+   ],
+   "file:MK0_MNA": [
+    "2021-02-02"
+   ],
+   "file:MS1_IVH": [
+    "2021-02-02"
+   ],
+   "file:MS1_IVV": [
+    "2021-02-02"
+   ],
+   "file:SL1_IVH": [
+    "2021-01-27"
+   ],
+   "file:SL1_IVV": [
+    "2021-01-27"
+   ],
+   "file:SL2_IVH": [
+    "2021-01-15"
+   ],
+   "file:SL2_IVV": [
+    "2021-01-15"
+   ]
+  },
+  "post_dates": [
+   "2021-02-02"
+  ]
+ },
+ {
+  "event": "562",
+  "area": "13",
+  "model_role": "train",
+  "tiles": 77,
+  "flood_pct": 25.1,
+  "tiles_bbox": [
+   139.4009,
+   -17.7674,
+   139.6222,
+   -17.6332
+  ],
+  "tiles_bbox_km2": 348,
+  "suggested_bbox": [
+   139.5153,
+   -17.745,
+   139.6222,
+   -17.6365
+  ],
+  "suggested_km2": 136,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2021-08-19"
+   ],
+   "sources.SL2.source_date": [
+    "2021-08-07"
+   ],
+   "sources.MS1.source_date": [
+    "2022-02-03"
+   ],
+   "datasets.MS1_IVH_562_13_20220203.name": [
+    "2022-02-03"
+   ],
+   "datasets.MS1_IVH_562_13_20220203.source_date": [
+    "2022-02-03"
+   ],
+   "datasets.SL1_IVH_562_13_20210819.name": [
+    "2021-08-19"
+   ],
+   "datasets.SL1_IVH_562_13_20210819.source_date": [
+    "2021-08-19"
+   ],
+   "datasets.SL2_IVH_562_13_20210807.name": [
+    "2021-08-07"
+   ],
+   "datasets.SL2_IVH_562_13_20210807.source_date": [
+    "2021-08-07"
+   ],
+   "datasets.MS1_IVV_562_13_20220203.name": [
+    "2022-02-03"
+   ],
+   "datasets.MS1_IVV_562_13_20220203.source_date": [
+    "2022-02-03"
+   ],
+   "datasets.SL1_IVV_562_13_20210819.name": [
+    "2021-08-19"
+   ],
+   "datasets.SL1_IVV_562_13_20210819.source_date": [
+    "2021-08-19"
+   ],
+   "datasets.SL2_IVV_562_13_20210807.name": [
+    "2021-08-07"
+   ],
+   "datasets.SL2_IVV_562_13_20210807.source_date": [
+    "2021-08-07"
+   ],
+   "datasets.MK0_MNA_562_13_20220203.name": [
+    "2022-02-03"
+   ],
+   "datasets.MK0_MNA_562_13_20220203.source_date": [
+    "2022-02-03"
+   ],
+   "datasets.MK0_MLU_562_13_20220203.name": [
+    "2022-02-03"
+   ],
+   "datasets.MK0_MLU_562_13_20220203.source_date": [
+    "2022-02-03"
+   ],
+   "datasets.MK0_DEM_562_13_20220203.name": [
+    "2022-02-03"
+   ],
+   "datasets.MK0_DEM_562_13_20220203.source_date": [
+    "2022-02-03"
+   ],
+   "flood_date": [
+    "2022-01-29"
+   ],
+   "file:MK0_DEM": [
+    "2022-02-03"
+   ],
+   "file:MK0_MLU": [
+    "2022-02-03"
+   ],
+   "file:MK0_MNA": [
+    "2022-02-03"
+   ],
+   "file:MS1_IVH": [
+    "2022-02-03"
+   ],
+   "file:MS1_IVV": [
+    "2022-02-03"
+   ],
+   "file:SL1_IVH": [
+    "2021-08-19"
+   ],
+   "file:SL1_IVV": [
+    "2021-08-19"
+   ],
+   "file:SL2_IVH": [
+    "2021-08-07"
+   ],
+   "file:SL2_IVV": [
+    "2021-08-07"
+   ]
+  },
+  "post_dates": [
+   "2022-01-29",
+   "2022-02-03"
+  ]
+ },
+ {
+  "event": "1111004",
+  "area": "01",
+  "model_role": "train",
+  "tiles": 5001,
+  "flood_pct": 6.4,
+  "tiles_bbox": [
+   -97.2683,
+   28.2371,
+   -95.5378,
+   29.7856
+  ],
+  "tiles_bbox_km2": 28845,
+  "suggested_bbox": [
+   -96.2535,
+   29.1094,
+   -96.13,
+   29.2179
+  ],
+  "suggested_km2": 144,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2017-08-05"
+   ],
+   "sources.SL2.source_date": [
+    "2017-07-24"
+   ],
+   "sources.MS1.source_date": [
+    "2017-08-29"
+   ],
+   "datasets.MS1_IVH_1111004_01_20170829.name": [
+    "2017-08-29"
+   ],
+   "datasets.MS1_IVH_1111004_01_20170829.source_date": [
+    "2017-08-29"
+   ],
+   "datasets.SL1_IVH_1111004_01_20170805.name": [
+    "2017-08-05"
+   ],
+   "datasets.SL1_IVH_1111004_01_20170805.source_date": [
+    "2017-08-05"
+   ],
+   "datasets.SL2_IVH_1111004_01_20170724.name": [
+    "2017-07-24"
+   ],
+   "datasets.SL2_IVH_1111004_01_20170724.source_date": [
+    "2017-07-24"
+   ],
+   "datasets.MS1_IVV_1111004_01_20170829.name": [
+    "2017-08-29"
+   ],
+   "datasets.MS1_IVV_1111004_01_20170829.source_date": [
+    "2017-08-29"
+   ],
+   "datasets.SL1_IVV_1111004_01_20170805.name": [
+    "2017-08-05"
+   ],
+   "datasets.SL1_IVV_1111004_01_20170805.source_date": [
+    "2017-08-05"
+   ],
+   "datasets.SL2_IVV_1111004_01_20170724.name": [
+    "2017-07-24"
+   ],
+   "datasets.SL2_IVV_1111004_01_20170724.source_date": [
+    "2017-07-24"
+   ],
+   "datasets.MK0_MNA_1111004_01_20170829.name": [
+    "2017-08-29"
+   ],
+   "datasets.MK0_MNA_1111004_01_20170829.source_date": [
+    "2017-08-29"
+   ],
+   "datasets.MK0_MLU_1111004_01_20170829.name": [
+    "2017-08-29"
+   ],
+   "datasets.MK0_MLU_1111004_01_20170829.source_date": [
+    "2017-08-29"
+   ],
+   "datasets.MK0_DEM_1111004_01_20170829.name": [
+    "2017-08-29"
+   ],
+   "datasets.MK0_DEM_1111004_01_20170829.source_date": [
+    "2017-08-29"
+   ],
+   "flood_date": [
+    "2017-08-28"
+   ],
+   "file:MK0_DEM": [
+    "2017-08-29"
+   ],
+   "file:MK0_MLU": [
+    "2017-08-29"
+   ],
+   "file:MK0_MNA": [
+    "2017-08-29"
+   ],
+   "file:MS1_IVH": [
+    "2017-08-29"
+   ],
+   "file:MS1_IVV": [
+    "2017-08-29"
+   ],
+   "file:SL1_IVH": [
+    "2017-08-05"
+   ],
+   "file:SL1_IVV": [
+    "2017-08-05"
+   ],
+   "file:SL2_IVH": [
+    "2017-07-24"
+   ],
+   "file:SL2_IVV": [
+    "2017-07-24"
+   ]
+  },
+  "post_dates": [
+   "2017-08-28",
+   "2017-08-29"
+  ]
+ },
+ {
+  "event": "1111005",
+  "area": "01",
+  "model_role": "train",
+  "tiles": 1369,
+  "flood_pct": 13.4,
+  "tiles_bbox": [
+   47.95,
+   -18.0624,
+   48.7952,
+   -17.161
+  ],
+  "tiles_bbox_km2": 8937,
+  "suggested_bbox": [
+   48.3261,
+   -17.6857,
+   48.4392,
+   -17.5772
+  ],
+  "suggested_km2": 144,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2019-11-27"
+   ],
+   "sources.SL2.source_date": [
+    "2019-11-15"
+   ],
+   "sources.MS1.source_date": [
+    "2020-01-26"
+   ],
+   "datasets.MS1_IVH_1111005_01_20200126.name": [
+    "2020-01-26"
+   ],
+   "datasets.MS1_IVH_1111005_01_20200126.source_date": [
+    "2020-01-26"
+   ],
+   "datasets.SL1_IVH_1111005_01_20191127.name": [
+    "2019-11-27"
+   ],
+   "datasets.SL1_IVH_1111005_01_20191127.source_date": [
+    "2019-11-27"
+   ],
+   "datasets.SL2_IVH_1111005_01_20191115.name": [
+    "2019-11-15"
+   ],
+   "datasets.SL2_IVH_1111005_01_20191115.source_date": [
+    "2019-11-15"
+   ],
+   "datasets.MS1_IVV_1111005_01_20200126.name": [
+    "2020-01-26"
+   ],
+   "datasets.MS1_IVV_1111005_01_20200126.source_date": [
+    "2020-01-26"
+   ],
+   "datasets.SL1_IVV_1111005_01_20191127.name": [
+    "2019-11-27"
+   ],
+   "datasets.SL1_IVV_1111005_01_20191127.source_date": [
+    "2019-11-27"
+   ],
+   "datasets.SL2_IVV_1111005_01_20191115.name": [
+    "2019-11-15"
+   ],
+   "datasets.SL2_IVV_1111005_01_20191115.source_date": [
+    "2019-11-15"
+   ],
+   "datasets.MK0_MNA_1111005_01_20200126.name": [
+    "2020-01-26"
+   ],
+   "datasets.MK0_MNA_1111005_01_20200126.source_date": [
+    "2020-01-26"
+   ],
+   "datasets.MK0_MLU_1111005_01_20200126.name": [
+    "2020-01-26"
+   ],
+   "datasets.MK0_MLU_1111005_01_20200126.source_date": [
+    "2020-01-26"
+   ],
+   "datasets.MK0_DEM_1111005_01_20200126.name": [
+    "2020-01-26"
+   ],
+   "datasets.MK0_DEM_1111005_01_20200126.source_date": [
+    "2020-01-26"
+   ],
+   "flood_date": [
+    "2020-01-25"
+   ],
+   "file:MK0_DEM": [
+    "2020-01-26"
+   ],
+   "file:MK0_MLU": [
+    "2020-01-26"
+   ],
+   "file:MK0_MNA": [
+    "2020-01-26"
+   ],
+   "file:MS1_IVH": [
+    "2020-01-26"
+   ],
+   "file:MS1_IVV": [
+    "2020-01-26"
+   ],
+   "file:SL1_IVH": [
+    "2019-11-27"
+   ],
+   "file:SL1_IVV": [
+    "2019-11-27"
+   ],
+   "file:SL2_IVH": [
+    "2019-11-15"
+   ],
+   "file:SL2_IVV": [
+    "2019-11-15"
+   ]
+  },
+  "post_dates": [
+   "2020-01-25",
+   "2020-01-26"
+  ]
+ },
+ {
+  "event": "1111006",
+  "area": "01",
+  "model_role": "test",
+  "tiles": 682,
+  "flood_pct": 7.8,
+  "tiles_bbox": [
+   46.3054,
+   -16.7169,
+   46.9292,
+   -16.1185
+  ],
+  "tiles_bbox_km2": 4407,
+  "suggested_bbox": [
+   46.6215,
+   -16.5108,
+   46.7339,
+   -16.4023
+  ],
+  "suggested_km2": 144,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2020-01-19"
+   ],
+   "sources.SL2.source_date": [
+    "2019-12-02"
+   ],
+   "sources.MS1.source_date": [
+    "2020-01-31"
+   ],
+   "datasets.MS1_IVH_1111006_01_20200131.name": [
+    "2020-01-31"
+   ],
+   "datasets.MS1_IVH_1111006_01_20200131.source_date": [
+    "2020-01-31"
+   ],
+   "datasets.SL1_IVH_1111006_01_20200119.name": [
+    "2020-01-19"
+   ],
+   "datasets.SL1_IVH_1111006_01_20200119.source_date": [
+    "2020-01-19"
+   ],
+   "datasets.SL2_IVH_1111006_01_20191202.name": [
+    "2019-12-02"
+   ],
+   "datasets.SL2_IVH_1111006_01_20191202.source_date": [
+    "2019-12-02"
+   ],
+   "datasets.MS1_IVV_1111006_01_20200131.name": [
+    "2020-01-31"
+   ],
+   "datasets.MS1_IVV_1111006_01_20200131.source_date": [
+    "2020-01-31"
+   ],
+   "datasets.SL1_IVV_1111006_01_20200119.name": [
+    "2020-01-19"
+   ],
+   "datasets.SL1_IVV_1111006_01_20200119.source_date": [
+    "2020-01-19"
+   ],
+   "datasets.SL2_IVV_1111006_01_20191202.name": [
+    "2019-12-02"
+   ],
+   "datasets.SL2_IVV_1111006_01_20191202.source_date": [
+    "2019-12-02"
+   ],
+   "datasets.MK0_MNA_1111006_01_20200131.name": [
+    "2020-01-31"
+   ],
+   "datasets.MK0_MNA_1111006_01_20200131.source_date": [
+    "2020-01-31"
+   ],
+   "datasets.MK0_MLU_1111006_01_20200131.name": [
+    "2020-01-31"
+   ],
+   "datasets.MK0_MLU_1111006_01_20200131.source_date": [
+    "2020-01-31"
+   ],
+   "datasets.MK0_DEM_1111006_01_20200131.name": [
+    "2020-01-31"
+   ],
+   "datasets.MK0_DEM_1111006_01_20200131.source_date": [
+    "2020-01-31"
+   ],
+   "flood_date": [
+    "2020-01-30"
+   ],
+   "file:MK0_DEM": [
+    "2020-01-31"
+   ],
+   "file:MK0_MLU": [
+    "2020-01-31"
+   ],
+   "file:MK0_MNA": [
+    "2020-01-31"
+   ],
+   "file:MS1_IVH": [
+    "2020-01-31"
+   ],
+   "file:MS1_IVV": [
+    "2020-01-31"
+   ],
+   "file:SL1_IVH": [
+    "2020-01-19"
+   ],
+   "file:SL1_IVV": [
+    "2020-01-19"
+   ],
+   "file:SL2_IVH": [
+    "2019-12-02"
+   ],
+   "file:SL2_IVV": [
+    "2019-12-02"
+   ]
+  },
+  "post_dates": [
+   "2020-01-30",
+   "2020-01-31"
+  ]
+ },
+ {
+  "event": "1111009",
+  "area": "01",
+  "model_role": "train",
+  "tiles": 13215,
+  "flood_pct": 10.0,
+  "tiles_bbox": [
+   67.1011,
+   25.3013,
+   69.6163,
+   28.9713
+  ],
+  "tiles_bbox_km2": 101116,
+  "suggested_bbox": [
+   68.1167,
+   27.7398,
+   68.2385,
+   27.8483
+  ],
+  "suggested_km2": 144,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2022-06-19"
+   ],
+   "sources.SL2.source_date": [
+    "2022-06-07"
+   ],
+   "sources.MS1.source_date": [
+    "2022-09-11"
+   ],
+   "datasets.MS1_IVH_1111009_01_20220911.name": [
+    "2022-09-11"
+   ],
+   "datasets.MS1_IVH_1111009_01_20220911.source_date": [
+    "2022-09-11"
+   ],
+   "datasets.SL1_IVH_1111009_01_20220619.name": [
+    "2022-06-19"
+   ],
+   "datasets.SL1_IVH_1111009_01_20220619.source_date": [
+    "2022-06-19"
+   ],
+   "datasets.SL2_IVH_1111009_01_20220607.name": [
+    "2022-06-07"
+   ],
+   "datasets.SL2_IVH_1111009_01_20220607.source_date": [
+    "2022-06-07"
+   ],
+   "datasets.MS1_IVV_1111009_01_20220911.name": [
+    "2022-09-11"
+   ],
+   "datasets.MS1_IVV_1111009_01_20220911.source_date": [
+    "2022-09-11"
+   ],
+   "datasets.SL1_IVV_1111009_01_20220619.name": [
+    "2022-06-19"
+   ],
+   "datasets.SL1_IVV_1111009_01_20220619.source_date": [
+    "2022-06-19"
+   ],
+   "datasets.SL2_IVV_1111009_01_20220607.name": [
+    "2022-06-07"
+   ],
+   "datasets.SL2_IVV_1111009_01_20220607.source_date": [
+    "2022-06-07"
+   ],
+   "datasets.MK0_MNA_1111009_01_20220911.name": [
+    "2022-09-11"
+   ],
+   "datasets.MK0_MNA_1111009_01_20220911.source_date": [
+    "2022-09-11"
+   ],
+   "datasets.MK0_MLU_1111009_01_20220911.name": [
+    "2022-09-11"
+   ],
+   "datasets.MK0_MLU_1111009_01_20220911.source_date": [
+    "2022-09-11"
+   ],
+   "datasets.MK0_DEM_1111009_01_20220911.name": [
+    "2022-09-11"
+   ],
+   "datasets.MK0_DEM_1111009_01_20220911.source_date": [
+    "2022-09-11"
+   ],
+   "flood_date": [
+    "2022-09-10"
+   ],
+   "file:MK0_DEM": [
+    "2022-09-11"
+   ],
+   "file:MK0_MLU": [
+    "2022-09-11"
+   ],
+   "file:MK0_MNA": [
+    "2022-09-11"
+   ],
+   "file:MS1_IVH": [
+    "2022-09-11"
+   ],
+   "file:MS1_IVV": [
+    "2022-09-11"
+   ],
+   "file:SL1_IVH": [
+    "2022-06-19"
+   ],
+   "file:SL1_IVV": [
+    "2022-06-19"
+   ],
+   "file:SL2_IVH": [
+    "2022-06-07"
+   ],
+   "file:SL2_IVV": [
+    "2022-06-07"
+   ]
+  },
+  "post_dates": [
+   "2022-09-10",
+   "2022-09-11"
+  ]
+ },
+ {
+  "event": "1111013",
+  "area": "01",
+  "model_role": "val",
+  "tiles": 1916,
+  "flood_pct": 3.5,
+  "tiles_bbox": [
+   -91.2103,
+   37.485,
+   -89.1176,
+   39.205
+  ],
+  "tiles_bbox_km2": 34749,
+  "suggested_bbox": [
+   -89.6593,
+   38.3905,
+   -89.5216,
+   38.499
+  ],
+  "suggested_km2": 144,
+  "dates_found": {
+   "sources.SL1.source_date": [
+    "2017-04-22"
+   ],
+   "sources.SL2.source_date": [
+    "2017-04-10"
+   ],
+   "sources.MS1.source_date": [
+    "2017-05-04"
+   ],
+   "datasets.MS1_IVH_1111013_01_20170504.name": [
+    "2017-05-04"
+   ],
+   "datasets.MS1_IVH_1111013_01_20170504.source_date": [
+    "2017-05-04"
+   ],
+   "datasets.SL1_IVH_1111013_01_20170422.name": [
+    "2017-04-22"
+   ],
+   "datasets.SL1_IVH_1111013_01_20170422.source_date": [
+    "2017-04-22"
+   ],
+   "datasets.SL2_IVH_1111013_01_20170410.name": [
+    "2017-04-10"
+   ],
+   "datasets.SL2_IVH_1111013_01_20170410.source_date": [
+    "2017-04-10"
+   ],
+   "datasets.MS1_IVV_1111013_01_20170504.name": [
+    "2017-05-04"
+   ],
+   "datasets.MS1_IVV_1111013_01_20170504.source_date": [
+    "2017-05-04"
+   ],
+   "datasets.SL1_IVV_1111013_01_20170422.name": [
+    "2017-04-22"
+   ],
+   "datasets.SL1_IVV_1111013_01_20170422.source_date": [
+    "2017-04-22"
+   ],
+   "datasets.SL2_IVV_1111013_01_20170410.name": [
+    "2017-04-10"
+   ],
+   "datasets.SL2_IVV_1111013_01_20170410.source_date": [
+    "2017-04-10"
+   ],
+   "datasets.MK0_MNA_1111013_01_20170504.name": [
+    "2017-05-04"
+   ],
+   "datasets.MK0_MNA_1111013_01_20170504.source_date": [
+    "2017-05-04"
+   ],
+   "datasets.MK0_MLU_1111013_01_20170504.name": [
+    "2017-05-04"
+   ],
+   "datasets.MK0_MLU_1111013_01_20170504.source_date": [
+    "2017-05-04"
+   ],
+   "datasets.MK0_DEM_1111013_01_20170504.name": [
+    "2017-05-04"
+   ],
+   "datasets.MK0_DEM_1111013_01_20170504.source_date": [
+    "2017-05-04"
+   ],
+   "flood_date": [
+    "2017-05-03"
+   ],
+   "file:MK0_DEM": [
+    "2017-05-04"
+   ],
+   "file:MK0_MLU": [
+    "2017-05-04"
+   ],
+   "file:MK0_MNA": [
+    "2017-05-04"
+   ],
+   "file:MS1_IVH": [
+    "2017-05-04"
+   ],
+   "file:MS1_IVV": [
+    "2017-05-04"
+   ],
+   "file:SL1_IVH": [
+    "2017-04-22"
+   ],
+   "file:SL1_IVV": [
+    "2017-04-22"
+   ],
+   "file:SL2_IVH": [
+    "2017-04-10"
+   ],
+   "file:SL2_IVV": [
+    "2017-04-10"
+   ]
+  },
+  "post_dates": [
+   "2017-05-03",
+   "2017-05-04"
+  ]
+ }
+]

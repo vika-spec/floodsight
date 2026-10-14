@@ -1,0 +1,170 @@
+﻿name,name_en,place,status,target_before,target_after,km_before,km_after,extra_km,min_before,min_after,extra_min,buildings,snap_m,priority,lon,lat,status_label
+बेत्रावती,Betrawati,hamlet,cut_off,Bhagwati Memorial Hospital,,10.6,,,10.0,,,943,32,1,85.18595,27.97311,Cut off (no road to a hospital; blocked by confident detections)
+देवीघाट,Devighat,hamlet,cut_off,Sanjivani Hospital,,6.0,,,7.0,,,782,31,2,85.11006,27.86003,Cut off (no road to a hospital; blocked by confident detections)
+गोदाम,Godam,hamlet,cut_off,Rasuwa District Hospital,,30.7,,,39.0,,,588,10,3,85.27684,28.15739,Cut off (no road to a hospital; blocked by confident detections)
+गोठेन,,hamlet,cut_off,Rasuwa District Hospital,,34.7,,,45.0,,,541,9,4,85.2571,28.15804,Cut off (no road to a hospital; blocked by confident detections)
+आमाछोदिङ्मो,Aamachhodingmo,village,cut_off,Rasuwa District Hospital,,27.9,,,35.0,,,386,76,5,85.31309,28.17058,Cut off (no road to a hospital; blocked by confident detections)
+Chyamdole,Chyamdole,hamlet,cut_off,Rasuwa District Hospital,,27.2,,,34.0,,,263,548,6,85.29632,28.17536,Cut off (no road to a hospital; blocked by confident detections)
+ग्रे,Gre,hamlet,cut_off,Rasuwa District Hospital,,40.4,,,60.0,,,255,65,7,85.29557,28.1425,Cut off (no road to a hospital; blocked by confident detections)
+बाहुनडाँडा,Bahun Danda,hamlet,cut_off,Rasuwa District Hospital,,24.4,,,29.0,,,233,9,8,85.32194,28.16655,Cut off (no road to a hospital; blocked by confident detections)
+लिङलिङ,Lingling,hamlet,cut_off,Rasuwa District Hospital,,22.2,,,24.0,,,173,40,9,85.3577,28.21085,Cut off (no road to a hospital; blocked by confident detections)
+गोगने,Gogne,hamlet,cut_off,hospital #81,,15.3,,,49.0,,,161,488,10,85.22226,28.08887,Cut off (no road to a hospital; blocked by confident detections)
+तेटाङचेट,Tetanchet,hamlet,cut_off,Rasuwa District Hospital,,37.5,,,57.0,,,161,33,11,85.28144,28.21507,Cut off (no road to a hospital; blocked by confident detections)
+रसुवागढी,Rasuwa Gadhi,hamlet,cut_off,Rasuwa District Hospital,,29.7,,,29.0,,,148,39,12,85.37778,28.27777,Cut off (no road to a hospital; blocked by confident detections)
+डाल्फेडी,Dalphedi,hamlet,cut_off,Rasuwa District Hospital,,23.5,,,23.0,,,147,837,13,85.35316,28.22901,Cut off (no road to a hospital; blocked by confident detections)
+तातोपानी,Tatopani,hamlet,cut_off,Rasuwa District Hospital,,42.8,,,70.0,,,142,10,14,85.29882,28.22007,Cut off (no road to a hospital; blocked by confident detections)
+गोङ्गाङ,Gongang,hamlet,cut_off,Rasuwa District Hospital,,33.8,,,48.0,,,132,633,15,85.29772,28.19892,Cut off (no road to a hospital; blocked by confident detections)
+पाङलिङ,Pangling,hamlet,cut_off,Rasuwa District Hospital,,37.1,,,52.0,,,131,1395,16,85.28106,28.13125,Cut off (no road to a hospital; blocked by confident detections)
+पाजुङ,Pajung,hamlet,cut_off,Rasuwa District Hospital,,21.6,,,27.0,,,120,70,17,85.32756,28.18603,Cut off (no road to a hospital; blocked by confident detections)
+None,,hamlet,cut_off,Rasuwa District Hospital,,18.6,,,23.0,,,90,74,18,85.34605,28.17678,Cut off (no road to a hospital; blocked by confident detections)
+भ्रजम,Bhrajam,hamlet,cut_off,Rasuwa District Hospital,,23.1,,,31.0,,,74,22,19,85.31696,28.18774,Cut off (no road to a hospital; blocked by confident detections)
+भञ्ज्याङ,Bhanjyang,hamlet,cut_off,Rasuwa District Hospital,,22.1,,,44.0,,,69,250,20,85.3552,28.16862,Cut off (no road to a hospital; blocked by confident detections)
+热索,Resuo,village,cut_off,Rasuwa District Hospital,,30.0,,,29.0,,,60,26,21,85.37822,28.28032,Cut off (no road to a hospital; blocked by confident detections)
+मैलुङ,Mailung,hamlet,cut_off,hospital #81,,12.2,,,41.0,,,54,20,22,85.207,28.07177,Cut off (no road to a hospital; blocked by confident detections)
+Somdang,,hamlet,cut_off,Rasuwa District Hospital,,57.3,,,79.0,,,51,15,23,85.19948,28.18997,Cut off (no road to a hospital; blocked by confident detections)
+जर्सा डाँडा,Jarsadada,hamlet,cut_off,Rasuwa District Hospital,,36.9,,,49.0,,,46,44,24,85.243,28.16286,Cut off (no road to a hospital; blocked by confident detections)
+ब्रिमडाङ,Brimdang,hamlet,cut_off,Rasuwa District Hospital,,45.0,,,75.0,,,32,19,25,85.30989,28.20364,Cut off (no road to a hospital; blocked by confident detections)
+None,,village,cut_off,Rasuwa District Hospital,,24.2,,,34.0,,,26,609,26,85.31082,28.19377,Cut off (no road to a hospital; blocked by confident detections)
+नागथली,Nagthali,hamlet,cut_off,Rasuwa District Hospital,,45.0,,,75.0,,,21,770,27,85.31583,28.2079,Cut off (no road to a hospital; blocked by confident detections)
+None,,hamlet,cut_off,Rasuwa District Hospital,,35.6,,,52.0,,,19,31,28,85.28653,28.20493,Cut off (no road to a hospital; blocked by confident detections)
+नौविसे फाँट,Naubisephat,hamlet,likely_cut_off,hospital #81,,9.3,,,13.0,,,1756,90,29,85.18256,27.98469,Likely cut off (only low-confidence detections block the last route)
+भैंसे,Bhainse,hamlet,likely_cut_off,Bhagwati Memorial Hospital,,8.4,,,8.0,,,1113,28,30,85.17033,27.96037,Likely cut off (only low-confidence detections block the last route)
+सिम्ले,Simle,hamlet,likely_cut_off,hospital #81,,6.6,,,27.0,,,456,28,31,85.1912,28.0292,Likely cut off (only low-confidence detections block the last route)
+None,,hamlet,likely_cut_off,hospital #102,,8.9,,,10.0,,,166,308,32,85.08496,27.85793,Likely cut off (only low-confidence detections block the last route)
+None,,hamlet,likely_cut_off,hospital #102,,9.2,,,10.0,,,52,22,33,85.08091,27.85424,Likely cut off (only low-confidence detections block the last route)
+None,,hamlet,unknown,hospital #81,Rasuwa District Hospital,20.3,20.4,0.1,31.0,31.0,0.0,264,1336,34,85.2638,28.11526,Unknown (the only remaining route runs through roads the radar could not see)
+ठुलो भार्खु,Sano Bharkhu,hamlet,unknown,Rasuwa District Hospital,Rasuwa District Hospital,6.9,6.9,0.0,8.0,8.0,0.0,179,25,35,85.31212,28.12978,Unknown (the only remaining route runs through roads the radar could not see)
+हाकु बेसी,Haku Besi,hamlet,unknown,Rasuwa District Hospital,Rasuwa District Hospital,19.0,19.0,0.0,28.0,28.0,0.0,139,435,36,85.27907,28.11648,Unknown (the only remaining route runs through roads the radar could not see)
+सानाे भार्खु,Sano Bharkhu,hamlet,unknown,Rasuwa District Hospital,Rasuwa District Hospital,9.4,9.4,0.0,13.0,13.0,0.0,132,17,37,85.31971,28.13744,Unknown (the only remaining route runs through roads the radar could not see)
+None,,hamlet,detour,Bhagwati Memorial Hospital,Katunje Health Post,7.9,39.0,31.1,16.0,80.0,64.0,700,29,38,85.10331,27.89112,Reachable only by a long detour
+None,,hamlet,detour,Bhagwati Memorial Hospital,Katunje Health Post,6.7,36.5,29.8,21.0,80.0,59.0,546,47,39,85.11224,27.89668,Reachable only by a long detour
+भ्यागुते,Bhyagute,hamlet,detour,Bhagwati Memorial Hospital,hospital #81,9.0,28.8,19.8,19.0,66.0,48.0,432,16,40,85.14379,27.95169,Reachable only by a long detour
+None,,hamlet,detour,Bhagwati Memorial Hospital,Katunje Health Post,6.9,38.0,31.1,14.0,78.0,64.0,408,137,41,85.1079,27.88998,Reachable only by a long detour
+गैराथोक,Gairathok,village,detour,Bhagwati Memorial Hospital,hospital #81,12.5,25.4,12.9,27.0,61.0,34.0,402,31,42,85.13097,27.95803,Reachable only by a long detour
+गगते,Gagate,hamlet,detour,Bhagwati Memorial Hospital,hospital #81,9.6,28.3,18.6,20.0,68.0,48.0,210,132,43,85.14645,27.95459,Reachable only by a long detour
+भैरमकोट,Bhairamkot,hamlet,detour,Bhagwati Memorial Hospital,hospital #81,10.9,28.1,17.2,23.0,68.0,45.0,55,50,44,85.14172,27.95469,Reachable only by a long detour
+बिदुर,Bidur,town,reachable,Sanjivani Hospital,Sanjivani Hospital,0.5,0.5,0.0,1.0,1.0,0.0,2508,25,0,85.14645,27.89526,Road access unchanged
+बुङताङ,Bungtang,village,reachable,Bhagwati Memorial Hospital,hospital #81,22.7,25.0,2.3,49.0,60.0,11.0,2010,20,0,85.10103,27.99156,Road access unchanged
+किस्पाङ,Kispang,village,reachable,hospital #81,hospital #81,7.1,7.1,0.0,17.0,17.0,0.0,1688,80,0,85.13777,28.00425,Road access unchanged
+नुचेत गाउँ,Nyuchet Gaon,hamlet,reachable,hospital #81,hospital #81,7.4,7.4,0.0,18.0,18.0,0.0,1544,15,0,85.134,28.00394,Road access unchanged
+उत्तरगया,Uttargaya,village,reachable,Kalika Community Hospital कालिका सामुदायिक अस्पताल,Kalika Community Hospital कालिका सामुदायिक अस्पताल,7.4,7.4,0.0,16.0,16.0,0.0,1361,11,0,85.19517,28.01161,Road access unchanged
+तादी,Tadi,village,reachable,शिखरबेंसी स्वास्थ्य चौकी,शिखरबेंसी स्वास्थ्य चौकी,15.3,15.3,0.0,21.0,21.0,0.0,1225,69,0,85.30894,27.92416,Road access unchanged
+लिखु,Likhu,village,reachable,hospital #10,hospital #10,8.3,8.3,0.0,13.0,13.0,0.0,1093,37,0,85.24251,27.88832,Road access unchanged
+कार्की गाउँ,Karki Gaun,hamlet,reachable,hospital #81,hospital #81,5.3,5.3,0.0,13.0,13.0,0.0,1085,24,0,85.17269,28.00017,Road access unchanged
+गणेशस्थान,Ganeshthan,village,reachable,hospital #10,hospital #10,12.5,12.5,0.0,37.0,37.0,0.0,1028,56,0,85.24022,27.917,Road access unchanged
+सातदोबाटो,Satdobato,hamlet,reachable,hospital #81,hospital #81,3.9,3.9,0.0,9.0,9.0,0.0,995,23,0,85.16381,28.00365,Road access unchanged
+पञ्चकन्या,Panchakanya,village,reachable,शिखरबेंसी स्वास्थ्य चौकी,शिखरबेंसी स्वास्थ्य चौकी,20.7,20.7,0.0,41.0,41.0,0.0,995,48,0,85.31431,27.88903,Road access unchanged
+ढुङ्गे,Dhunge,hamlet,reachable,Kalika Community Hospital कालिका सामुदायिक अस्पताल,Kalika Community Hospital कालिका सामुदायिक अस्पताल,3.1,3.1,0.0,6.0,6.0,0.0,992,35,0,85.2031,28.01424,Road access unchanged
+शिवपुरी,Shivapuri,village,reachable,टोखा चन्देश्वरी अस्पताल,टोखा चन्देश्वरी अस्पताल,22.6,22.6,0.0,32.0,32.0,0.0,984,51,0,85.3579,27.86513,Road access unchanged
+पिपलटार,Pipaltar,hamlet,reachable,Sanjivani Hospital,Sanjivani Hospital,4.9,4.9,0.0,5.0,5.0,0.0,927,14,0,85.12812,27.86558,Road access unchanged
+धइबुङ,Dhaibung,hamlet,reachable,Kalika Community Hospital कालिका सामुदायिक अस्पताल,Kalika Community Hospital कालिका सामुदायिक अस्पताल,1.9,1.9,0.0,2.0,2.0,0.0,895,10,0,85.21124,28.00215,Road access unchanged
+खालचेत,Khalchet,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,3.0,3.0,0.0,10.0,10.0,0.0,829,45,0,85.23774,27.99958,Road access unchanged
+दाङमाई,Dangmai,hamlet,reachable,hospital #102,hospital #102,12.2,12.2,0.0,25.0,25.0,0.0,802,57,0,85.19445,27.86644,Road access unchanged
+सूर्यगढी,Suryagadhi,village,reachable,hospital #10,hospital #10,10.0,10.0,0.0,28.0,28.0,0.0,780,36,0,85.2289,27.95058,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,4.6,4.6,0.0,11.0,11.0,0.0,769,136,0,85.17612,27.91467,Road access unchanged
+खरसा,Kharsa,hamlet,reachable,Healthpost,Healthpost,0.3,0.3,0.0,2.0,2.0,0.0,738,986,0,85.09121,28.17696,Road access unchanged
+Dumre,,hamlet,reachable,hospital #10,hospital #10,16.7,16.7,0.0,23.0,23.0,0.0,737,8,0,85.30908,27.86064,Road access unchanged
+दनुस्वारा,Danuswara,hamlet,reachable,hospital #10,hospital #10,18.5,18.5,0.0,46.0,46.0,0.0,716,70,0,85.26337,27.97302,Road access unchanged
+माथिल्लो चौर,,hamlet,reachable,शिखरबेंसी स्वास्थ्य चौकी,शिखरबेंसी स्वास्थ्य चौकी,15.2,15.2,0.0,21.0,21.0,0.0,678,36,0,85.30969,27.92516,Road access unchanged
+दुप्चेश्वर,Ducheshwar,village,reachable,शिखरबेंसी स्वास्थ्य चौकी,शिखरबेंसी स्वास्थ्य चौकी,6.8,6.8,0.0,12.0,12.0,0.0,674,9,0,85.38283,27.92206,Road access unchanged
+बडहरे,Badare,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,1.2,1.2,0.0,3.0,3.0,0.0,629,224,0,85.23699,27.98476,Road access unchanged
+लावाडुङ,Lawadun,hamlet,reachable,Healthpost,Healthpost,3.6,3.6,0.0,22.0,22.0,0.0,567,57,0,85.11616,28.17346,Road access unchanged
+गोसाइँकुण्ड,Gosaikunda,village,reachable,Rasuwa District Hospital,Rasuwa District Hospital,0.2,0.2,0.0,0.0,0.0,0.0,555,22,0,85.29852,28.11036,Road access unchanged
+कालिका,Kalika,village,reachable,Kalika Community Hospital कालिका सामुदायिक अस्पताल,Kalika Community Hospital कालिका सामुदायिक अस्पताल,4.1,4.1,0.0,7.0,7.0,0.0,535,69,0,85.21343,28.00594,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,14.2,14.2,0.0,27.0,27.0,0.0,534,67,0,85.28426,27.90955,Road access unchanged
+सरसिउ,Sarsyu,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,4.4,4.4,0.0,14.0,14.0,0.0,516,33,0,85.24816,28.00424,Road access unchanged
+ग्राङ,Grang,village,reachable,Kalika Community Hospital कालिका सामुदायिक अस्पताल,Kalika Community Hospital कालिका सामुदायिक अस्पताल,12.8,12.8,0.0,12.0,12.0,0.0,500,181,0,85.226,28.05735,Road access unchanged
+None,,hamlet,reachable,Bhagwati Memorial Hospital,Bhagwati Memorial Hospital,4.6,4.6,0.0,12.0,12.0,0.0,475,13,0,85.16985,27.91097,Road access unchanged
+काजिन डाँडा,Kajindada,hamlet,reachable,hospital #102,hospital #102,10.8,10.8,0.0,22.0,22.0,0.0,473,12,0,85.18053,27.86259,Road access unchanged
+None,,hamlet,reachable,शिखरबेंसी स्वास्थ्य चौकी,शिखरबेंसी स्वास्थ्य चौकी,10.5,10.5,0.0,22.0,22.0,0.0,462,14,0,85.38026,27.94509,Road access unchanged
+कामिं गाउँ,Kamingau,hamlet,reachable,Healthpost,Healthpost,0.1,0.1,0.0,1.0,1.0,0.0,447,97,0,85.1004,28.18337,Road access unchanged
+थापा गाउँ,Thāpāgāon,hamlet,reachable,hospital #10,hospital #10,16.9,16.9,0.0,25.0,25.0,0.0,424,179,0,85.30453,27.85544,Road access unchanged
+अर्चले,Archale,hamlet,reachable,hospital #81,hospital #81,2.8,2.8,0.0,13.0,13.0,0.0,423,47,0,85.1765,28.01704,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,15.7,15.7,0.0,35.0,35.0,0.0,420,34,0,85.28217,27.89745,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,16.0,16.0,0.0,39.0,39.0,0.0,411,16,0,85.28209,27.90389,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,14.2,14.2,0.0,27.0,27.0,0.0,408,88,0,85.28393,27.90961,Road access unchanged
+डोग्लाङ,Doglāng,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,17.7,17.7,0.0,49.0,49.0,0.0,383,491,0,85.30818,28.03588,Road access unchanged
+None,,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,16.2,16.2,0.0,42.0,42.0,0.0,377,39,0,85.27741,28.02638,Road access unchanged
+None,,hamlet,reachable,Sanjivani Hospital,Sanjivani Hospital,3.4,3.4,0.0,4.0,4.0,0.0,365,5,0,85.1671,27.8994,Road access unchanged
+"National Rainbow Trout Research Station, Dhunche",,hamlet,reachable,Rasuwa District Hospital,Rasuwa District Hospital,2.9,2.9,0.0,5.0,5.0,0.0,364,49,0,85.30472,28.11041,Road access unchanged
+None,,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,0.1,0.1,0.0,0.0,0.0,0.0,358,26,0,85.24476,27.98746,Road access unchanged
+घोर्मु,Ghormu,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,5.9,5.9,0.0,18.0,18.0,0.0,340,31,0,85.2526,28.0135,Road access unchanged
+लौके कोटघाडेरी,Lauke Kotghaderi,hamlet,reachable,hospital #102,hospital #102,13.8,13.8,0.0,24.0,24.0,0.0,330,6,0,85.19184,27.84917,Road access unchanged
+None,,hamlet,reachable,शिखरबेंसी स्वास्थ्य चौकी,शिखरबेंसी स्वास्थ्य चौकी,9.4,9.4,0.0,19.0,19.0,0.0,320,13,0,85.37989,27.93688,Road access unchanged
+None,,hamlet,reachable,hospital #102,hospital #102,7.2,7.2,0.0,9.0,31.0,22.0,305,118,0,85.09477,27.85811,Road access unchanged
+None,,village,reachable,शिखरबेंसी स्वास्थ्य चौकी,शिखरबेंसी स्वास्थ्य चौकी,13.2,13.2,0.0,28.0,28.0,0.0,301,9,0,85.37178,27.93819,Road access unchanged
+च्युपर खोला,Chyupar Khola,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,15.1,15.1,0.0,39.0,39.0,0.0,294,466,0,85.28696,28.02685,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,25.1,25.1,0.0,50.0,50.0,0.0,279,23,0,85.27212,27.99456,Road access unchanged
+शान्ति बजार,Shanti Bazar,hamlet,reachable,hospital #81,hospital #81,3.9,3.9,0.0,21.0,21.0,0.0,245,49,0,85.18146,28.0172,Road access unchanged
+None,,village,reachable,hospital #81,hospital #81,14.9,14.9,0.0,36.0,36.0,0.0,244,1024,0,85.09621,28.04514,Road access unchanged
+ठुलो स्याप्रु,Thulo Syābru,hamlet,reachable,hospital #8,hospital #8,3.8,3.8,0.0,9.0,9.0,0.0,243,34,0,85.36069,28.14304,Road access unchanged
+चिप्लेटी,Chipleti,hamlet,reachable,hospital #81,hospital #81,15.0,15.0,0.0,81.0,85.0,4.0,239,334,0,85.19955,28.06211,Road access unchanged
+पारच्याङ्ग,Parchyang,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,20.7,20.7,0.0,53.0,53.0,0.0,218,50,0,85.27362,28.01151,Road access unchanged
+ठाडे,Thade,hamlet,reachable,Rasuwa District Hospital,Rasuwa District Hospital,9.5,9.5,0.0,10.0,10.0,0.0,203,59,0,85.24409,28.07756,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,15.3,15.3,0.0,37.0,37.0,0.0,192,186,0,85.28331,27.89924,Road access unchanged
+None,,hamlet,reachable,शिखरबेंसी स्वास्थ्य चौकी,शिखरबेंसी स्वास्थ्य चौकी,7.9,7.9,0.0,15.0,15.0,0.0,189,31,0,85.37867,27.92876,Road access unchanged
+दुर्सागाङ,Dursagang,hamlet,reachable,hospital #8,hospital #8,3.5,3.5,0.0,8.0,8.0,0.0,184,833,0,85.35574,28.13448,Road access unchanged
+पल्लो दाङमाई,Pallo Dangmai,hamlet,reachable,hospital #102,hospital #102,10.5,10.5,0.0,21.0,21.0,0.0,183,22,0,85.17832,27.85164,Road access unchanged
+कोमु,Komu,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,5.3,5.3,0.0,16.0,16.0,0.0,151,35,0,85.25378,28.00921,Road access unchanged
+"Pasture and Fodder Research Station, Dhunche",,hamlet,reachable,Rasuwa District Hospital,Rasuwa District Hospital,3.3,3.3,0.0,6.0,6.0,0.0,132,16,0,85.30212,28.11239,Road access unchanged
+घिचेत,Ghichet,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,22.1,22.1,0.0,56.0,56.0,0.0,129,571,0,85.28716,28.00587,Road access unchanged
+सालिम भित्ता,Salim Bhitta,hamlet,reachable,hospital #81,hospital #81,6.5,6.5,0.0,30.0,34.0,4.0,123,21,0,85.18173,28.02356,Road access unchanged
+None,,hamlet,reachable,शिखरबेंसी स्वास्थ्य चौकी,शिखरबेंसी स्वास्थ्य चौकी,14.0,14.0,0.0,32.0,32.0,0.0,119,35,0,85.37474,27.94213,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,15.5,15.5,0.0,35.0,35.0,0.0,109,17,0,85.28116,27.8992,Road access unchanged
+None,,hamlet,reachable,शिखरबेंसी स्वास्थ्य चौकी,शिखरबेंसी स्वास्थ्य चौकी,8.5,8.5,0.0,17.0,17.0,0.0,107,30,0,85.37702,27.93083,Road access unchanged
+मान्डुचेट,Manduchet,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,24.5,24.5,0.0,59.0,59.0,0.0,101,29,0,85.26994,27.99895,Road access unchanged
+None,,hamlet,reachable,Sanjivani Hospital,Sanjivani Hospital,3.9,3.9,0.0,7.0,7.0,0.0,86,31,0,85.16779,27.90273,Road access unchanged
+ब्राबल,Brabal,village,reachable,hospital #8,hospital #8,0.5,0.5,0.0,1.0,1.0,0.0,85,42,0,85.33916,28.14357,Road access unchanged
+घिचेत घटेलुङ,Ghichet Ghattelung,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,27.1,27.1,0.0,53.0,53.0,0.0,84,214,0,85.28416,28.00303,Road access unchanged
+None,,hamlet,reachable,hospital #102,hospital #102,8.3,8.3,0.0,13.0,38.0,24.0,77,24,0,85.09036,27.85222,Road access unchanged
+एक्पाखे,Ekpakhe,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,24.1,24.1,0.0,61.0,61.0,0.0,77,293,0,85.26367,28.00258,Road access unchanged
+सिरुचेत,Siruchet,hamlet,reachable,hospital #81,hospital #81,16.5,16.5,0.0,90.0,94.0,4.0,75,324,0,85.19857,28.07144,Road access unchanged
+None,,hamlet,reachable,शिखरबेंसी स्वास्थ्य चौकी,शिखरबेंसी स्वास्थ्य चौकी,8.9,8.9,0.0,18.0,18.0,0.0,72,159,0,85.37704,27.93432,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,15.5,15.5,0.0,35.0,35.0,0.0,67,8,0,85.28149,27.89847,Road access unchanged
+None,,hamlet,reachable,hospital #102,hospital #102,6.9,6.9,0.0,12.0,29.0,17.0,64,16,0,85.09727,27.85453,Road access unchanged
+None,,hamlet,reachable,hospital #102,hospital #102,6.4,6.4,0.0,15.0,26.0,11.0,42,26,0,85.09805,27.85282,Road access unchanged
+None,,hamlet,reachable,hospital #102,hospital #102,7.8,7.8,0.0,15.0,35.0,19.0,37,21,0,85.08639,27.85057,Road access unchanged
+कप्ताली,Kapthali,hamlet,reachable,Chiti Health Post चीती स्वास्थ्य केन्द्र,Chiti Health Post चीती स्वास्थ्य केन्द्र,24.1,24.1,0.0,61.0,61.0,0.0,37,561,0,85.2605,27.99949,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,15.4,15.4,0.0,35.0,35.0,0.0,25,31,0,85.28156,27.89953,Road access unchanged
+धर्नाभदौरे,Dharna bhadaure,hamlet,reachable,hospital #81,hospital #81,15.9,15.9,0.0,87.0,91.0,4.0,18,366,0,85.20017,28.06642,Road access unchanged
+Phyang Gaon,,hamlet,reachable,Healthpost,Healthpost,0.7,0.7,0.0,4.0,4.0,0.0,15,962,0,85.11179,28.18727,Road access unchanged
+None,,hamlet,reachable,hospital #102,hospital #102,5.8,5.8,0.0,18.0,23.0,5.0,9,21,0,85.09629,27.85066,Road access unchanged
+None,,hamlet,reachable,hospital #102,hospital #102,5.3,5.3,0.0,20.0,20.0,0.0,9,35,0,85.09838,27.84783,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,15.6,15.6,0.0,35.0,35.0,0.0,7,20,0,85.28174,27.89814,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,15.4,15.4,0.0,35.0,35.0,0.0,3,111,0,85.28249,27.89917,Road access unchanged
+None,,hamlet,reachable,hospital #10,hospital #10,15.4,15.4,0.0,35.0,35.0,0.0,1,35,0,85.28168,27.89932,Road access unchanged
+None,,hamlet,reachable,hospital #102,hospital #102,6.5,6.5,0.0,24.0,27.0,3.0,0,23,0,85.08852,27.84791,Road access unchanged
+None,,hamlet,reachable,hospital #102,hospital #102,6.5,6.5,0.0,26.0,27.0,0.0,0,9,0,85.09151,27.84854,Road access unchanged
+जफाती,Jafati,hamlet,isolated_before,,,,,,,,,928,36,0,85.14953,27.95604,No road to a hospital even before the flood (in OSM)
+None,,hamlet,isolated_before,,,,,,,,,722,120,0,85.38216,27.95442,No road to a hospital even before the flood (in OSM)
+None,,hamlet,isolated_before,,,,,,,,,706,263,0,85.34348,27.97008,No road to a hospital even before the flood (in OSM)
+None,,hamlet,isolated_before,,,,,,,,,616,318,0,85.30642,28.01796,No road to a hospital even before the flood (in OSM)
+झर्कलेरी,Jharkaleri,hamlet,isolated_before,,,,,,,,,494,37,0,85.17144,28.02808,No road to a hospital even before the flood (in OSM)
+युब्रा,Yubra,village,isolated_before,,,,,,,,,247,266,0,85.30091,28.00493,No road to a hospital even before the flood (in OSM)
+जोङ्सा,Jongsa,hamlet,isolated_before,,,,,,,,,231,469,0,85.09344,28.03724,No road to a hospital even before the flood (in OSM)
+गुम्सा,Gumsa,hamlet,isolated_before,,,,,,,,,218,315,0,85.0842,28.01957,No road to a hospital even before the flood (in OSM)
+होप,Hop,hamlet,isolated_before,,,,,,,,,211,230,0,85.09024,28.01897,No road to a hospital even before the flood (in OSM)
+थाङ्सेन युवा,Thangsen Yubra,hamlet,isolated_before,,,,,,,,,191,528,0,85.30378,28.00768,No road to a hospital even before the flood (in OSM)
+बोल्डोगाङ,Boldogang,hamlet,isolated_before,,,,,,,,,189,125,0,85.09375,28.0325,No road to a hospital even before the flood (in OSM)
+चिपुट,Chiput,hamlet,isolated_before,,,,,,,,,125,5,0,85.08783,28.01916,No road to a hospital even before the flood (in OSM)
+Bagale,,hamlet,isolated_before,,,,,,,,,121,512,0,85.0868,28.02834,No road to a hospital even before the flood (in OSM)
+अम्बुचेट,Ambuchet,hamlet,isolated_before,,,,,,,,,115,526,0,85.0817,28.01752,No road to a hospital even before the flood (in OSM)
+चोखोर,Chokhor,hamlet,isolated_before,,,,,,,,,104,474,0,85.08817,28.02866,No road to a hospital even before the flood (in OSM)
+यार्सा,Yarsa,hamlet,isolated_before,,,,,,,,,88,434,0,85.0875,28.03022,No road to a hospital even before the flood (in OSM)
+नौकुण्ड,Naukunda,village,isolated_before,,,,,,,,,86,8,0,85.27659,28.0108,No road to a hospital even before the flood (in OSM)
+घले गाउँ,Ghale Gau,hamlet,isolated_before,,,,,,,,,73,520,0,85.08683,28.02846,No road to a hospital even before the flood (in OSM)
+खाङजिम,Khangjim,hamlet,isolated_before,,,,,,,,,48,68,0,85.35914,28.17681,No road to a hospital even before the flood (in OSM)
+Dimdungkhor,,hamlet,isolated_before,,,,,,,,,40,438,0,85.08829,28.02953,No road to a hospital even before the flood (in OSM)
+शेर्पागाउँ,Sherpagaun,hamlet,isolated_before,,,,,,,,,38,1071,0,85.39705,28.1625,No road to a hospital even before the flood (in OSM)
+थुलो गाउँ,Thulo gaun,hamlet,isolated_before,,,,,,,,,33,448,0,85.08806,28.02957,No road to a hospital even before the flood (in OSM)
+सुर्का,Surka,hamlet,isolated_before,,,,,,,,,15,57,0,85.36193,28.17107,No road to a hospital even before the flood (in OSM)
+चालिस गाउँ,Chalish Gaon,hamlet,no_road_data,Healthpost,Healthpost,0.1,0.1,0.0,1.0,1.0,0.0,259,1512,0,85.08326,28.18515,No mapped road nearby
+लिङ्जो,Linjo,hamlet,no_road_data,Healthpost,Healthpost,3.7,3.7,0.0,22.0,22.0,0.0,184,3695,0,85.12529,28.21254,No mapped road nearby
+सानो हाकु,Sano Haku,hamlet,no_road_data,Rasuwa District Hospital,Rasuwa District Hospital,18.9,18.9,0.0,28.0,28.0,0.0,155,1644,0,85.27015,28.12417,No mapped road nearby
+हिन्दुङ्ग,Hindung,hamlet,no_road_data,Healthpost,Healthpost,0.1,0.1,0.0,1.0,1.0,0.0,104,3929,0,85.08038,28.21565,No mapped road nearby
+चंदन बाडी,Chandanbari,hamlet,no_road_data,Rasuwa District Hospital,Rasuwa District Hospital,3.9,3.9,0.0,5.0,5.0,0.0,55,2713,0,85.34016,28.11087,No mapped road nearby
+बाबिल खर्क,Babil Kharka,hamlet,no_road_data,Healthpost,Healthpost,3.7,3.7,0.0,22.0,22.0,0.0,41,6788,0,85.13765,28.23891,No mapped road nearby
+Puru,,hamlet,no_road_data,Healthpost,Healthpost,0.7,0.7,0.0,4.0,4.0,0.0,37,2118,0,85.11638,28.19813,No mapped road nearby
+लौरिबिना,Laurebina,hamlet,no_road_data,hospital #8,hospital #8,3.7,3.7,0.0,9.0,9.0,0.0,16,5813,0,85.37984,28.0924,No mapped road nearby
+Awan,,hamlet,no_road_data,Healthpost,Healthpost,3.7,3.7,0.0,22.0,22.0,0.0,12,4670,0,85.13357,28.22011,No mapped road nearby
+Dalgaun,,hamlet,no_road_data,Rasuwa District Hospital,,26.0,,,27.0,,,0,2075,0,85.34215,28.25576,No mapped road nearby

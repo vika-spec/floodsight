@@ -1,0 +1,614 @@
+{
+ "reference": "Copernicus EMS (EMSR927); used only for checking, never as input",
+ "flood_extent": {
+  "iou": 0.466,
+  "precision": 0.9576,
+  "recall": 0.4758,
+  "f1": 0.6357,
+  "tp": 12097,
+  "fp": 536,
+  "fn": 13328,
+  "tn": 51045
+ },
+ "combined_from": [
+  "AOI01_GRA_PRODUCT_v1",
+  "AOI02_GRA_PRODUCT_v2",
+  "AOI03_GRA_MONIT01_v1",
+  "AOI05_GRA_MONIT01_v2"
+ ],
+ "what_ems_mapped": "EMS mapped the event as mass movement (debris flow / landslide), not open water, so it is compared with our flood + debris footprint; the share we classed as debris is reported per area",
+ "products": [
+  {
+   "product": "AOI01_GRA_PRODUCT_v1",
+   "aoi_km2_in_run": 3.46,
+   "extent": {
+    "iou": 0.1381,
+    "precision": 1.0,
+    "recall": 0.1381,
+    "f1": 0.2427,
+    "tp": 380,
+    "fp": 0,
+    "fn": 2372,
+    "tn": 5857
+   },
+   "area_km2": {
+    "ours": 0.152,
+    "ems": 1.108,
+    "ems_in_radar_blind_spots": 0.008,
+    "radar_blind_share_of_aoi": 0.003
+   },
+   "ems_event_types": {
+    "column": "event_type",
+    "types": {
+     "6-Mass Movement": {
+      "km2": 1.108,
+      "share_we_detected": 0.138,
+      "detected_as_debris": 0.138,
+      "detected_as_water": 0.0
+     }
+    }
+   },
+   "by_confidence": {
+    "high_medium": {
+     "km2": 0.017,
+     "precision": 1.0
+    },
+    "low": {
+     "km2": 0.135,
+     "precision": 1.0
+    }
+   },
+   "by_terrain": {
+    "mountain": {
+     "iou": 0.144,
+     "precision": 1.0,
+     "recall": 0.144,
+     "ems_km2": 1.055
+    },
+    "plain": {
+     "iou": 0.0,
+     "precision": 0.0,
+     "recall": 0.0,
+     "ems_km2": 0.046
+    }
+   },
+   "buildings": {
+    "damage_column": "damage_gra",
+    "ems_damaged": 355,
+    "ems_damaged_or_possible": 433,
+    "ours_flagged_in_aoi": 100,
+    "recall_damaged": 0.501,
+    "recall_incl_possible": 0.411,
+    "precision": 0.98,
+    "match_tolerance_m": 25.0
+   },
+   "roads": {
+    "damage_column": "damage_gra",
+    "ems_damaged_km": 7.63,
+    "ems_damaged_segments": 20,
+    "share_we_flagged": 0.643,
+    "our_closed_km_in_aoi": 2.24,
+    "closure_precision": 1.0
+   },
+   "facilities": {
+    "ems_damaged": 1,
+    "inside_run": 1,
+    "within_50m_of_our_map": 1,
+    "items": [
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     }
+    ]
+   }
+  },
+  {
+   "product": "AOI02_GRA_PRODUCT_v2",
+   "aoi_km2_in_run": 2.97,
+   "extent": {
+    "iou": 0.1632,
+    "precision": 1.0,
+    "recall": 0.1632,
+    "f1": 0.2806,
+    "tp": 520,
+    "fp": 0,
+    "fn": 2667,
+    "tn": 4181
+   },
+   "area_km2": {
+    "ours": 0.208,
+    "ems": 1.295,
+    "ems_in_radar_blind_spots": 0.02,
+    "radar_blind_share_of_aoi": 0.008
+   },
+   "ems_event_types": {
+    "column": "event_type",
+    "types": {
+     "6-Mass Movement": {
+      "km2": 1.295,
+      "share_we_detected": 0.163,
+      "detected_as_debris": 0.163,
+      "detected_as_water": 0.0
+     }
+    }
+   },
+   "by_confidence": {
+    "high_medium": {
+     "km2": 0.028,
+     "precision": 1.0
+    },
+    "low": {
+     "km2": 0.18,
+     "precision": 1.0
+    }
+   },
+   "by_terrain": {
+    "mountain": {
+     "iou": 0.163,
+     "precision": 1.0,
+     "recall": 0.163,
+     "ems_km2": 1.275
+    }
+   },
+   "buildings": {
+    "damage_column": "damage_gra",
+    "ems_damaged": 405,
+    "ems_damaged_or_possible": 431,
+    "ours_flagged_in_aoi": 144,
+    "recall_damaged": 0.57,
+    "recall_incl_possible": 0.536,
+    "precision": 0.917,
+    "match_tolerance_m": 25.0
+   },
+   "roads": {
+    "damage_column": "damage_gra",
+    "ems_damaged_km": 9.7,
+    "ems_damaged_segments": 15,
+    "share_we_flagged": 0.829,
+    "our_closed_km_in_aoi": 2.24,
+    "closure_precision": 1.0
+   },
+   "facilities": {
+    "ems_damaged": 1,
+    "inside_run": 1,
+    "within_50m_of_our_map": 0,
+    "items": [
+     {
+      "type": "215-Harbours, waterways, dams and other waterworks",
+      "state": "Destroyed",
+      "we_flagged": false
+     }
+    ]
+   }
+  },
+  {
+   "product": "AOI03_GRA_MONIT01_v1",
+   "aoi_km2_in_run": 21.12,
+   "extent": {
+    "iou": 0.5498,
+    "precision": 0.9514,
+    "recall": 0.5657,
+    "f1": 0.7095,
+    "tp": 9925,
+    "fp": 507,
+    "fn": 7619,
+    "tn": 34738
+   },
+   "area_km2": {
+    "ours": 4.173,
+    "ems": 7.018,
+    "ems_in_radar_blind_spots": 0.0,
+    "radar_blind_share_of_aoi": 0.0
+   },
+   "ems_event_types": {
+    "column": "event_type",
+    "types": {
+     "6-Mass Movement": {
+      "km2": 7.018,
+      "share_we_detected": 0.566,
+      "detected_as_debris": 0.52,
+      "detected_as_water": 0.045
+     }
+    }
+   },
+   "by_confidence": {
+    "high_medium": {
+     "km2": 1.41,
+     "precision": 0.947
+    },
+    "low": {
+     "km2": 2.762,
+     "precision": 0.954
+    }
+   },
+   "by_terrain": {
+    "mountain": {
+     "iou": 0.55,
+     "precision": 0.951,
+     "recall": 0.566,
+     "ems_km2": 7.018
+    }
+   },
+   "buildings": {
+    "damage_column": "damage_gra",
+    "ems_damaged": 2725,
+    "ems_damaged_or_possible": 3058,
+    "ours_flagged_in_aoi": 1440,
+    "recall_damaged": 0.748,
+    "recall_incl_possible": 0.688,
+    "precision": 0.927,
+    "match_tolerance_m": 25.0
+   },
+   "roads": {
+    "damage_column": "damage_gra",
+    "ems_damaged_km": 49.77,
+    "ems_damaged_segments": 371,
+    "share_we_flagged": 0.931,
+    "our_closed_km_in_aoi": 31.34,
+    "closure_precision": 0.98
+   },
+   "facilities": {
+    "ems_damaged": 15,
+    "inside_run": 15,
+    "within_50m_of_our_map": 13,
+    "items": [
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Possibly damaged",
+      "we_flagged": false
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "24-Other Civil Engineering Works",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "215-Harbours, waterways, dams and other waterworks",
+      "state": "Possibly damaged",
+      "we_flagged": false
+     },
+     {
+      "type": "22-Pipelines, Communication and Electricity Lines",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "215-Harbours, waterways, dams and other waterworks",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "215-Harbours, waterways, dams and other waterworks",
+      "state": "Destroyed",
+      "we_flagged": true
+     }
+    ]
+   }
+  },
+  {
+   "product": "AOI03_GRA_PRODUCT_v1",
+   "aoi_km2_in_run": 20.95,
+   "extent": {
+    "iou": 0.518,
+    "precision": 0.8269,
+    "recall": 0.581,
+    "f1": 0.6825,
+    "tp": 8554,
+    "fp": 1791,
+    "fn": 6169,
+    "tn": 35870
+   },
+   "area_km2": {
+    "ours": 4.138,
+    "ems": 5.889,
+    "ems_in_radar_blind_spots": 0.0,
+    "radar_blind_share_of_aoi": 0.0
+   },
+   "ems_event_types": {
+    "column": "event_type",
+    "types": {
+     "6-Mass Movement": {
+      "km2": 5.889,
+      "share_we_detected": 0.581,
+      "detected_as_debris": 0.539,
+      "detected_as_water": 0.042
+     }
+    }
+   },
+   "by_confidence": {
+    "high_medium": {
+     "km2": 1.406,
+     "precision": 0.872
+    },
+    "low": {
+     "km2": 2.732,
+     "precision": 0.804
+    }
+   },
+   "by_terrain": {
+    "mountain": {
+     "iou": 0.518,
+     "precision": 0.827,
+     "recall": 0.581,
+     "ems_km2": 5.889
+    }
+   },
+   "buildings": {
+    "damage_column": "damage_gra",
+    "ems_damaged": 2046,
+    "ems_damaged_or_possible": 2343,
+    "ours_flagged_in_aoi": 1439,
+    "recall_damaged": 0.766,
+    "recall_incl_possible": 0.694,
+    "precision": 0.721,
+    "match_tolerance_m": 25.0
+   },
+   "roads": {
+    "damage_column": "damage_gra",
+    "ems_damaged_km": 39.04,
+    "ems_damaged_segments": 308,
+    "share_we_flagged": 0.951,
+    "our_closed_km_in_aoi": 30.87,
+    "closure_precision": 0.87
+   },
+   "facilities": {
+    "ems_damaged": 14,
+    "inside_run": 14,
+    "within_50m_of_our_map": 12,
+    "items": [
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Possibly damaged",
+      "we_flagged": false
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "24-Other Civil Engineering Works",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "215-Harbours, waterways, dams and other waterworks",
+      "state": "Possibly damaged",
+      "we_flagged": false
+     },
+     {
+      "type": "22-Pipelines, Communication and Electricity Lines",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "215-Harbours, waterways, dams and other waterworks",
+      "state": "Destroyed",
+      "we_flagged": true
+     },
+     {
+      "type": "215-Harbours, waterways, dams and other waterworks",
+      "state": "Destroyed",
+      "we_flagged": true
+     }
+    ]
+   }
+  },
+  {
+   "product": "AOI05_GRA_MONIT01_v2",
+   "aoi_km2_in_run": 3.3,
+   "extent": {
+    "iou": 0.6454,
+    "precision": 0.9777,
+    "recall": 0.655,
+    "f1": 0.7845,
+    "tp": 1272,
+    "fp": 29,
+    "fn": 670,
+    "tn": 6269
+   },
+   "area_km2": {
+    "ours": 0.52,
+    "ems": 0.777,
+    "ems_in_radar_blind_spots": 0.0,
+    "radar_blind_share_of_aoi": 0.0
+   },
+   "ems_event_types": {
+    "column": "event_type",
+    "types": {
+     "6-Mass Movement": {
+      "km2": 0.777,
+      "share_we_detected": 0.655,
+      "detected_as_debris": 0.518,
+      "detected_as_water": 0.137
+     }
+    }
+   },
+   "by_confidence": {
+    "high_medium": {
+     "km2": 0.327,
+     "precision": 0.989
+    },
+    "low": {
+     "km2": 0.193,
+     "precision": 0.959
+    }
+   },
+   "by_terrain": {
+    "mountain": {
+     "iou": 0.645,
+     "precision": 0.978,
+     "recall": 0.655,
+     "ems_km2": 0.777
+    }
+   },
+   "buildings": {
+    "damage_column": "damage_gra",
+    "ems_damaged": 513,
+    "ems_damaged_or_possible": 763,
+    "ours_flagged_in_aoi": 45,
+    "recall_damaged": 0.084,
+    "recall_incl_possible": 0.063,
+    "precision": 0.844,
+    "match_tolerance_m": 25.0
+   },
+   "roads": {
+    "damage_column": "damage_gra",
+    "ems_damaged_km": 24.67,
+    "ems_damaged_segments": 191,
+    "share_we_flagged": 0.121,
+    "our_closed_km_in_aoi": 1.72,
+    "closure_precision": 0.971
+   }
+  },
+  {
+   "product": "AOI05_GRA_PRODUCT_v2",
+   "aoi_km2_in_run": 3.3,
+   "extent": {
+    "iou": 0.6116,
+    "precision": 0.9185,
+    "recall": 0.6466,
+    "f1": 0.759,
+    "tp": 1195,
+    "fp": 106,
+    "fn": 653,
+    "tn": 6286
+   },
+   "area_km2": {
+    "ours": 0.52,
+    "ems": 0.739,
+    "ems_in_radar_blind_spots": 0.0,
+    "radar_blind_share_of_aoi": 0.0
+   },
+   "ems_event_types": {
+    "column": "event_type",
+    "types": {
+     "6-Mass Movement": {
+      "km2": 0.739,
+      "share_we_detected": 0.647,
+      "detected_as_debris": 0.508,
+      "detected_as_water": 0.139
+     }
+    }
+   },
+   "by_confidence": {
+    "high_medium": {
+     "km2": 0.327,
+     "precision": 0.941
+    },
+    "low": {
+     "km2": 0.193,
+     "precision": 0.88
+    }
+   },
+   "by_terrain": {
+    "mountain": {
+     "iou": 0.612,
+     "precision": 0.919,
+     "recall": 0.647,
+     "ems_km2": 0.739
+    }
+   },
+   "buildings": {
+    "damage_column": "damage_gra",
+    "ems_damaged": 361,
+    "ems_damaged_or_possible": 609,
+    "ours_flagged_in_aoi": 45,
+    "recall_damaged": 0.119,
+    "recall_incl_possible": 0.074,
+    "precision": 0.8,
+    "match_tolerance_m": 25.0
+   },
+   "roads": {
+    "damage_column": "damage_gra",
+    "ems_damaged_km": 18.23,
+    "ems_damaged_segments": 142,
+    "share_we_flagged": 0.156,
+    "our_closed_km_in_aoi": 1.72,
+    "closure_precision": 0.971
+   }
+  }
+ ],
+ "note": "Scores exclude pixels the radar could not observe. EMS maps come from very-high-resolution optical images; differences in date, resolution and mapping definitions are expected."
+}

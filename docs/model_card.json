@@ -1,0 +1,242 @@
+{
+ "_comment": "Shown in the dashboard's 'AI model' tab. Every number is a recorded run (docs/tuning_log.md). Update only with new recorded results, never by hand-tuning.",
+ "name": "Siamese U-Net (ResNet-34 encoder), two-date change segmentation",
+ "inputs": "Sentinel-1 VV and VH before and after (same orbit track), plus terrain slope from the Copernicus DEM",
+ "output": "probability per pixel that it is NEW flood water",
+ "training_data": "Kuro Siwo (Bountos et al., NeurIPS 2024 Datasets & Benchmarks), Sentinel-1 GRD with flood labels",
+ "split": "training events 1111004, 1111005, 1111009, 411, 562; validation 1111013 (threshold chosen here only); test 427 and 1111006 (run once after the freeze); 205, 421 and 498 never used",
+ "threshold": "0.8 on flood probability, chosen on the validation event only",
+ "how_used": "Runs on every orbit track; per pixel the highest probability among tracks that see it. Where it agrees with the radar rules, confidence goes up; where it clearly disagrees, down; it adds water the rules missed only where water can pond (low, flat ground), at low confidence.",
+ "tests": [
+  {
+   "name": "Sri Lanka floods, May 2017 (Kuro Siwo 205)",
+   "role": "never used for training or selection",
+   "reference": "Kuro Siwo labels",
+   "model_alone_iou": 0.442,
+   "final_map_iou": 0.468,
+   "final_map_precision": 0.993,
+   "note": "On Kuro Siwo's own images of the same area the model alone reaches 0.578: part of the gap is the different radar processing.",
+   "run": null,
+   "model_alone_na_pr": true
+  },
+  {
+   "name": "Buner, Pakistan, Aug 2025 (EMSR838 AOI10)",
+   "role": "Himalayan test, decided before running, run once",
+   "reference": "Copernicus EMS",
+   "model_alone_iou": 0.006,
+   "model_alone_precision": 0.945,
+   "rules_water_iou": 0.019,
+   "final_map_iou": 0.197,
+   "final_map_precision": 0.318,
+   "note": "The model detects relatively little, but its detections are reliable (95% precision). This flash flood was dominated by mud and debris, which is outside what the model was trained to find (open water). The final map gets most of its result from the debris rules and Sentinel-2. AI-alone scores are against EMS flood areas.",
+   "run": "hkh_buner_aoi10_full",
+   "model_alone_recall": 0.006
+  },
+  {
+   "name": "Buner, Pakistan, Aug 2025 (EMSR838 AOI11)",
+   "role": "Himalayan test, decided before running, run once",
+   "reference": "Copernicus EMS",
+   "model_alone_iou": 0.006,
+   "model_alone_precision": 0.994,
+   "rules_water_iou": 0.003,
+   "final_map_iou": 0.089,
+   "final_map_precision": 0.584,
+   "note": "Same pattern: 99% precision but 0.6% recall, because the damage was debris rather than open water.",
+   "run": "hkh_buner_aoi11_full",
+   "model_alone_recall": 0.006
+  },
+  {
+   "name": "Lasithi plateau, Crete, Oct 2026 (EMSR933 AOI03)",
+   "role": "blind test, decided before running, run once",
+   "reference": "Copernicus EMS (latest map of the AOI)",
+   "model_alone_iou": 0.549,
+   "model_alone_precision": 0.744,
+   "model_alone_recall": 0.677,
+   "rules_water_iou": 0.513,
+   "final_map_iou": 0.424,
+   "final_map_precision": 0.467,
+   "run": "crete_lasithi_2026",
+   "note": "A flat farmland basin in mountains, flooded after about 440 mm of rain. Against the latest EMS map the AI alone (0.55) beats the radar rules alone (0.51); against the first EMS delineation of the plateau it reaches IoU 0.84 (P 0.89, R 0.94) vs rules 0.62. Confirmed detections were 72% precise, single-source detections 16%."
+  },
+  {
+   "name": "Trishuli, Nepal, Aug 2026 (EMSR927)",
+   "role": "case study (viewed during development, never tuned on; final score after the freeze)",
+   "reference": "Copernicus EMS",
+   "final_map_iou": 0.466,
+   "final_map_precision": 0.958,
+   "note": "AI alone is not scored here: EMS mapped this event only as mass movement (debris flow), so there is no flood-water reference for a water-only model. The final map combines the AI, radar rules and Sentinel-2.",
+   "run": "trishuli_shub",
+   "model_alone_na": "not scored (see note)"
+  }
+ ],
+ "comparison": {
+  "source": "scripts/compare_models.py, 11 Oct 2026: same 600 tiles per event for every method (130 for event 205); flood threshold chosen per model on validation event 1111013",
+  "rows": [
+   {
+    "model": "Siamese U-Net R34, production (siamese_unet.pt)",
+    "val_iou": 0.758,
+    "test_iou": 0.653,
+    "test_precision": 0.86,
+    "test_recall": 0.73,
+    "test_1111006_iou": 0.685,
+    "test_427_iou": 0.183,
+    "unseen_iou": 0.457,
+    "unseen_precision": 0.96,
+    "unseen_recall": 0.47,
+    "ms_per_tile": 49.0,
+    "chosen": true
+   },
+   {
+    "model": "Siamese U-Net R34, retrained same budget",
+    "val_iou": 0.703,
+    "test_iou": 0.686,
+    "test_precision": 0.84,
+    "test_recall": 0.79,
+    "test_1111006_iou": 0.714,
+    "test_427_iou": 0.161,
+    "unseen_iou": 0.492,
+    "unseen_precision": 0.96,
+    "unseen_recall": 0.5,
+    "ms_per_tile": 53.2,
+    "chosen": false
+   },
+   {
+    "model": "Early fusion U-Net R50",
+    "val_iou": 0.724,
+    "test_iou": 0.677,
+    "test_precision": 0.81,
+    "test_recall": 0.8,
+    "test_1111006_iou": 0.708,
+    "test_427_iou": 0.158,
+    "unseen_iou": 0.625,
+    "unseen_precision": 0.84,
+    "unseen_recall": 0.71,
+    "ms_per_tile": 72.6,
+    "chosen": false
+   },
+   {
+    "model": "Siamese DeepLabV3+ R34",
+    "val_iou": 0.726,
+    "test_iou": 0.673,
+    "test_precision": 0.83,
+    "test_recall": 0.78,
+    "test_1111006_iou": 0.704,
+    "test_427_iou": 0.178,
+    "unseen_iou": 0.577,
+    "unseen_precision": 0.9,
+    "unseen_recall": 0.62,
+    "ms_per_tile": 83.4,
+    "chosen": false
+   },
+   {
+    "model": "Early fusion U-Net R34",
+    "val_iou": 0.69,
+    "test_iou": 0.677,
+    "test_precision": 0.8,
+    "test_recall": 0.81,
+    "test_1111006_iou": 0.71,
+    "test_427_iou": 0.204,
+    "unseen_iou": 0.608,
+    "unseen_precision": 0.83,
+    "unseen_recall": 0.69,
+    "ms_per_tile": 68.0,
+    "chosen": false
+   },
+   {
+    "model": "Siamese SegFormer MiT-B2",
+    "val_iou": 0.61,
+    "test_iou": 0.618,
+    "test_precision": 0.82,
+    "test_recall": 0.72,
+    "test_1111006_iou": 0.646,
+    "test_427_iou": 0.216,
+    "unseen_iou": 0.584,
+    "unseen_precision": 0.87,
+    "unseen_recall": 0.64,
+    "ms_per_tile": 145.8,
+    "chosen": false
+   },
+   {
+    "model": "After-only U-Net R34 (no before-image)",
+    "val_iou": 0.549,
+    "test_iou": 0.472,
+    "test_precision": 0.62,
+    "test_recall": 0.66,
+    "test_1111006_iou": 0.515,
+    "test_427_iou": 0.083,
+    "unseen_iou": 0.197,
+    "unseen_precision": 0.61,
+    "unseen_recall": 0.23,
+    "ms_per_tile": 65.4,
+    "chosen": false
+   },
+   {
+    "model": "Gradient-boosted trees (pixel features)",
+    "val_iou": 0.531,
+    "test_iou": 0.537,
+    "test_precision": 0.76,
+    "test_recall": 0.65,
+    "test_1111006_iou": 0.572,
+    "test_427_iou": 0.152,
+    "unseen_iou": 0.404,
+    "unseen_precision": 0.9,
+    "unseen_recall": 0.42,
+    "ms_per_tile": 278.6,
+    "chosen": false
+   },
+   {
+    "model": "Physical radar rules (no learning)",
+    "val_iou": 0.658,
+    "test_iou": 0.479,
+    "test_precision": 0.88,
+    "test_recall": 0.51,
+    "test_1111006_iou": 0.502,
+    "test_427_iou": 0.078,
+    "unseen_iou": 0.288,
+    "unseen_precision": 0.99,
+    "unseen_recall": 0.29,
+    "ms_per_tile": 133.7,
+    "chosen": false
+   }
+  ],
+  "rule": "Protocol rule 5, fixed before training: a model replaces the production Siamese U-Net only if its VALIDATION flood IoU is at least 0.02 higher. Best challenger: DeepLabV3+ 0.726 vs production 0.758 here (0.721 vs 0.723 in training), so the production model stays. Test and event-205 results were never used to choose. On the unseen event 205 the early-fusion models score higher (0.61-0.63 vs 0.46); this is reported, not acted on.",
+  "reading": "Learning beats the physical rules by +0.17 test IoU and gradient-boosted trees by +0.12; removing the before-image costs about 0.18-0.21. The two-date deep models are within 0.07 of each other on test."
+ },
+ "limitations": [
+  "Detects flood WATER, not debris: Kuro Siwo has water labels only.",
+  "Trained on mostly flat terrain (0-2.5% of training ground steeper than 20 degrees; Trishuli 82%).",
+  "Optical Sentinel-2 is not an input of the network (Kuro Siwo has none); it is combined afterwards."
+ ],
+ "fusion": [
+  "AI model: flood-water probability",
+  "Radar rules: water and debris",
+  "Sentinel-2 (clear sky): second sensor",
+  "Terrain: where water and debris can be"
+ ],
+ "second_dataset": {
+  "name": "Sen1Floods11 (Bonafilia et al. 2020), hand-labelled chips",
+  "model": "After-only U-Net (ResNet-34), from the model comparison (models/cmp_post_only.pt). Trained on Kuro Siwo only, best epoch chosen on Kuro Siwo validation event 1111013. Sen1Floods11 was never used for training, selection or thresholds.",
+  "why_not_production_model": "Sen1Floods11 has one radar image per chip and no before-image, so the two-date production model cannot be scored on it.",
+  "what_is_scored": "All surface water (the model's permanent-water or flood class) against the hand labels, as the dataset defines water. Slope input set to 0 (no DEM in Sen1Floods11).",
+  "rows": [
+   {
+    "split": "Test split (flood_test_data.csv)",
+    "chips": 90,
+    "iou": 0.479,
+    "precision": 0.592,
+    "recall": 0.715,
+    "otsu_iou": 0.546
+   },
+   {
+    "split": "Bolivia hold-out (flood_bolivia_data.csv)",
+    "chips": 15,
+    "iou": 0.684,
+    "precision": 0.835,
+    "recall": 0.791,
+    "otsu_iou": 0.697
+   }
+  ],
+  "reading": "Zero-shot on a dataset from a different processing chain, the model finds most water (recall 0.72 and 0.79) but over-flags on the test split (precision 0.59). It scores slightly below the dataset's own per-chip Otsu-threshold labels, which choose a threshold for each chip separately; the model uses no per-chip adjustment.",
+  "date": "2026-10-10"
+ }
+}

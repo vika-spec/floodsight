@@ -1,0 +1,80 @@
+{
+ "run": "ks_205_05",
+ "event": "205",
+ "tiles_used": 36,
+ "labelled_km2": 107.96,
+ "label_flood_km2": 5.906,
+ "label_flood_in_blind_mask_pct": 0.0,
+ "scores": {
+  "final map: flood water": {
+   "iou": 0.468,
+   "precision": 0.993,
+   "recall": 0.469,
+   "f1": 0.637,
+   "tp": 27702,
+   "fp": 191,
+   "fn": 31359,
+   "tn": 1019175
+  },
+  "final map: flood water + debris": {
+   "iou": 0.468,
+   "precision": 0.993,
+   "recall": 0.469,
+   "f1": 0.637,
+   "tp": 27702,
+   "fp": 191,
+   "fn": 31359,
+   "tn": 1019175
+  },
+  "segmentation model alone (p >= 0.8)": {
+   "iou": 0.442,
+   "precision": 0.994,
+   "recall": 0.443,
+   "f1": 0.613,
+   "tp": 26152,
+   "fp": 169,
+   "fn": 32909,
+   "tn": 1019197
+  }
+ },
+ "permanent_water_agreement": 0.022172284644194757,
+ "label_flood_in_our_classes_pct": {
+  "flood or debris": 46.9,
+  "permanent water (water already in our before-image)": 0.0,
+  "dry / no change": 53.1
+ },
+ "run_after_dates": [
+  "2017-05-30"
+ ],
+ "run_before_dates": [
+  "2017-01-24"
+ ],
+ "kurosiwo_post_dates": [
+  "2017-05-30"
+ ],
+ "kurosiwo_before_dates": [
+  "2017-01-24"
+ ],
+ "model_role_for_event": "not used",
+ "model_used_in_run": true,
+ "diagnostic_tiles": 20,
+ "diagnostics_skipped": [],
+ "model_on_kurosiwo_images_of_this_area": {
+  "tiles": 20,
+  "iou": 0.578,
+  "precision": 0.98,
+  "recall": 0.585
+ },
+ "backscatter_ours_vs_kurosiwo": {
+  "track": "des-019",
+  "our_after_date": "2017-05-30",
+  "pixels": 984836,
+  "median_ours_db": -7.17,
+  "median_kurosiwo_db": -7.14,
+  "median_difference_db": -0.04,
+  "correlation": 0.961,
+  "graininess_ours_db": 1.01,
+  "graininess_kurosiwo_db_at_10m": 0.64,
+  "note": "ours at the run's grid; Kuro Siwo averaged onto it (graininess of Kuro Siwo measured at its 10 m)"
+ }
+}

@@ -1,0 +1,26 @@
+{
+"type": "FeatureCollection",
+"name": "health",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "None", "amenity": "clinic", "healthcare": "clinic" }, "geometry": { "type": "Point", "coordinates": [ 72.3569437, 34.7574722 ] } },
+{ "type": "Feature", "properties": { "name": "Saidu Group of Teaching Hospital", "amenity": "hospital", "healthcare": "hospital" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 72.3571929, 34.7500119 ], [ 72.3568894, 34.7502498 ], [ 72.3565812, 34.7504545 ], [ 72.356273, 34.7505798 ], [ 72.3560133, 34.7506292 ], [ 72.3554791, 34.7506258 ], [ 72.3549963, 34.7498798 ], [ 72.3545404, 34.7491293 ], [ 72.3546642, 34.7490843 ], [ 72.3549869, 34.7489835 ], [ 72.3563048, 34.748572 ], [ 72.356343, 34.7486037 ], [ 72.3569723, 34.7493912 ], [ 72.3571443, 34.7496972 ], [ 72.3571929, 34.7500119 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "None", "amenity": "clinic", "healthcare": "clinic" }, "geometry": { "type": "Point", "coordinates": [ 72.3558013, 34.7545318 ] } },
+{ "type": "Feature", "properties": { "name": "None", "amenity": "doctors", "healthcare": "None" }, "geometry": { "type": "Point", "coordinates": [ 72.3670159, 34.7633657 ] } },
+{ "type": "Feature", "properties": { "name": "Government Hospital Pacha Kalay", "amenity": "hospital", "healthcare": "hospital" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 72.4492006, 34.5868301 ], [ 72.4490941, 34.5868947 ], [ 72.4487486, 34.5870562 ], [ 72.4475717, 34.5867332 ], [ 72.4465163, 34.5864603 ], [ 72.4463874, 34.5864215 ], [ 72.4462941, 34.5863934 ], [ 72.4462735, 34.5857913 ], [ 72.446458, 34.5857987 ], [ 72.4478568, 34.5858971 ], [ 72.4486598, 34.5859951 ], [ 72.4486879, 34.5861027 ], [ 72.4490751, 34.5861022 ], [ 72.4491226, 34.5863778 ], [ 72.4491442, 34.5865029 ], [ 72.449155, 34.5865768 ], [ 72.4492006, 34.5868301 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "Civil Hospital", "amenity": "hospital", "healthcare": "None" }, "geometry": { "type": "Point", "coordinates": [ 72.2821122, 34.3467055 ] } },
+{ "type": "Feature", "properties": { "name": "None", "amenity": "clinic", "healthcare": "clinic" }, "geometry": { "type": "Point", "coordinates": [ 72.36067, 34.7591035 ] } },
+{ "type": "Feature", "properties": { "name": "None", "amenity": "clinic", "healthcare": "clinic" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 72.3556534, 34.7559659 ], [ 72.355749, 34.7563556 ], [ 72.355342, 34.7564312 ], [ 72.3550801, 34.7563585 ], [ 72.3551721, 34.7560212 ], [ 72.355342, 34.756027 ], [ 72.3554411, 34.7559659 ], [ 72.3556534, 34.7559659 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "None", "amenity": "hospital", "healthcare": "hospital" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 72.3585638, 34.7593682 ], [ 72.3590962, 34.7590613 ], [ 72.3601189, 34.7590152 ], [ 72.3600629, 34.7583016 ], [ 72.3600302, 34.7579755 ], [ 72.3599975, 34.7578719 ], [ 72.3599002, 34.7574963 ], [ 72.3596426, 34.7575918 ], [ 72.3592503, 34.7566365 ], [ 72.3585732, 34.7567708 ], [ 72.3584284, 34.7561837 ], [ 72.3578586, 34.756272 ], [ 72.3578306, 34.7571736 ], [ 72.3579941, 34.7579678 ], [ 72.358529, 34.7592828 ], [ 72.3585638, 34.7593682 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "Dr Dil Raj", "amenity": "doctors", "healthcare": "doctor" }, "geometry": { "type": "Point", "coordinates": [ 72.4600681, 34.5060867 ] } },
+{ "type": "Feature", "properties": { "name": "سوات ہسپتال", "amenity": "hospital", "healthcare": "hospital" }, "geometry": { "type": "Point", "coordinates": [ 72.3556253, 34.7527448 ] } },
+{ "type": "Feature", "properties": { "name": "Dr. Noor Muhammad Medical Centre", "amenity": "clinic", "healthcare": "clinic" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 72.4491901, 34.5873454 ], [ 72.4488978, 34.5874426 ], [ 72.4487486, 34.5870562 ], [ 72.4491713, 34.5871817 ], [ 72.4491901, 34.5873454 ] ] ] } },
+{ "type": "Feature", "properties": { "name": "None", "amenity": "hospital", "healthcare": "hospital" }, "geometry": { "type": "Point", "coordinates": [ 72.3575714, 34.7609072 ] } },
+{ "type": "Feature", "properties": { "name": "Munir First AID Clinic Parn", "amenity": "clinic", "healthcare": "None" }, "geometry": { "type": "Point", "coordinates": [ 72.3768289, 34.76519 ] } },
+{ "type": "Feature", "properties": { "name": "Dr. Noor Muhammad Medical Centre", "amenity": "clinic", "healthcare": "clinic" }, "geometry": { "type": "Point", "coordinates": [ 72.4490802, 34.5872174 ] } },
+{ "type": "Feature", "properties": { "name": "BHU Meragai , Chinar Bagh", "amenity": "hospital", "healthcare": "hospital" }, "geometry": { "type": "Point", "coordinates": [ 72.455002, 34.7070068 ] } },
+{ "type": "Feature", "properties": { "name": "None", "amenity": "hospital", "healthcare": "hospital" }, "geometry": { "type": "Point", "coordinates": [ 72.3586744, 34.760649 ] } },
+{ "type": "Feature", "properties": { "name": "None", "amenity": "clinic", "healthcare": "clinic" }, "geometry": { "type": "Point", "coordinates": [ 72.3563542, 34.757676 ] } },
+{ "type": "Feature", "properties": { "name": "کنگ ہسپتال", "amenity": "hospital", "healthcare": "hospital" }, "geometry": { "type": "Point", "coordinates": [ 72.3554069, 34.7539167 ] } }
+]
+}

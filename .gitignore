@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+runs/
+models/*.pt
+models/*.json
+validation_data/
+data/
+.pytest_cache/
+*.part
+*.part.tif
+web/node_modules/
+_backups/

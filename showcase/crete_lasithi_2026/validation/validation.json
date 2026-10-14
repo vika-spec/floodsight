@@ -1,0 +1,299 @@
+{
+ "reference": "Copernicus EMS (EMSR933); used only for checking, never as input",
+ "flood_extent": {
+  "iou": 0.4242,
+  "precision": 0.4671,
+  "recall": 0.8221,
+  "f1": 0.5957,
+  "tp": 7713,
+  "fp": 8801,
+  "fn": 1669,
+  "tn": 249986
+ },
+ "combined_from": [
+  "AOI01_DEL_MONIT01_v1",
+  "AOI03_DEL_MONIT02_v1"
+ ],
+ "what_ems_mapped": "EMS observed-event extent compared with our flood + debris footprint",
+ "products": [
+  {
+   "product": "AOI01_DEL_MONIT01_v1",
+   "aoi_km2_in_run": 5.4,
+   "extent": {
+    "iou": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "tn": 13479
+   },
+   "area_km2": {
+    "ours": 0.0,
+    "ems": 0.0,
+    "ems_in_radar_blind_spots": 0.0,
+    "radar_blind_share_of_aoi": 0.001
+   },
+   "ems_event_types": {
+    "column": "event_type",
+    "types": {
+     "5-Flood": {
+      "km2": 0.0,
+      "share_we_detected": 0.0,
+      "detected_as_debris": 0.0,
+      "detected_as_water": 0.0
+     }
+    }
+   },
+   "by_confidence": {
+    "high_medium": {
+     "km2": 0.0,
+     "precision": null
+    },
+    "low": {
+     "km2": 0.0,
+     "precision": null
+    }
+   },
+   "by_terrain": {}
+  },
+  {
+   "product": "AOI03_DEL_MONIT02_v1",
+   "aoi_km2_in_run": 101.97,
+   "extent": {
+    "iou": 0.4242,
+    "precision": 0.4671,
+    "recall": 0.8221,
+    "f1": 0.5957,
+    "tp": 7713,
+    "fp": 8801,
+    "fn": 1669,
+    "tn": 236507
+   },
+   "area_km2": {
+    "ours": 6.606,
+    "ems": 3.753,
+    "ems_in_radar_blind_spots": 0.0,
+    "radar_blind_share_of_aoi": 0.001
+   },
+   "ems_event_types": {
+    "column": "event_type",
+    "types": {
+     "5-Flood": {
+      "km2": 3.753,
+      "share_we_detected": 0.822,
+      "detected_as_debris": 0.043,
+      "detected_as_water": 0.779
+     }
+    }
+   },
+   "by_confidence": {
+    "high_medium": {
+     "km2": 3.657,
+     "precision": 0.718
+    },
+    "low": {
+     "km2": 2.948,
+     "precision": 0.156
+    }
+   },
+   "by_terrain": {
+    "mountain": {
+     "iou": 0.424,
+     "precision": 0.467,
+     "recall": 0.822,
+     "ems_km2": 3.753
+    }
+   },
+   "water_rules_vs_model": {
+    "threshold": 0.8,
+    "rules": {
+     "iou": 0.513,
+     "precision": 0.601,
+     "recall": 0.779
+    },
+    "model_alone": {
+     "iou": 0.549,
+     "precision": 0.744,
+     "recall": 0.677
+    }
+   }
+  },
+  {
+   "product": "AOI03_DEL_PRODUCT_v1",
+   "aoi_km2_in_run": 101.97,
+   "extent": {
+    "iou": 0.4758,
+    "precision": 0.4789,
+    "recall": 0.9864,
+    "f1": 0.6448,
+    "tp": 7909,
+    "fp": 8605,
+    "fn": 109,
+    "tn": 238067
+   },
+   "area_km2": {
+    "ours": 6.606,
+    "ems": 3.207,
+    "ems_in_radar_blind_spots": 0.0,
+    "radar_blind_share_of_aoi": 0.001
+   },
+   "ems_event_types": {
+    "column": "event_type",
+    "types": {
+     "5-Flood": {
+      "km2": 3.207,
+      "share_we_detected": 0.986,
+      "detected_as_debris": 0.019,
+      "detected_as_water": 0.967
+     }
+    }
+   },
+   "by_confidence": {
+    "high_medium": {
+     "km2": 3.657,
+     "precision": 0.846
+    },
+    "low": {
+     "km2": 2.948,
+     "precision": 0.024
+    }
+   },
+   "by_terrain": {
+    "mountain": {
+     "iou": 0.476,
+     "precision": 0.479,
+     "recall": 0.986,
+     "ems_km2": 3.207
+    }
+   },
+   "water_rules_vs_model": {
+    "threshold": 0.8,
+    "rules": {
+     "iou": 0.624,
+     "precision": 0.638,
+     "recall": 0.967
+    },
+    "model_alone": {
+     "iou": 0.842,
+     "precision": 0.886,
+     "recall": 0.944
+    }
+   }
+  },
+  {
+   "product": "AOI03_GRA_PRODUCT_v1",
+   "aoi_km2_in_run": 46.58,
+   "extent": {
+    "iou": 0.4396,
+    "precision": 0.4935,
+    "recall": 0.8012,
+    "f1": 0.6108,
+    "tp": 8111,
+    "fp": 8325,
+    "fn": 2013,
+    "tn": 98011
+   },
+   "area_km2": {
+    "ours": 6.574,
+    "ems": 4.05,
+    "ems_in_radar_blind_spots": 0.0,
+    "radar_blind_share_of_aoi": 0.0
+   },
+   "ems_event_types": {
+    "column": "event_type",
+    "types": {
+     "5-Flood": {
+      "km2": 4.05,
+      "share_we_detected": 0.801,
+      "detected_as_debris": 0.048,
+      "detected_as_water": 0.753
+     }
+    }
+   },
+   "by_confidence": {
+    "high_medium": {
+     "km2": 3.657,
+     "precision": 0.749
+    },
+    "low": {
+     "km2": 2.917,
+     "precision": 0.174
+    }
+   },
+   "by_terrain": {
+    "mountain": {
+     "iou": 0.44,
+     "precision": 0.493,
+     "recall": 0.801,
+     "ems_km2": 4.05
+    }
+   },
+   "water_rules_vs_model": {
+    "threshold": 0.8,
+    "rules": {
+     "iou": 0.522,
+     "precision": 0.631,
+     "recall": 0.753
+    },
+    "model_alone": {
+     "iou": 0.548,
+     "precision": 0.774,
+     "recall": 0.653
+    }
+   },
+   "buildings": {
+    "damage_column": "damage_gra",
+    "ems_damaged": 0,
+    "ems_damaged_or_possible": 5,
+    "ours_flagged_in_aoi": 117,
+    "recall_damaged": null,
+    "recall_incl_possible": 0.4,
+    "precision": 0.017,
+    "match_tolerance_m": 25.0
+   },
+   "roads": {
+    "damage_column": "damage_gra",
+    "ems_damaged_km": 36.26,
+    "ems_damaged_segments": 168,
+    "share_we_flagged": 0.849,
+    "our_closed_km_in_aoi": 59.46,
+    "closure_precision": 0.476
+   },
+   "facilities": {
+    "ems_damaged": 2,
+    "inside_run": 2,
+    "within_50m_of_our_map": 2,
+    "items": [
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Possibly damaged",
+      "we_flagged": true
+     },
+     {
+      "type": "23-Complex Constructions on Industrial Sites",
+      "state": "Possibly damaged",
+      "we_flagged": true
+     }
+    ]
+   }
+  },
+  {
+   "product": "AOI04_DEL_MONIT01_v1",
+   "aoi_km2_in_run": 0.0,
+   "skipped": "EMS area of interest lies outside this run's area"
+  },
+  {
+   "product": "AOI06_DEL_MONIT01_v1",
+   "aoi_km2_in_run": 0.0,
+   "skipped": "EMS area of interest lies outside this run's area"
+  },
+  {
+   "product": "AOI07_DEL_MONIT01_v1",
+   "aoi_km2_in_run": 0.0,
+   "skipped": "EMS area of interest lies outside this run's area"
+  }
+ ],
+ "note": "Scores exclude pixels the radar could not observe. EMS maps come from very-high-resolution optical images; differences in date, resolution and mapping definitions are expected."
+}

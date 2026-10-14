@@ -1,0 +1,9 @@
+﻿name,name_en,place,status,target_before,target_after,km_before,km_after,extra_km,min_before,min_after,extra_min,buildings,snap_m,priority,lon,lat,status_label
+Kospelawinna,,village,reachable,hospital #4,hospital #4,1.4,1.4,0.0,2,2,0,358,14,0,80.39326,6.69922,Road access unchanged
+Hidellana Junction,,village,reachable,hospital #4,hospital #4,3.8,3.8,0.0,3,3,0,13,1,0,80.38372,6.71796,Road access unchanged
+Ratnapura New Town,,village,reachable,hospital #4,hospital #4,2.9,2.9,0.0,2,2,0,6,6,0,80.3809,6.71045,Road access unchanged
+Hidellana,,village,reachable,hospital #4,hospital #4,3.5,3.5,0.0,3,3,0,2,10,0,80.3849,6.71559,Road access unchanged
+Amithagoda,,village,reachable,hospital #4,hospital #4,5.4,5.4,0.0,5,5,0,1,4,0,80.377,6.72498,Road access unchanged
+Hidellana,,village,reachable,hospital #4,hospital #4,3.5,3.5,0.0,3,3,0,0,10,0,80.3849,6.71559,Road access unchanged
+Batuhena Junction,,hamlet,reachable,hospital #4,hospital #4,6.1,6.3,0.2,5,5,0,0,9,0,80.38379,6.73705,Road access unchanged
+Edandawela,,hamlet,reachable,hospital #4,hospital #4,7.2,7.4,0.2,6,6,0,0,13,0,80.37918,6.74512,Road access unchanged

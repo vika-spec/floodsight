@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "buildings_hit",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "status": "possibly_hit", "overlap_pct": 25.0 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 16.2914814, 46.54603070000001 ], [ 16.2916859, 46.5459449 ], [ 16.2915453, 46.5457863 ], [ 16.2914362, 46.5458321 ], [ 16.2914564, 46.5458548 ], [ 16.2914377, 46.5458627 ], [ 16.2914864, 46.5459176 ], [ 16.2914096, 46.5459498 ], [ 16.2914814, 46.54603070000001 ] ] ] } },
+{ "type": "Feature", "properties": { "status": "possibly_hit", "overlap_pct": 25.0 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 16.1990887, 46.5655096 ], [ 16.1992335, 46.5654754 ], [ 16.1991894, 46.5653869 ], [ 16.1991172, 46.5654039 ], [ 16.19913, 46.5654296 ], [ 16.1990574, 46.5654467 ], [ 16.1990887, 46.5655096 ] ] ] } }
+]
+}

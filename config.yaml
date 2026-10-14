@@ -1,0 +1,134 @@
+# FloodSight configuration. Every value here is generic: nothing is tuned to one valley.
+# Thresholds that depend on the scene (water threshold) are computed per image at run time.
+
+grid:
+  resolution_m: 20          # 20 m keeps a 30x40 km valley under ~3M pixels (fast); 10 m for small AOIs
+  max_area_km2: 3000        # larger areas are refused with a clear message (split them instead)
+
+sentinel1:
+  backend: auto             # auto | sentinelhub | openeo | local   (auto = Sentinel Hub if SH_CLIENT_ID is set,
+                            # then openEO, then local GRD processing; both images of a pair use one backend)
+  shub_coefficient: SIGMA0_ELLIPSOID # Sentinel Hub calibration. sigma0 = same as openEO and closest to the Kuro Siwo
+                                     # training data (measured with scripts/check_domain.py); GAMMA0_TERRAIN also possible
+  coefficient: sigma0-ellipsoid   # the only backscatter coefficient CDSE openEO offers (Oct 2026)
+  local_calibration: sigma0 # local GRD fallback: sigma0 (same as the other backends) | gamma0
+  local_thermal_noise: true # local GRD: remove thermal noise with the product's noise LUTs before calibration
+  sync_max_km2: 400         # larger areas skip openEO's 5-minute synchronous mode and use batch jobs
+  pre_window_days: 30       # search this far back for the "before" image
+  post_window_days: 14      # search this far forward for the "after" image
+  post_min_offset_days: 0   # 0 = an image on the flood day itself counts as "after"
+  polarisations: [VV, VH]
+  speckle_filter_size: 5    # Lee filter window (pixels)
+  max_pairs: 2              # process up to N orbit tracks (ascending + descending) and merge
+  pre_stack_images: 1       # 1 = single latest before-image; N > 1 = median of the N latest before-images of the same
+                            # track as the change reference (Sentinel Hub only). Under test, see docs/tuning_log.md
+  pre_stack_window_days: 60 # how far back to look for those images
+
+sentinel2:
+  enabled: true
+  pre_window_days: 45
+  post_window_days: 20
+  max_cloud_pct: 80         # scene-level filter; pixel-level SCL masking does the real work
+  min_clear_fraction: 0.15  # below this, optical is skipped for the AOI and the report says so
+  detect: true              # where clear before AND after: optical-only new water / fresh debris is added at low
+                            # confidence (same physical limits as radar); false = optical only confirms/contradicts
+  source: sentinelhub       # sentinelhub (fast, uses the monthly processing-unit quota) | openeo (slower, own credits)
+
+dem:
+  source: copernicus_glo30
+
+osm:
+  ohsome_url: https://api.ohsome.org/v1
+  latest_snapshot: "2026-07-27"   # latest date the ohsome API currently serves (from the brief)
+  overpass_fallback: false       # brief names the ohsome API; Overpass only if switched on deliberately
+  network_buffer_km: 15           # roads/hospitals fetched beyond the AOI so escape routes aren't cut artificially
+
+detection:
+  # Water
+  water_db_min: -24.0       # clamp for the automatic (Otsu/KI) VV water threshold
+  water_db_max: -15.0
+  water_drop_db: 3.0        # VV must darken by at least this much to count as NEW water
+  water_max_hand_m: 20.0
+  water_max_slope_deg: 12.0
+  # Debris / mud
+  debris_change_db: 3.0     # |post - pre| in VV or VH (log-ratio) for debris candidates
+  debris_texture_ratio: 1.6 # local std-dev change that also signals new rough deposits
+  debris_max_hand_m: 45.0   # debris flows run higher up the banks than still water
+  debris_corroboration_m: 40  # debris is confident only if a 2nd radar track (within this distance) or Sentinel-2 agrees
+  debris_max_slope_deg: 25.0
+  debris_terrain: mountain  # mountain = debris class only in mountain terrain (UNEP-WCMC, Kapos et al. 2000);
+                            # any = everywhere. Plains floods show up as water, harvested fields are not debris
+  min_object_m2: 4800       # remove isolated specks smaller than ~0.5 ha (= 12 px at 20 m, 48 px at 10 m):
+                            # the same physical size at any resolution
+  corridor_link_m: 600      # debris must connect to the river corridor within this distance
+
+model:
+  enabled: true
+  weights: models/siamese_unet.pt   # skipped silently if the file is missing
+  tile: 256
+  overlap: 64
+  flood_prob: 0.8          # chosen on the validation event with the threshold sweep (floodsight.model.evaluate --sweep)
+  tta: false               # true = average 4 flipped predictions (smoother, ~4x model time)
+  match_speckle: false     # OFF (4 Oct): measured on training event 1111009, smoothing the model input to the
+                           # 0.4 dB target LOWERED model IoU 0.869 -> 0.780 (scripts/check_model_input.py); raw input best
+  input_speckle_db: 0.4    # target: median local std of VV (dB, 5x5, flat ground) MEASURED ON THE KURO SIWO TRAINING
+                           # TILES with scripts/check_domain.py; never set from a test or case-study scene
+
+damage:
+  building_likely_frac: 0.30   # >= 30% of footprint inside flood/debris -> likely hit
+  building_buffer_m: 15        # within 15 m -> possibly hit
+  road_buffer_m: 10
+  bridge_buffer_m: 30
+
+network:
+  motorable: [motorway, trunk, primary, secondary, tertiary, unclassified, residential,
+              service, living_street, track, motorway_link, trunk_link, primary_link,
+              secondary_link, tertiary_link]
+  include_paths: false         # footpaths are common in the Himalaya; toggle to model foot access
+  snap_max_m: 1500             # settlement further than this from any road = "no road in OSM"
+  detour_ratio: 1.25           # post distance > 1.25x pre (and +2 km) -> "detour needed"
+  detour_min_extra_km: 2.0
+  targets: [hospital]          # fall back to town/city automatically if no hospital is reachable pre-event
+  settlement_radius_m: 1500    # buildings are counted for their nearest settlement within this distance
+  speed_kmh:                   # nominal free-flow speeds for travel times: OSRM car-profile defaults;
+    motorway: 90               # track/path are assumptions (unpaved / on foot). Real mountain roads are slower,
+    motorway_link: 45          # so times are optimistic lower bounds; the change before -> after is what matters
+    trunk: 85
+    trunk_link: 40
+    primary: 65
+    primary_link: 30
+    secondary: 55
+    secondary_link: 25
+    tertiary: 40
+    tertiary_link: 20
+    unclassified: 25
+    residential: 25
+    living_street: 10
+    service: 15
+    track: 10
+    path: 4
+    footway: 4
+    steps: 2
+    bridleway: 4
+    default: 25
+
+landing:                    # helicopter access for cut-off settlements (analysis/landing.py)
+  max_slope_deg: 7          # candidate landing ground: at most this slope (Copernicus DEM); US Army FM 3-21.38
+  clear_diameter_m: 60      # open circle needed (touchdown + margin for a medium helicopter)
+  flood_clearance_m: 50     # kept this far from detected flood, debris or water
+  building_clearance_m: 15  # and from mapped buildings
+  power_line_clearance_m: 30   # and from power lines mapped in OpenStreetMap (before the event)
+  max_distance_km: 5        # nearest pad / zone looked for within this straight-line distance
+
+flowpath:                   # bonus: flood path from any point (analysis/flowtrace.py)
+  max_length_km: 80         # default length; the dashboard offers 25 / 50 / 80 / 120 km
+  dem_res_m: 30             # Copernicus DEM GLO-30 at its native resolution
+  window_km: 30             # traced window by window, so the path is not limited to the analysed box
+  edge_margin_km: 3         # path near a window edge is not trusted (depression filling); next window centred there
+  snap_m: 300               # a click within 300 m of the river starts on the river
+  max_distance_m: 1500      # places further than this from the river are not listed
+  height_bands_m: [10, 25, 50]   # exposure bands above the river (valley floor / low / high terraces)
+  list_max_height_m: 150    # places up to this height above the river are listed (above 50 m: "high ground")
+
+report:
+  languages: [en, ne]

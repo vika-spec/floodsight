@@ -1,0 +1,123 @@
+{
+ "reference": "Copernicus EMS (EMSR680); used only for checking, never as input",
+ "flood_extent": {
+  "iou": 0.112,
+  "precision": 0.5168,
+  "recall": 0.1251,
+  "f1": 0.2015,
+  "tp": 399,
+  "fp": 373,
+  "fn": 2790,
+  "tn": 395757
+ },
+ "combined_from": [
+  "AOI15_GRA_PRODUCT_v1"
+ ],
+ "what_ems_mapped": "EMS observed-event extent compared with our flood + debris footprint",
+ "products": [
+  {
+   "product": "AOI15_GRA_PRODUCT_v1",
+   "aoi_km2_in_run": 159.73,
+   "extent": {
+    "iou": 0.112,
+    "precision": 0.5168,
+    "recall": 0.1251,
+    "f1": 0.2015,
+    "tp": 399,
+    "fp": 373,
+    "fn": 2790,
+    "tn": 395757
+   },
+   "area_km2": {
+    "ours": 0.309,
+    "ems": 1.276,
+    "ems_in_radar_blind_spots": 0.0,
+    "radar_blind_share_of_aoi": 0.0
+   },
+   "ems_event_types": {
+    "column": "event_type",
+    "types": {
+     "5-Flood": {
+      "km2": 1.028,
+      "share_we_detected": 0.155,
+      "detected_as_debris": 0.153,
+      "detected_as_water": 0.002
+     },
+     "6-Mass Movement": {
+      "km2": 0.248,
+      "share_we_detected": 0.002,
+      "detected_as_debris": 0.002,
+      "detected_as_water": 0.0
+     }
+    }
+   },
+   "by_confidence": {
+    "high_medium": {
+     "km2": 0.018,
+     "precision": 0.432
+    },
+    "low": {
+     "km2": 0.291,
+     "precision": 0.522
+    }
+   },
+   "by_terrain": {
+    "mountain": {
+     "iou": 0.112,
+     "precision": 0.517,
+     "recall": 0.125,
+     "ems_km2": 1.276
+    }
+   },
+   "water_rules_vs_model": {
+    "threshold": 0.8,
+    "rules": {
+     "iou": 0.002,
+     "precision": 0.308,
+     "recall": 0.002
+    },
+    "model_alone": {
+     "iou": 0.0,
+     "precision": 0.0,
+     "recall": 0.0
+    }
+   },
+   "buildings": {
+    "damage_column": "damage_gra",
+    "ems_damaged": 22,
+    "ems_damaged_or_possible": 220,
+    "ours_flagged_in_aoi": 119,
+    "recall_damaged": 0.091,
+    "recall_incl_possible": 0.214,
+    "precision": 0.261,
+    "match_tolerance_m": 25.0
+   },
+   "roads": {
+    "damage_column": "damage_gra",
+    "ems_damaged_km": 10.09,
+    "ems_damaged_segments": 114,
+    "share_we_flagged": 0.394,
+    "our_closed_km_in_aoi": 7.91,
+    "closure_precision": 0.303
+   },
+   "facilities": {
+    "ems_damaged": 2,
+    "inside_run": 2,
+    "within_50m_of_our_map": 0,
+    "items": [
+     {
+      "type": "24-Other Civil Engineering Works",
+      "state": "Damaged",
+      "we_flagged": false
+     },
+     {
+      "type": "24-Other Civil Engineering Works",
+      "state": "Possibly damaged",
+      "we_flagged": false
+     }
+    ]
+   }
+  }
+ ],
+ "note": "Scores exclude pixels the radar could not observe. EMS maps come from very-high-resolution optical images; differences in date, resolution and mapping definitions are expected."
+}

@@ -1,0 +1,100 @@
+{
+ "reference": "Copernicus EMS (EMSR838); used only for checking, never as input",
+ "flood_extent": {
+  "iou": 0.1965,
+  "precision": 0.3182,
+  "recall": 0.3395,
+  "f1": 0.3285,
+  "tp": 3177,
+  "fp": 6807,
+  "fn": 6180,
+  "tn": 406314
+ },
+ "combined_from": [
+  "AOI10_GRA_PRODUCT_v1"
+ ],
+ "what_ems_mapped": "EMS observed-event extent compared with our flood + debris footprint",
+ "products": [
+  {
+   "product": "AOI10_GRA_PRODUCT_v1",
+   "aoi_km2_in_run": 169.0,
+   "extent": {
+    "iou": 0.1965,
+    "precision": 0.3182,
+    "recall": 0.3395,
+    "f1": 0.3285,
+    "tp": 3177,
+    "fp": 6807,
+    "fn": 6180,
+    "tn": 406314
+   },
+   "area_km2": {
+    "ours": 3.994,
+    "ems": 3.743,
+    "ems_in_radar_blind_spots": 0.0,
+    "radar_blind_share_of_aoi": 0.0
+   },
+   "ems_event_types": {
+    "column": "event_type",
+    "types": {
+     "5-Flood": {
+      "km2": 3.743,
+      "share_we_detected": 0.34,
+      "detected_as_debris": 0.321,
+      "detected_as_water": 0.019
+     }
+    }
+   },
+   "by_confidence": {
+    "high_medium": {
+     "km2": 0.256,
+     "precision": 0.595
+    },
+    "low": {
+     "km2": 3.738,
+     "precision": 0.299
+    }
+   },
+   "by_terrain": {
+    "mountain": {
+     "iou": 0.197,
+     "precision": 0.318,
+     "recall": 0.34,
+     "ems_km2": 3.743
+    }
+   },
+   "water_rules_vs_model": {
+    "threshold": 0.8,
+    "rules": {
+     "iou": 0.019,
+     "precision": 0.911,
+     "recall": 0.019
+    },
+    "model_alone": {
+     "iou": 0.006,
+     "precision": 0.945,
+     "recall": 0.006
+    }
+   },
+   "buildings": {
+    "damage_column": "damage_gra",
+    "ems_damaged": 9,
+    "ems_damaged_or_possible": 605,
+    "ours_flagged_in_aoi": 14,
+    "recall_damaged": 0.0,
+    "recall_incl_possible": 0.003,
+    "precision": 0.071,
+    "match_tolerance_m": 25.0
+   },
+   "roads": {
+    "damage_column": "damage_gra",
+    "ems_damaged_km": 6.43,
+    "ems_damaged_segments": 110,
+    "share_we_flagged": 0.814,
+    "our_closed_km_in_aoi": 21.62,
+    "closure_precision": 0.254
+   }
+  }
+ ],
+ "note": "Scores exclude pixels the radar could not observe. EMS maps come from very-high-resolution optical images; differences in date, resolution and mapping definitions are expected."
+}

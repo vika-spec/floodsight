@@ -1,0 +1,10 @@
+﻿name,name_en,place,status,target_before,target_after,km_before,km_after,extra_km,min_before,min_after,extra_min,buildings,snap_m,priority,lon,lat,status_label
+کلپانی,Kalpani,village,likely_cut_off,Government Hospital Pacha Kalay,,19.8,,,22,,,0,50,1,72.53268,34.4675,Likely cut off (only low-confidence detections block the last route)
+Bajkata,,village,likely_cut_off,Government Hospital Pacha Kalay,,22.7,,,30,,,0,132,2,72.56074,34.46629,Likely cut off (only low-confidence detections block the last route)
+ديوانه بابا,Dewana Baba,village,likely_cut_off,Government Hospital Pacha Kalay,,25.8,,,29,,,0,71,3,72.58756,34.47436,Likely cut off (only low-confidence detections block the last route)
+کلیا ڑی,Kulyari,village,likely_cut_off,Government Hospital Pacha Kalay,,27.8,,,32,,,0,33,4,72.59469,34.46079,Likely cut off (only low-confidence detections block the last route)
+مٹوانی,Matwani,village,likely_cut_off,Government Hospital Pacha Kalay,,28.4,,,32,,,0,98,5,72.61006,34.48245,Likely cut off (only low-confidence detections block the last route)
+Budhal Kalay,,village,likely_cut_off,Government Hospital Pacha Kalay,,33.7,,,37,,,0,231,6,72.65003,34.49138,Likely cut off (only low-confidence detections block the last route)
+Chinar Kalay,,village,reachable,Government Hospital Pacha Kalay,Government Hospital Pacha Kalay,17.6,17.6,0.0,20,20.0,0.0,1,66,0,72.49494,34.45758,Road access unchanged
+تختابند,Takhtaband,village,reachable,Government Hospital Pacha Kalay,Government Hospital Pacha Kalay,17.7,17.7,0.0,20,20.0,0.0,0,66,0,72.50861,34.47688,Road access unchanged
+ڈھیرئی,Dherai,village,reachable,Government Hospital Pacha Kalay,Government Hospital Pacha Kalay,20.3,20.3,0.0,23,23.0,0.0,0,181,0,72.49412,34.44116,Road access unchanged
